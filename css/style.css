@@ -1,24 +1,28 @@
-* {
-    color: rgb(0, 140, 10);
+div {
+    color: brown;
 }
 
-h1 {
-    color: aqua;
-}
-
-.element {
-    color: blueviolet;
-}
-
-#title {
-    color: chartreuse;
-}
-div[title] {
-    color: blue;
-}
 div[title="text"] {
     color: rgb(255, 136, 0);
+    background-color: transparent;  /*Прозрачный фон*/
 }
 p {
-    color: black;
+    color: red;
+    background-color:green;
+}
+.logo {
+    background-image: url(../img/1.png);
+    background-repeat: no-repeat;
+}
+.logo2 {
+    background-image: url(../img/2.png);
+    background-repeat: no-repeat;
+}
+.logo3 {
+    background-image: url(../img/3.png);
+    background-repeat: no-repeat;
+}
+.logo4 {
+    background-image: url(../img/4.png);
+    background-repeat: no-repeat;
 }
