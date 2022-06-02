@@ -4,11 +4,14 @@ div {
 
 div[title="text"] {
     color: rgb(255, 136, 0);
-    background-color: transparent;  /*Прозрачный фон*/
+    background-color: transparent;  
 }
 p {
-    color: red;
-    background-color:green;
+    color: #ff0000;
+    border: 4px green groove;
+    border-radius: 10px 20px 30px 40px;
+    border-top-color: violet;
+
 }
 .logo {
     background-image: url(../img/1.png);
