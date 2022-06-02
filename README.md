@@ -1,2 +1,2 @@
-# Frontend_Udemy
+# Frontend
 Учебные материалы
