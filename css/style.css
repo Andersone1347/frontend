@@ -16,16 +16,31 @@ p {
 .logo {
     background-image: url(../img/1.png);
     background-repeat: no-repeat;
+    height: 100px;
+    width: 100px;
+    border: 1px black solid;
+    border-radius: 50px;
 }
 .logo2 {
     background-image: url(../img/2.png);
     background-repeat: no-repeat;
+    height: 100px;                  /*высота*/
+    width: 100px;                   /*ширина*/
+    border: 1px black solid;
+    border-radius: 50px;
 }
 .logo3 {
     background-image: url(../img/3.png);
     background-repeat: no-repeat;
+    height: 100px;
+    width: 100px;
+    border: 1px black solid;
+    border-radius: 50px;
 }
 .logo4 {
-    background-image: url(../img/4.png);
-    background-repeat: no-repeat;
+    background-color: #ff0000;
+    background-repeat: no-repeat;    height: 100px;
+    width: 100px;
+
+    border-radius: 50px;
 }
