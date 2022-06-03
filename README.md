@@ -19,7 +19,7 @@
 # :root {--peremen};
 в ксс можно создавать переменную 
 # calc()
-калькулятор количесво нужного столбика делим на максимальное количество столбов и минусуем отступ .
+калькулятор количесво желаемых отступов делим на максимальное количество столбов и минусуем отступ .
 # описание bootstrap сетки
 https://getbootstrap.com/docs/5.2/layout/grid/
 # @media screen and (max-width:992px){}
@@ -110,3 +110,7 @@ https://getbootstrap.com/docs/5.2/layout/grid/
 https://getbootstrap.com/docs/5.2/layout/grid/
 # Архив с файлами bootstrap
 https://getbootstrap.com/docs/5.2/getting-started/download/
+
+ @media screen and (max-width:768px) {
+.col-md-6    
+}
