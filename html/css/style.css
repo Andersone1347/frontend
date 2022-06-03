@@ -1,18 +1,43 @@
-* {
+:root {
+ --gutter: 20px
+ --bg: tomato
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+html {
     box-sizing: border-box;
+    font-size: 18px;
 }
-div.parent {
-    height: 250px;
-    border: 1px solid red;
-    display: flex; 
+body,p,h1,h2,h3,ul,ol {
+    margin: 0;
+    padding: 0;
+}
+.header {
+    background-color: grey;
+}
+.container {
+    background-color: #eee;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+.row {
+    display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    align-items: flex-end;
-    align-content: space-evenly;
 }
-
-.parent div:nth-child(4){
-    background-color: blueviolet;
-    align-self: flex-end;
-
-}  
+.row > div {
+    padding: 15px;
+    margin: 0 auto;
+    background-color: wheat;
+    border: 1px solid gray
+}
+.col-3 {
+    width: calc(25% - var(--gutter));
+}
+.col-6 {
+    width: calc(50% - var(--gutter));
+}
+.col-12 {
+    width: calc(100% - var(--gutter));
+}
