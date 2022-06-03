@@ -25,7 +25,8 @@ https://getbootstrap.com/docs/5.2/layout/grid/
 # @media screen and (max-width:992px){}
 запрос медиа (то что написано в фигурных скобках будет работать только на экранах меньше 992px)
 # для разной ширины экрана
-```.col-3 {
+```
+.col-3 {
     width: calc(25% - var(--gutter));
 }
 .col-4 {
@@ -102,5 +103,10 @@ https://getbootstrap.com/docs/5.2/layout/grid/
     body {
         background-color: red;
     }
-}```
+}
+```
 
+# параметры сетки на bootstrap
+https://getbootstrap.com/docs/5.2/layout/grid/
+# Архив с файлами bootstrap
+https://getbootstrap.com/docs/5.2/getting-started/download/
