@@ -114,3 +114,4 @@ https://getbootstrap.com/docs/5.2/getting-started/download/
  @media screen and (max-width:768px) {
 .col-md-6    
 }
+1
