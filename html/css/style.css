@@ -1,19 +1,18 @@
 * {
     box-sizing: border-box;
 }
-button {
-cursor: pointer;
+div.parent {
+    height: 250px;
+    border: 1px solid red;
+    display: flex; 
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-end;
+    align-content: space-evenly;
 }
-.menu li:nth-child(3) {  /* nth-child() находит один или более элементов, основываясь на их позиции среди группы соседних элементов. */
-     text-decoration:none ;
-    color: red;
-}
-table tr:nth-child(odd) {
-color: chartreuse;
-}
-div::before {    
-   content: "\00A9"; /*в гугле много ксс символов */
-}
-div::after {
-    content: "2";
-} /*before перед   after после  */
+
+.parent div:nth-child(4){
+    background-color: blueviolet;
+    align-self: flex-end;
+
+}  
