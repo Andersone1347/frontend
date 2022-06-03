@@ -1,20 +1,19 @@
-.monospace {
-    font-family: monospace; /*одинаковые по ширине */
+* {
+    box-sizing: border-box;
+}
 
+.box {
+    box-sizing: border-box; /*что бы марджин и падинг не меняли размер    */
+    width: 150px;
+    height: 150px;
+    border: 1px black solid;
 }
-p {
-    font-family: serif;
-    font-size: 15px;
-    font-weight:normal;
-    line-height: normal;
-    text-align: justify;
-    text-decoration: none;
-    text-transform: ;
-
+.box1 {
+    background-color: blue;
+    margin: 10px 0px 10px 10px;
+    padding: 20px;
 }
-a {
-    text-decoration: none;
-}
-ul {
-    list-style:upper-roman;
+.box2 {
+    background-color: red ;
+    margin: 10px;
 }
