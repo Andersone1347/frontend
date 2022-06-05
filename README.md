@@ -54,3 +54,45 @@ Hello world!
 <title>Заголовок</title>   
 
 С помощью **emmet** можно просто писать div и нажать на enter и он сразу выведет <div></div>
+
+## Урок 5.
+
+Как задавать путь к файлу.   
+
+Создание файла **style.css** в папке сss.
+С помощью тега **link** соединяем **index.html** c файлом **style.css** в файле index.html , в href указываем буть к файлу css.
+```
+<link rel="stylesheet" href="css/style.css">
+```
+В папку img добавляем картинку с названием **logo.png**.В **body** c помочью тега <img> добавляем картинку на страничку.
+```
+<img src="img/logo.png" alt="logo">
+```
+Так же как и с картинкой можно добавить подлючение **java scripta** ,создаём папку **js** и в этой папке создаём файл **main.js**.
+```
+<Script src="js/main.js"></Script>
+```
+## Урок 6.
+
+Легкое задание на создание папок и файлов.
+Подключение css и js файлов
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css2/main.css">
+</head>
+<body>
+      <img src="img/main/logo.png" alt="logo">
+      <script src="js/lib.js"></script>
+      <script src="js/script/main.js"></script>
+</body>
+</html>
+```
+Создаём в папке **css** папку **css2** и в ней файл **main.css**, а в папке **js** папку **script** а в ней файл **main.js** и в папке **js** файл **lib.js**.
+В папке **img** создаём папку **main** и перетаски ваем в неё файл **logo.png** .
