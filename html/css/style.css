@@ -1,11 +1,9 @@
-.box {
-    width: 150px;
-    height: 150px;
-    border: 1px solid black;
+* {
+box-sizing: border-box;
 }
-.box1 {
-    background-color: rgb(83,136,172);
-    margin: 10px;
+div.parent {
+    display: flex;
+
 }
 .box2 {
     background-color: rgb(200,106,106);
