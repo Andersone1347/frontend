@@ -3,28 +3,35 @@
     box-sizing: inherit;
 }
 .container {
-    width: 1170px;
+    width: 1000px;
+    margin: 0 auto;
 }
-.menu__inner {
-    margin: 25px 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.menu {
+background-color: blueviolet;
+width: 1050px;
+margin: 400px;
 }
 .nav {
     display: flex;
-    list-style: none;
-    padding: 0;
-    margin: 0;
+    justify-content: space-between;
+    align-items: center;
+    height: 200px;
+
 }
-.nav li a {
+.value {
+    text-align: center;
+}
+.number {
+    color: rgb(255, 109, 5);
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 40px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.text {
+    color: white;
     text-transform: uppercase;
-    text-decoration: none;
-    color: #999;
-    padding: 10px 20px;
-}
-.nav li a:hover {
-    background-color: #ffc744;
-    color: #fff;
-    border-radius: 5px;
+    font-size: 15px;
+    font-weight: lighter;
 }
