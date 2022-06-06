@@ -343,3 +343,78 @@ C помочью свойства **display:flex;** можно **div** писа�
 
 ## Урок 23. Адаптивная версия сайта, Создание своей сетки.
 
+В index.html создаём вложеную цепочку дивов.
+```
+<div class="header">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">1</div>
+      <div class="col-6">2</div>
+      <div class="col-6">3</div>
+      <div class="col-3">4</div>
+      <div class="col-3">5</div>
+      <div class="col-3">6</div>
+      <div class="col-3">7</div>
+      <div class="col-4">8</div>
+      <div class="col-4">9</div>
+      <div class="col-4">10</div>
+    </div>
+  </div>
+</div>
+```
+C помощью flex-box вычерчиваем невидимую таблицу из 12 столбиков,и по формуле x/12*100,где x-столбик к которому хотим перейти.
+```
+     :root {
+     --gutter: 20px;
+     --bg: tomato;
+    }
+    *, *:before, *:after {
+        box-sizing: inherit;
+    }
+    html {
+        box-sizing: border-box;
+        font-size: 18px;
+    }
+    body,p,h1,h2,h3,ul,ol {
+        margin: 0;
+        padding: 0;
+    }
+    .header {
+        background-color: grey;
+    }
+    .container {
+        background-color: #eee;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 15px;
+    }
+
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .row > div {
+        padding: 15px;
+        margin: 0 auto;
+        background-color: wheat;
+        border: 1px solid gray
+    }
+    .col-3 {
+        width: calc(25% - var(--gutter));
+    }
+    .col-6 {
+        width: calc(50% - var(--gutter));
+    }
+    .col-12 {
+        width: calc(100% - var(--gutter));
+    } 
+    .col-4 {
+        width: calc(33.33% - var(--gutter));
+    }
+```
+# описание bootstrap сетки
+https://getbootstrap.com/docs/5.2/layout/grid/
+# @media screen and (max-width:992px){}
+запрос медиа (то что написано в фигурных скобках будет работать только на экранах меньше 992px)
+**root {--peremen};** - в **css** можно создавать переменную.
+В итоге мы научились управлять элементами на разный размерах мобильных устройств.
