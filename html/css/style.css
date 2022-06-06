@@ -1,29 +1,9 @@
-
-*, *:before, *:after {
-    box-sizing: inherit;
-}
-.container {
-    width: 1170px;
-    margin: 0 auto;
-}
-.menu__inner {
-    margin: 25px 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.nav {
-    display: flex;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-
-}
-.nav li a {
-    text-transform: uppercase;
-    text-decoration: none;
-    color: #999;
-}
-.nav li {
-    padding-left: 25px;
+.logo {
+    background-image: url(../img/logo.png);
+    background-repeat: no-repeat;
+    border-top: ;
+    border-bottom: ;
+    border-left: ;
+    border-right: ;
+    
 }

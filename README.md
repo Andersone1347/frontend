@@ -188,4 +188,60 @@ Hello world!
  * class - класс может быть одинаковый у элементов.
  * id - должны быть индивидуальные для каждого элемента.
 
- ## Урок 13. 
+ ## Урок 13. Цвет RGB и спецсимволы.
+
+ Спецсимволы пример &nbsp; , сайт с спецсимволами https://htmlweb.ru/html/symbols.php    
+ 
+ Цвет записываеться в разных форматах, можно записать в текстовом варианте **green**, в значение **RGB (0,128,0)** , и в коде **#008000** .
+
+## Урок 14. Подведение итогов изучения Html   
+
+## Урок 15. Css селекторы.
+
+Подключаем к индексу ксс файл с помощью тега линк.
+Пример 
+```
+*{
+color: teal;
+}
+
+```
+Где **color** это свойство , **teal** значение.
+**h1{}** обращение ко всем элементам h1.
+По классам обращаемся через точку, по индификаторам через решётку.В **css** всё работает сверху вниз, так же ещё можно обращаться к атрибутам **html** пример:
+```
+div[title] {
+    color: red;
+}
+```
+В **сss** каждое значение заканчиваеться точкой с запятой.
+
+## Урок 16. Работа с изображениями в сss.
+
+```
+html
+<body>
+<div class="logo">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum culpa recusandae sapiente dolores, doloremque a nihil repudiandae veniam, voluptate doloribus nostrum impedit quidem? Beatae dolor, tempora nesciunt accusantium fugit totam?</div>
+</body>
+css
+.logo {
+    background-image: url(../img/logo.png)
+    background-repeat: no-repeat;
+}
+}
+```
+Две точки нужны для выхода из папки css.
+    **background-repeat: no-repeat;** нужно для того что бы изображение не повторялось.
+# Урок 17. Границы.
+
+С помощью **бордер** можно отчертить рамку , границу блока, а с **бордер-радиус** скруглить углы.
+```
+  border-top: ;
+    border-bottom: ;
+    border-left: ;
+    border-right: ;
+    
+```
+Можно настроить любую границу отдельно.
+
+## Урок 18. Размеры элементов.
