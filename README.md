@@ -232,7 +232,7 @@ css
 ```
 Две точки нужны для выхода из папки css.
     **background-repeat: no-repeat;** нужно для того что бы изображение не повторялось.
-# Урок 17. Границы.
+## Урок 17. Границы.
 
 С помощью **бордер** можно отчертить рамку , границу блока, а с **бордер-радиус** скруглить углы.
 ```
@@ -245,3 +245,44 @@ css
 Можно настроить любую границу отдельно.
 
 ## Урок 18. Размеры элементов.
+
+C помощью width(ширина) и height(высота) выставляем нужные параметры картинки. 
+Тестовое задание , нарисовать в **сss** светафор.
+```
+html
+<body>
+<div class="svetofor">
+  <div class="red"></div>
+  <div class="orange"></div>
+  <div class="green"></div>
+</div>
+</body>
+css
+.svetofor div{
+width: 100px;
+height: 100px;
+border-radius: 50%;
+}
+.red {
+    background-color: red;
+}
+.orange {
+    background-color: orange;
+}
+.green {
+    background-color: green;
+}
+```
+
+## Урок 19. Работа с шрифтом.
+
+* font-family - свойство выбора шрифта.
+* font-size - размер шрифта.
+* font-weight - ширина шрифта.
+* line-height - интервал между строками.
+* text-align - выравние текста по стороне.
+* text-decoration - подчёркивание.
+* text-transform - изменение символов.
+* list-style - символы для списка.
+
+## Урок 20. Блочная модель документа. 
