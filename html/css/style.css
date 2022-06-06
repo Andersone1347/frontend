@@ -1,14 +1,13 @@
-.svetofor div{
-width: 100px;
-height: 100px;
-border-radius: 50%;
+.box {
+    width: 150px;
+    height: 150px;
+    border: 1px solid black;
 }
-.red {
-    background-color: red;
+.box1 {
+    background-color: rgb(83,136,172);
+    margin: 10px;
 }
-.orange {
-    background-color: orange;
-}
-.green {
-    background-color: green;
+.box2 {
+    background-color: rgb(200,106,106);
+    margin: 10px;
 }
