@@ -418,3 +418,199 @@ https://getbootstrap.com/docs/5.2/layout/grid/
 запрос медиа (то что написано в фигурных скобках будет работать только на экранах меньше 992px)
 **root {--peremen};** - в **css** можно создавать переменную.
 В итоге мы научились управлять элементами на разный размерах мобильных устройств.
+
+## Урок 24. Задание по работе с сеткой.
+
+Сделать **style.css** файл со всеми размерами столбцов от 1 до 12, также создать медиа запрос по размерам lg,md,sm и вывести в отдельный файл media.css.
+```
+style.css
+:root {
+    --gutter: 20px;
+    --bg: #5b9c5a;
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+  html {
+    box-sizing: border-box;
+    font-size: 18px;
+  }
+  body,p,h1,h2,h3,ul,ol {
+    margin: 0;
+    padding: 0;
+  }
+  .header {
+    background-color: var(--bg);
+  }
+  .container {
+    background-color: #eee;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .row > div {
+    padding: 15px;
+    margin: 0 auto;
+    background-color: wheat;
+    border: 1px solid gray
+  }
+  .col-1 {
+    width: calc(8.3% - var(--gutter));
+  }
+  .col-2 {
+    width: calc(16.66% - var(--gutter));
+  }
+  .col-3 {
+    width: calc(25% - var(--gutter));
+  }
+  .col-4 {
+    width: calc(33.33% - var(--gutter));
+  }
+  .col-5 {
+    width: calc(41.66% - var(--gutter));
+  }
+  .col-6 {
+    width: calc(50% - var(--gutter));
+  }
+  .col-7 {
+    width: calc(58.33% - var(--gutter));
+  }
+  .col-8 {
+    width: calc(66.66% - var(--gutter));
+  }
+  .col-9 {
+    width: calc(75% - var(--gutter));
+  }
+  .col-10 {
+    width: calc(83.33% - var(--gutter));
+  }
+  .col-11 {
+    width: calc(91.66% - var(--gutter));
+  }
+  .col-12 {
+    width: calc(100% - var(--gutter));
+  }
+  media.css
+
+@media screen and (max-width:992px) {
+  .container {
+    max-width: 100%;
+  }
+  .col-lg-1 {
+    width: calc(8.3% - var(--gutter));
+  }
+  .col-lg-2 {
+    width: calc(16.66% - var(--gutter));
+  }
+  .col-lg-3 {
+    width: calc(25% - var(--gutter));
+  }
+  .col-lg-4 {
+    width: calc(33.33% - var(--gutter));
+  }
+  .col-lg-5 {
+    width: calc(41.66% - var(--gutter));
+  }
+  .col-lg-6 {
+    width: calc(50% - var(--gutter));
+  }
+  .col-lg-7 {
+    width: calc(58.33% - var(--gutter));
+  }
+  .col-lg-8 {
+    width: calc(66.66% - var(--gutter));
+  }
+  .col-lg-9 {
+    width: calc(75% - var(--gutter));
+  }
+  .col-lg-10 {
+    width: calc(83.33% - var(--gutter));
+  }
+  .col-lg-11 {
+    width: calc(91.66% - var(--gutter));
+  }
+  .col-lg-12 {
+    width: calc(100% - var(--gutter));
+  }
+}
+@media screen and (max-width:768px) {
+  .col-md-1 {
+    width: calc(8.3% - var(--gutter));
+  }
+  .col-md-2 {
+    width: calc(16.66% - var(--gutter));
+  }
+  .col-md-3 {
+    width: calc(25% - var(--gutter));
+  }
+  .col-md-4 {
+    width: calc(33.33% - var(--gutter));
+  }
+  .col-md-5 {
+    width: calc(41.66% - var(--gutter));
+  }
+  .col-md-6 {
+    width: calc(50% - var(--gutter));
+  }
+  .col-md-7 {
+    width: calc(58.33% - var(--gutter));
+  }
+  .col-md-8 {
+    width: calc(66.66% - var(--gutter));
+  }
+  .col-md-9 {
+    width: calc(75% - var(--gutter));
+  }
+  .col-md-10 {
+    width: calc(83.33% - var(--gutter));
+  }
+  .col-md-11 {
+    width: calc(91.66% - var(--gutter));
+  }
+  .col-md-12 {
+    width: calc(100% - var(--gutter));
+  }
+}
+@media screen and (max-width:576px) {
+  .col-sm-1 {
+    width: calc(8.3% - var(--gutter));
+  }
+  .col-sm-2 {
+    width: calc(16.66% - var(--gutter));
+  }
+  .col-sm-3 {
+    width: calc(25% - var(--gutter));
+  }
+  .col-sm-4 {
+    width: calc(33.33% - var(--gutter));
+  }
+  .col-sm-5 {
+    width: calc(41.66% - var(--gutter));
+  }
+  .col-sm-6 {
+    width: calc(50% - var(--gutter));
+  }
+  .col-sm-7 {
+    width: calc(58.33% - var(--gutter));
+  }
+  .col-sm-8 {
+    width: calc(66.66% - var(--gutter));
+  }
+  .col-sm-9 {
+    width: calc(75% - var(--gutter));
+  }
+  .col-sm-10 {
+    width: calc(83.33% - var(--gutter));
+  }
+  .col-sm-11 {
+    width: calc(91.66% - var(--gutter));
+  }
+  .col-sm-12 {
+    width: calc(100% - var(--gutter));
+  }
+}
+```
