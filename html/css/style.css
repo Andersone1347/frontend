@@ -10,23 +10,18 @@
 }
 .box__inner {
     text-align: center;
+    display: flex;
 }
-h1 {
-    max-width: 700px;
-    margin: 80px auto 30px;
-    line-height: 45px;
-    font-weight: normal;
+div .image {
+    background-image: url(../img/png.png);
+    border-image: fill;
+
 }
-p {
-    max-width: 900px;
-    margin: 0 auto 60px;
-    line-height: 30px;
+.content {
 }
-.icon-box {
-    margin-bottom: 60px;
+.icon {
 }
-.icon-box i.fa {
-    color: rgb(26, 152, 156);
-    font-size: 80px;
-    margin: 0 50px;
+.fa {
+}
+.fa-users {
 }
