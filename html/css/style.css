@@ -4,24 +4,41 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 .container {
-
     width: 1170px;
     margin: 0 auto;
 }
-.box__inner {
-    text-align: center;
-    display: flex;
+.img {
+    background-size: 100px 100px;
+    
 }
-div .image {
-    background-image: url(../img/png.png);
-    border-image: fill;
-
+h2, p {
+    color: #000000;
+    line-height: 30px;
+}
+.box__inner {
+    display: flex;
+    align-items: center;
 }
 .content {
+    max-width: 500px;
+    margin-right: 40px;
 }
-.icon {
+.icon > div {
+    width: 50px;
+    height: 50px;
+    border: 2px solid #30a740;
+    background-color: transparent;
+    font-size: 25px;
+    color: #30a740;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.2s;
+    cursor: pointer;
+    margin: 15px 0;
 }
-.fa {
-}
-.fa-users {
+.icons > div:hover {
+    background-color: #30a740;
+    color: #fff;
 }
