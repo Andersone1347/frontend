@@ -7,3 +7,33 @@
     margin: 0 auto;
 }
 
+.box {
+    
+    background: linear-gradient(to bottom left, #ffffff 6%, #993300 58%);
+}
+.box__inner {
+    height: 300px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.item {
+    text-align: center;
+}
+.number {
+    color: #ffffff;
+    font-size: 70px;
+}
+.text {
+    color: #bd724c;
+    font-size: 25px;
+    font-family: sans-serif;
+    margin-bottom: 25px;
+}
+.line {
+    width: 60px;
+    height: 4px;
+    background-color: white;
+    margin: 0 auto;
+}
+
