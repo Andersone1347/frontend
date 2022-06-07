@@ -697,3 +697,86 @@ margin: 400px;
 ## 28 Урок. Домашнее задание 2.
 
 Сделать блок как на видио.
+```
+html
+<div class="box">
+  <div class="container">
+    <div class="box__inner">
+      
+      <i class="fa fa-users" aria-hidden="true"></i> 
+      <div class="item">
+        <div class="number">3587</div>
+        <div class="text">satissfield clients</div>
+      </div>
+
+      <i class="fa fa-users" aria-hidden="true"></i>
+      <div class="item">
+        <div class="number">3587</div>
+        <div class="text">satissfield clients</div>
+      </div>
+
+      <i class="fa fa-users" aria-hidden="true"></i>
+      <div class="item">
+        <div class="number">3587</div>
+        <div class="text">satissfield clients</div>
+      </div>
+
+      <i class="fa fa-users" aria-hidden="true"></i>
+      <div class="item">
+        <div class="number">3587</div>
+        <div class="text">satissfield clients</div>
+      </div>
+
+    </div>
+  </div>
+</div>
+```
+```
+* {
+    box-sizing: border-box;
+}
+.container {
+
+    width: 1170px;
+    margin: 0 auto;
+}
+
+.box {
+
+    background: teal;
+}
+.box__inner {
+    margin-top: 200px;
+    height: 200px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.item {
+    text-align: left;
+}
+.number {
+    padding-top: 11px;
+    color: #ffffff;
+    font-size: 20px;
+}
+.text {
+    color: #ffffff;
+    font-size: 10px;
+    font-family: sans-serif;
+    margin-bottom: 18px;
+    text-transform: uppercase;
+    padding-top: 5px;
+}
+.line {
+    width: 60px;
+    height: 4px;
+    background-color: white;
+    margin: 0 auto;
+}
+i.fa {
+    font-size: 30px;
+    color: #ffffff;
+    margin-left: 100px;
+}
+```
