@@ -21,14 +21,16 @@
     text-align: center;
 }
 .number {
+    padding-top: 15px;
     color: #ffffff;
-    font-size: 70px;
+    font-size: 60px;
 }
 .text {
-    color: #bd724c;
+    color: #eba683;
     font-size: 25px;
     font-family: sans-serif;
     margin-bottom: 25px;
+    text-transform: uppercase;
 }
 .line {
     width: 60px;
@@ -38,6 +40,6 @@
 }
 i.fa {
     font-size: 70px;
-    background-color: #bd724c;
+    color: #f8ac86;
 }
 
