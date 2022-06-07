@@ -3,34 +3,37 @@
     box-sizing: border-box;
 }
 .container {
+
     width: 1170px;
     margin: 0 auto;
 }
 
 .box {
-    
-    background: linear-gradient(to bottom left, #ffffff 6%, #993300 58%);
+
+    background: teal;
 }
 .box__inner {
-    height: 300px;
+    margin-top: 200px;
+    height: 200px;
     display: flex;
     justify-content: space-around;
     align-items: center;
 }
 .item {
-    text-align: center;
+    text-align: left;
 }
 .number {
-    padding-top: 15px;
+    padding-top: 11px;
     color: #ffffff;
-    font-size: 60px;
+    font-size: 20px;
 }
 .text {
-    color: #eba683;
-    font-size: 25px;
+    color: #ffffff;
+    font-size: 10px;
     font-family: sans-serif;
-    margin-bottom: 25px;
+    margin-bottom: 18px;
     text-transform: uppercase;
+    padding-top: 5px;
 }
 .line {
     width: 60px;
@@ -39,7 +42,8 @@
     margin: 0 auto;
 }
 i.fa {
-    font-size: 70px;
-    color: #f8ac86;
+    font-size: 30px;
+    color: #ffffff;
+    margin-left: 100px;
 }
 
