@@ -620,3 +620,68 @@ style.css
 Создание шапки по макету лого и меню навигации,с помощью hover при наведение на меню загораеться желтым , объекты меню обёрнуты в тег **а** для дальнейшего перехода для сайта.
 
 ## Урок 26. Домашнее задание 1.
+
+С помощью дивов сделать похожую html страничку как на видио, и в css указать похожие свойства текста,расположения,шрифта,и размера.
+```
+html
+<div class="menu">
+    <div class="container">
+      <div class="nav">
+      <div class="value">
+      <div class="number">2500</div>
+        <div class="text">happy clients</div>
+      </div>
+        <div class="value">
+          <div class="number">300</div>
+            <div class="text">full notebooks</div>
+        </div>
+            <div class="value">
+              <div class="number">120</div>
+                <div class="text">teammates</div>
+            </div>
+                <div class="value">
+                  <div class="number">30</div>
+                    <div class="text">stores</div>
+                </div>
+      </div>
+    </div>
+```
+```
+css
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+.container {
+    width: 1170px;
+    margin: 0 auto;
+}
+.menu {
+background-color: blueviolet;
+width: 1050px;
+margin: 400px;
+}
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 200px;
+
+}
+.value {
+    text-align: center;
+}
+.number {
+    color: rgb(255, 109, 5);
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 40px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.text {
+    color: white;
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: lighter;
+}
+```
