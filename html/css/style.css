@@ -4,43 +4,92 @@
 }
 
 .container {
-    width: 1170px;
+    width: 1095px;
+    height: 387px;
     margin: 0 auto;
 }
-.box__inner {
+.team {
+    background-color: #ff3f3;  
+}
+.team__inner {
+    text-align: center;
+}
+.team__title {
+    font-size: 30px;
+    font-family: "Gotham";
+    color: rgb(48, 48, 48);
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 50px; 
+    margin: 0;
+    padding-top: 50px;
+}
+.team__line {
+    width: 40px;
+    height: 3px;
+    background-color: orange;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+.team__text {
+    padding-top: 30px;
+    font-size: 16px;
+    font-family: "Proxima";
+    color: rgb(90, 90, 90);
+    line-height: 25px; 
+    margin: 0 auto; 
+    width: 540px;
+}
+.cards {
     display: flex;
-    align-items: center;
-    margin-left: 190px;
-    margin-top: 200px;
+    justify-content: space-between;  
+    padding-bottom: 80px;
+    padding-top: 55px;
 }
-img {
-    max-width: 150px;
+.item {
+    text-align: center;
+    background-color: #fff;
+    min-width: 210px;
+    padding: 20px 35px;
+    box-shadow: 0px 2px 4px 0px rgba(0, 1, 1, 0.2); 
 }
-.content {
-    max-width: 458px;
+.item__img {
+    margin-bottom: 10px;
 }
+.item__title {
+    font-size: 16px;
+    font-family: "Gotham";
+    color: rgb(48, 48, 48);
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 16px;
+    margin: 0 0 10px 0;
+}
+.item__text {
+    font-size: 12px;
+    font-family: "Georgia";
+    color: rgb(48, 48, 48);
+    font-style: italic;
+    line-height: 12px;
+    margin: 0 0 10px 0;
+}
+.icons {
 
-.icons div{
-    width: 50px;
-    height: 50px;
-    border: 1px solid green;
-    font-size: 25px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;  
-    margin: 10px;
 }
 .fa {
-    color: green;
+    font-size: 20px;    
+    color: orange;
+    margin: 0 10px;
 }
-.fa-pencil {
+.fa-twitter {
+
 }
-.fa-facebook {
+.fa-linkedin {
+
 }
-.icons div:hover {
-    background-color: darkgreen; 
+.fa-dribbble {
+
 }
-.fa div:hover {
-    color: aqua;
+.fa-skype {
+
 }
