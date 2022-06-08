@@ -784,7 +784,79 @@ i.fa {
  Сделать блок как на видио. Создаём тег **h1** и выравниваем текст с помощью максимальной ширины и марджин , так же выравниваем и **p**. Далее вставляем иконки. Не всегда получаеться по селектору установить нужные свойства , поэтому лучше всего указывать и классы.
 
  ## Урок 30. Домашнее задание 3.
-  max-width
+  Сделать блок как на видио.
+  ```
+  html
+<body>
+
+    <div class="box">
+        <div class="container">
+            <div class="box__inner">
+                <div class="img">
+                    <img src="img/2.png" alt="">
+                </div>
+                <div class="content">
+                    <h2>Lorem ipsum dolor sit amet</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore exercitationem, officiis et consectetur minima veniam necessitatibus rem a, quisquam sit reiciendis aperiam modi voluptas quod, illo nemo ratione id magnam.</p> 
+                </div>
+                <div class="icons">
+                    <div><i class="fa fa-pencil" aria-hidden="true"></i></div>
+                    <div><i class="fa fa-facebook" aria-hidden="true"></i></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+  ```
+
+  ```
+  css
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    width: 1170px;
+    margin: 0 auto;
+}
+.box__inner {
+    display: flex;
+    align-items: center;
+    margin-left: 190px;
+    margin-top: 200px;
+}
+img {
+    max-width: 150px;
+}
+.content {
+    max-width: 458px;
+}
+
+.icons div{
+    width: 50px;
+    height: 50px;
+    border: 1px solid green;
+    font-size: 25px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+}
+.fa {
+    color: green;
+}
+.fa-pencil {
+}
+.fa-facebook {
+}
+.icons div:hover {
+    background-color: darkgreen; 
+}
+.fa div:hover {
+    color: aqua;
+}
+  ```
  ## Урок 31. Photoshop.
 
  Анализируем карточки на макете, включаем линейку иузнаём ширину контейнера , с помощью выделения прикидываем растояние блоков друг от друга.
