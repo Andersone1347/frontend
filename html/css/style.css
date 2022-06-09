@@ -25,7 +25,7 @@
     padding-top: 50px;
 }
 .team__line {
-    width: 40px;
+    width: 50px;
     height: 3px;
     background-color: orange;
     margin: 0 auto;
@@ -42,54 +42,25 @@
 }
 .cards {
     display: flex;
-    justify-content: space-between;  
+    justify-content: space-around;  
     padding-bottom: 80px;
-    padding-top: 55px;
+    padding-top: 75px;
 }
 .item {
     text-align: center;
     background-color: #fff;
-    min-width: 210px;
+    min-width: 328px;
     padding: 20px 35px;
-    box-shadow: 0px 2px 4px 0px rgba(0, 1, 1, 0.2); 
+   
 }
-.item__img {
-    margin-bottom: 10px;
-}
-.item__title {
-    font-size: 16px;
-    font-family: "Gotham";
-    color: rgb(48, 48, 48);
-    font-weight: bold;
-    text-transform: uppercase;
-    line-height: 16px;
-    margin: 0 0 10px 0;
-}
-.item__text {
-    font-size: 12px;
-    font-family: "Georgia";
-    color: rgb(48, 48, 48);
-    font-style: italic;
-    line-height: 12px;
-    margin: 0 0 10px 0;
-}
-.icons {
-
-}
-.fa {
-    font-size: 20px;    
+ .icons .fa{
+    padding-top: 10px;  
     color: orange;
-    margin: 0 10px;
-}
-.fa-twitter {
-
-}
-.fa-linkedin {
-
-}
-.fa-dribbble {
-
-}
-.fa-skype {
-
-}
+    font-size: 45px;
+    width: 70px;
+    height: 70px;
+    border: 2px solid orange;
+    border-radius: 50%;
+    align-items: center;   
+ }
+ 

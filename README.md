@@ -881,4 +881,108 @@ img {
 
  ## Урок 33. Домашнее задание 4.
 
- Вверх готов , остался только низ.
+ Сделать блок как на видио.
+
+html
+ ```
+<body>
+
+    <div class="team">
+        <div class="container">
+            <div class="team__inner">
+                <h2 class="team__title">why this is awesome</h2>
+                <div class="team__line"></div>
+                <p class="team__text">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </div>
+            <div class="cards">
+                <div class="item">
+                    <div class="icons"><i class="fa fa-twitter" aria-hidden="true"></i></div>
+                    <h3 class="item__title">Thoughtful Design</h3>
+                    <p class="item__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, veritatis! Beatae commodi dolor dolores? Rerum laborum sed expedita?</p>
+                </div>
+                <div class="item">
+                    <div class="icons"><i class="fa fa-twitter" aria-hidden="true"></i></div>
+                    <h3 class="item__title">Thoughtful Design</h3>
+                    <p class="item__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, veritatis! Beatae commodi dolor dolores? Rerum laborum sed expedita?</p>
+                </div>
+                <div class="item">
+                    <div class="icons"><i class="fa fa-twitter" aria-hidden="true"></i></div>
+                    <h3 class="item__title">Thoughtful Design</h3>
+                    <p class="item__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, veritatis! Beatae commodi dolor dolores? Rerum laborum sed expedita?</p>
+                </div>
+            </div>
+        </div>
+    
+
+</body>
+ ```
+
+ css
+ ```
+
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    width: 1095px;
+    height: 387px;
+    margin: 0 auto;
+}
+.team {
+    background-color: #ff3f3;  
+}
+.team__inner {
+    text-align: center;
+}
+.team__title {
+    font-size: 30px;
+    font-family: "Gotham";
+    color: rgb(48, 48, 48);
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 50px; 
+    margin: 0;
+    padding-top: 50px;
+}
+.team__line {
+    width: 50px;
+    height: 3px;
+    background-color: orange;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+.team__text {
+    padding-top: 30px;
+    font-size: 16px;
+    font-family: "Proxima";
+    color: rgb(90, 90, 90);
+    line-height: 25px; 
+    margin: 0 auto; 
+    width: 540px;
+}
+.cards {
+    display: flex;
+    justify-content: space-around;  
+    padding-bottom: 80px;
+    padding-top: 75px;
+}
+.item {
+    text-align: center;
+    background-color: #fff;
+    min-width: 328px;
+    padding: 20px 35px;
+   
+}
+ .icons .fa{
+    padding-top: 10px;  
+    color: orange;
+    font-size: 45px;
+    width: 70px;
+    height: 70px;
+    border: 2px solid orange;
+    border-radius: 50%;
+    align-items: center;   
+ }
+ 
+ ```
