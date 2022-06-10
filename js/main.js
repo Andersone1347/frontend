@@ -27,3 +27,28 @@ console.log(randomInteger(1,5))
 let arr2 = [1,2,3]  */
 
 /* 40 урок */
+/* let obj = {
+    "color": "Tomato",
+    "numbers": ["8888", "7777"],
+    "checked": true
+} */
+
+/* let obj = [
+{
+    "color": "Tomato",
+    "numbers": ["8888", "7777"],
+    "checked": true
+},
+ {
+    "color": "Green",
+    "numbers": ["18", "7"],
+    "checked": false
+},
+{
+    "color": "Red",
+    "numbers": ["188", "477"],
+    "checked": true
+}
+] */
+
+/* 41 урок */
