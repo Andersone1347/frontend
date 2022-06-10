@@ -23,4 +23,7 @@ console.log(randomInteger(1,5))
  */
 
 /* 39 урок */
-let arr = [5,2,"Str", true]
+/* let arr = [5,2,"Str", true]
+let arr2 = [1,2,3]  */
+
+/* 40 урок */
