@@ -194,3 +194,6 @@ switch(true) {
         default:
             alert("no")
 }
+
+## 42 Урок. Циклы(5 видов).
+

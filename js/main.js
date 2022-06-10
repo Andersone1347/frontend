@@ -95,3 +95,8 @@ alert("Отменено")        сокращённый код записанн�
         default:
             alert("no")
 } */
+
+let count = 0;
+while(count < 10) {
+    console.log(count);
+}
