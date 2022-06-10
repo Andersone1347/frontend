@@ -246,6 +246,18 @@ css
     
 ```
 Можно настроить любую границу отдельно.
+```
+.menu__inner .logo {
+    width: 200px;
+    height: 80px;
+    background: #fff;
+    background-image: url(../img/1.png);
+    background-repeat: no-repeat;
+/*     background-size: cover; */
+    background-position: center center;
+}
+```
+
 
 ## Урок 18. Размеры элементов.
 
