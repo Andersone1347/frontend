@@ -96,7 +96,80 @@ alert("Отменено")        сокращённый код записанн�
             alert("no")
 } */
 
-let count = 0;
+/* 42 урок */
+
+/* let count = 0;
 while(count < 10) {
     console.log(count);
+    if(count==4) {
+        breake;
+    }
+    count++;
+} */
+
+/* let count = 10;
+do {
+    console.log(count);
+    count--;
+} while(count>7)  */
+ 
+ /*let arr = [5, 7, 9, 1, 0];
+ for(let i=0; i<arr.length; i++) {
+  console.log(arr[i]*2)
+}  
+
+for(let item of arr) {
+    console.log(item) 
+} */
+
+/* let obj = {
+    "name": "Petr",
+    "age": 25,
+    "number": 909090909090
 }
+
+for(let key in obj) {
+    console.log("Ключ ${key}, Значение ${obj[key]}") 
+} */
+
+/* let arr = [5, 7, 9, 1, 0];
+arr.forEach(function(item, i, array){
+    console.log('Элемент: ${item}
+    Индекс: ${i}
+    Массив: ${array}')
+}) */
+
+/* let people = [
+    {id: 1, name: "Ivan"},
+    {id: 2, name: "masha"},
+    {id: 3, name: "Ivana"},
+    {id: 4, name: "Ivanka"},
+]
+let a = peaople.filter(function(item) {
+    if (item.id<3) return item 
+})
+  console.log(a)       */
+    
+/*   let arr = [5, 7, 9, 1, 0];
+  let newArr = arr.map(function(item) {
+      return item*3
+  })
+  console.log(newArr)
+ */
+   
+/*   let arr = []
+     for(let i=0; i<20; i++) {
+      arr.push(i)
+  } 
+console.log(arr) */
+/* let arr = []
+for(let i=30; i>0; i-=3) {
+    arr.push(i)
+}
+console.log(arr) */
+
+let arr = []
+for(let i=30; i>0; i++) {
+    arr.push(i)
+}
+console.log(arr)

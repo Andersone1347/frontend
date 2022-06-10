@@ -197,3 +197,83 @@ switch(true) {
 
 ## 42 Урок. Циклы(5 видов).
 
+while - один из самых популярных
+```
+let count = 10;
+do {
+    console.log(count);
+    count--;
+} while(count>7) 
+```
+for c 2 до 98 .
+```
+for(let i=0; i<100; i+=2) {
+  console.log(i)
+}
+```
+for работа с масивом умножаем на 2 
+```
+ let arr = [5, 7, 9, 1, 0];
+ for(let i=0; i<arr.length; i++) {
+  console.log(arr[i]*2)
+} 
+```
+
+Цикл for of :
+```
+ let arr = [5, 7, 9, 1, 0];
+for(let item of arr) {
+    console.log(item)
+}
+```
+Цикл for in :
+```
+let obj = {
+    "name": "Petr",
+    "age": 25,
+    "number": 909090909090
+}
+
+for(let key in obj) {
+    console.log('Ключ ${key}, Значение ${obj[key]}')
+}
+```
+получаем значение всех ключей в этом объекте, цикл for in не рекомендуеться использовать в обычных массивах , потому не те значения.
+
+Метод forEach :
+```
+let arr = [5, 7, 9, 1, 0];
+arr.forEach(function(item, i, array){
+    console.log('Элемент: ${item}
+    Индекс: ${i}
+    Массив: ${array}')
+})
+```
+Метод Map :
+```
+  let arr = [5, 7, 9, 1, 0];
+  let newArr = arr.map(function(item) {
+      return item*3
+  })
+  console.log(newArr)
+
+```
+Задания:
+
+
+1. Выводим массив из четных чисел от 0 до 20 
+  let arr = []
+  for(let i=0; i<20; i+=2) {
+      arr.push(i)
+  }
+console.log(arr)
+
+2. Выводим массив в убывающем порядке от 30 до 0 и элементы этого масива деляться на 3 без остатка.
+   let arr = []
+  for(let i=30; i>0; i-=3) {
+      arr.push(i)
+  }
+console.log(arr)
+
+3. Создать массив каждый элемент которого будет равен квадрату его индекса.
+ 
