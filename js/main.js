@@ -52,3 +52,46 @@ let arr2 = [1,2,3]  */
 ] */
 
 /* 41 урок */
+
+/* alert("ЭЭ") */
+/* prompt("диалоговое окно") */
+/* let age = prompt("Ваш возврат ?")
+if(age != null) {
+alert("мой возвраст " + age)
+} else {
+    alert("вы нажали отмену")
+} */
+ 
+
+/* if(confirm("Удалить ваш аккаунт?")) {
+    alert("Удалено")
+} else {
+    alert("Отменено")
+}
+ */
+
+/* confirm("удалить ваш код?") ? alert("Удалено") : 
+alert("Отменено")        сокращённый код записанного выше */
+
+/*  let age = prompt("Введите ваш возраст?") */
+/*if(age < 18) {
+    alert("Мой возраст меньше 18")
+} else if(age > 18) {
+    alert("Мой возраст больше 18")
+} else if(age == 18) {
+    alert("Мой возраст  18")
+} */
+
+/* switch(true) {
+    case age > 18:
+        alert("мне бол 18")
+        break;
+    case age < 18 && age > 0:
+        alert("мне мен 18")
+        break;
+    case age == 18:
+        alert("Мне 18 лет")    
+        break;
+        default:
+            alert("no")
+} */
