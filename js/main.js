@@ -168,8 +168,32 @@ for(let i=30; i>0; i-=3) {
 }
 console.log(arr) */
 
-let arr = []
+/*let arr = []
 for(let i=30; i>0; i++) {
     arr.push(i)
 }
-console.log(arr)
+console.log(arr)*/
+
+/*for(let i=30; i>0; i--) {
+if(i%3==0) {
+    arr.push(i)
+  }
+}
+console.log(arr) */
+
+// let arr = []
+// for(let i=0; i>10; i++) {
+//      arr.push(Math.pow(i,2))     
+//      }
+//      console.log(arr)
+
+// let arr = []
+// let arr1 = [7,4,2,1,0,6,2,6,15]
+// let count = 0;
+// for(let i=0; i<arr1.length; i++) {
+//     if(arr1[i]%2==0) {
+//         count++;
+//     }
+// }
+// console.log("Всего четных элементов: " + count)
+
