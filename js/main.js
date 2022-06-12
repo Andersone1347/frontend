@@ -301,3 +301,29 @@ console.log(arr) */
 
 // let a = new Date()
 // console.log(a)
+
+// // 45 урок
+// /**
+//  * Функция преобразует строку с временем в минуты
+//  * @param {string} time время в виде строки, например "02:04" . Может быть в диапозоне от "00:00" до "23:59" .
+//  * @return {number} целое число в минутах. Например time="02:08" вернет 128.
+//  */
+// function timeToMinute(time) {
+
+// }
+// timeToMinute()
+
+// function timeToMinute(time) {
+//     try {
+//         let hour = +time.split(":")[0]
+//         let min = +time.split(":")[1]
+//         if( !(hour>=0 && hour<=23) || !(min>=0 && min<=59))
+//         {
+//             throw new RangeError("Ошибка времени")
+//         }
+//         return hour*60+min
+//     } catch(error) {
+//         console.log(error)
+//     }
+// }
+// console.log(timeToMinute("24:28"))
