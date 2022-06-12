@@ -1,4 +1,442 @@
-/* * {
+/* урок25
+* {
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+.container {
+    width: 1170px;
+    margin: 0 auto;
+}
+.menu__inner {
+    margin: 25px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0; 
+}
+.nav li a {
+    text-transform: uppercase;
+    color: #999;
+    text-decoration: none;
+    padding: 10px 20px;
+}
+.nav li a:hover {
+    background-color: #ffc744;
+    color: #fff;
+    border-radius: 5px;
+} */
+
+
+
+
+/* .svetofor div{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    }
+    .red {
+        background-color: red;
+    }
+    .orange {
+        background-color: orange;
+    }
+    .green {
+         background-color: green;
+    }*/
+
+ /* урок 26
+
+* {
+        box-sizing: border-box;
+    }
+    .container {
+        width: 1170px;
+        margin: 0 auto;
+    }
+    .menu {
+    background-color: blueviolet;
+  
+
+    }
+    .nav {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: 200px;
+
+    
+    }
+    .value {
+        text-align: center;
+    }
+    .number {
+        color: rgb(255, 109, 5);
+        font-weight: bold;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 40px;
+        text-align: center;
+ 
+    }
+    .text {
+        color: white;
+        text-transform: uppercase;
+        font-size: 15px;
+        font-weight: lighter;
+    } */
+
+        /* 27 урок
+    * {
+        box-sizing: border-box;
+        font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    }
+    .container {
+        width: 1170px;
+        margin: 0 auto;
+    }
+    .box {
+        
+        background: rgb(45,22,0);
+        background: linear-gradient(90deg, rgba(45,22,0,1) 0%, rgba(111,54,0,1) 100%);
+    }
+    .box__inner {
+        height: 300px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .item {
+        text-align: center;
+    }
+    .number {
+        padding-top: 15px;
+        color: #fff;
+        font-size: 60px;
+    }
+    .text {
+        color: #eec8a8;
+        font-size: 25px;
+        font-family: sans-serif;
+        margin-bottom: 25px;
+        text-transform: uppercase;
+    }
+    .line {
+        width: 30px;
+        height: 3px;
+        background-color: #fff;
+        margin: 0 auto;
+    }
+    i.fa {
+        font-size: 60px;
+        color: #eec8a8;
+    } */
+
+         /* урок28
+    * {
+        box-sizing: border-box;
+    }
+    .container {
+    
+        width: 1170px;
+        margin: 0 auto;
+    }
+    
+    .box {
+    
+        background: teal;
+    }
+    .box__inner {
+        height: 200px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .item {
+        text-align: left;
+    }
+    .number {
+        padding-top: 11px;
+        color: #ffffff;
+        font-size: 20px;
+    }
+    .text {
+        color: #ffffff;
+        font-size: 10px;
+        font-family: sans-serif;
+        margin-bottom: 18px;
+        text-transform: uppercase;
+        padding-top: 5px;
+    }
+    .line {
+        width: 60px;
+        height: 4px;
+        background-color: white;
+        margin: 0 auto;
+    }
+    i.fa {
+        font-size: 30px;
+        color: #ffffff;
+        padding-left: 120px;
+    } */
+
+    /* урок 29
+    * {
+        box-sizing: border-box;
+        font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    }
+    .container {
+        width: 1170px;
+        margin: 0 auto;
+    }
+    .box__inner {
+        text-align: center;
+    }
+    h1 {
+        max-width: 750px;
+        margin: 80px auto 30px;
+        line-height: 45px;
+        font-weight: normal;
+    }
+    p {
+        max-width: 900px;
+        margin: 0 auto 60px;
+        line-height: 30px;
+    }
+    .icon-box {
+        margin-bottom: 60px;
+    }
+    .icon-box i.fa {
+        color: rgb(26, 152, 156);
+        font-size: 80px;
+        margin: 0 50px;
+    } */
+
+    /* 30 урок
+    * {
+        box-sizing: border-box;
+      }
+      
+      .container {
+        width: 1170px;
+        margin: 0 auto;
+      }
+      .box__inner {
+        display: flex;
+        align-items: center;
+        margin-left: 190px;
+        margin-top: 200px;
+      }
+      img {
+        max-width: 150px;
+      }
+      .content {
+        max-width: 458px;
+      }
+      
+      .icons div{
+        width: 50px;
+        height: 50px;
+        border: 1px solid green;
+        font-size: 25px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;  
+        margin: 2px;
+      }
+      .icons{
+        display: flex;
+        flex-direction: column;
+      }
+      .fa {
+        color: green;
+      }
+      .fa-pencil {
+      }
+      .fa-facebook {
+      }
+      .icons div:hover {
+        background-color: darkgreen; 
+      }
+      .fa div:hover {
+        color: aqua;
+      } */
+
+      /* урок 32
+      @font-face {
+        font-family: Gotham;
+        src: url(../fonts/Gotham-Bold.otf)
+    }
+    @font-face {
+        font-family: Proxima;
+        src: url(../fonts/proximanova-regular.otf)
+    }
+    * {
+        box-sizing: border-box;
+    }
+    body {
+        margin: 0;
+    }
+    .container {
+        width: 900px;
+        margin: 0 auto;
+    }
+    .team {
+        background-color: #f3f3f3;  
+    }
+    .team__inner {
+        text-align: center;
+    }
+    .team__title {
+        font-size: 30px;
+        font-family: "Gotham";
+        color: rgb(48, 48, 48);
+        font-weight: bold;
+        text-transform: uppercase;
+        line-height: 50px; 
+        margin: 0;
+        padding-top: 50px;
+    }
+    .team__line {
+        width: 184px;
+        height: 3px;
+        background-color: #303030;
+        margin: 0 auto;
+    }
+    .team__text {
+        padding-top: 30px;
+        font-size: 16px;
+        font-family: "Proxima";
+        color: rgb(90, 90, 90);
+        line-height: 25px; 
+        margin: 0 auto; 
+        width: 540px;
+    }
+    .cards {
+        display: flex;
+        justify-content: space-between;  
+        padding-bottom: 80px;
+        padding-top: 55px;
+    }
+    .item {
+        text-align: center;
+        background-color: #fff;
+        min-width: 210px;
+        padding: 20px 35px;
+        box-shadow: 0px 2px 4px 0px rgba(0, 1, 1, 0.2); 
+    }
+    .item__img {
+        margin-bottom: 10px;
+    }
+    .item__title {
+        font-size: 16px;
+        font-family: "Gotham";
+        color: rgb(48, 48, 48);
+        font-weight: bold;
+        text-transform: uppercase;
+        line-height: 16px;
+        margin: 0 0 10px 0;
+    }
+    .item__text {
+        font-size: 12px;
+        font-family: "Georgia";
+        color: rgb(48, 48, 48);
+        font-style: italic;
+        line-height: 12px;
+        margin: 0 0 10px 0;
+    }
+    .icons {
+    
+    }
+    .fa {
+        font-size: 20px;    
+        color: #7f7f7f;
+        margin: 0 10px;
+    }
+    .fa-twitter {
+    
+    }
+    .fa-linkedin {
+    
+    }
+    .fa-dribbble {
+    
+    }
+    .fa-skype {
+    
+    } */
+    
+    /* 33 урок
+    * {
+        box-sizing: border-box;
+     }
+     
+     .container {
+        width: 1095px;
+        height: 387px;
+        margin: 0 auto;
+     }
+     .team {
+        background-color: #ff3f3;  
+     }
+     .team__inner {
+        text-align: center;
+     }
+     .team__title {
+        font-size: 30px;
+        font-family: "Gotham";
+        color: rgb(48, 48, 48);
+        font-weight: bold;
+        text-transform: uppercase;
+        line-height: 50px; 
+        margin: 0;
+        padding-top: 50px;
+     }
+     .team__line {
+        width: 50px;
+        height: 3px;
+        background-color: orange;
+        margin: 0 auto;
+        margin-top: 30px;
+     }
+     .team__text {
+        padding-top: 30px;
+        font-size: 16px;
+        font-family: "Proxima";
+        color: rgb(90, 90, 90);
+        line-height: 25px; 
+        margin: 0 auto; 
+        width: 540px;
+     }
+     .cards {
+        display: flex;
+        justify-content: space-around;  
+        padding-bottom: 80px;
+        padding-top: 75px;
+     }
+     .item {
+        text-align: center;
+        background-color: #fff;
+        min-width: 328px;
+        padding: 20px 35px;
+       
+     }
+     .icons .fa{  
+        color: orange;
+        font-size: 45px;
+        width: 47px;
+        height: 47px;
+        border: 2px solid orange;
+        border-radius: 50%;
+          
+     }
+      */
+
+    /* урок 34 * {
     box-sizing: border-box;
     font-family: sans-serif;
 }
@@ -175,105 +613,3 @@ footer span {
     background-position: center center;
 }
  */
-
-/* .svetofor div{
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    }
-    .red {
-        background-color: red;
-    }
-    .orange {
-        background-color: orange;
-    }
-    .green {
-         background-color: green;
-    }*/
-
-/*  урок 26
-
-*, *:before, *:after {
-        box-sizing: border-box;
-    }
-    .container {
-        width: 1170px;
-        margin: 0 auto;
-    }
-    .menu {
-    background-color: blueviolet;
-    width: 1050px;
-    margin: 400px;
-    }
-    .nav {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        height: 200px;
-    
-    }
-    .value {
-        text-align: center;
-    }
-    .number {
-        color: rgb(255, 109, 5);
-        font-weight: bold;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        font-size: 40px;
-        text-align: center;
-        margin-bottom: 20px;
-    }
-    .text {
-        color: white;
-        text-transform: uppercase;
-        font-size: 15px;
-        font-weight: lighter;
-    } */
-
-    * {
-        box-sizing: border-box;
-    }
-    .container {
-    
-        width: 1170px;
-        margin: 0 auto;
-    }
-    
-    .box {
-    
-        background: teal;
-    }
-    .box__inner {
-        margin-top: 200px;
-        height: 200px;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-    }
-    .item {
-        text-align: left;
-    }
-    .number {
-        padding-top: 11px;
-        color: #ffffff;
-        font-size: 20px;
-    }
-    .text {
-        color: #ffffff;
-        font-size: 10px;
-        font-family: sans-serif;
-        margin-bottom: 18px;
-        text-transform: uppercase;
-        padding-top: 5px;
-    }
-    .line {
-        width: 60px;
-        height: 4px;
-        background-color: white;
-        margin: 0 auto;
-    }
-    i.fa {
-        font-size: 30px;
-        color: #ffffff;
-        margin-left: 100px;
-    }
