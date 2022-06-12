@@ -315,4 +315,92 @@ for(let i=0; i<arr1.length; i++) {
 console.log(count)
  
 
-43 Урок. Функции и решения 6 задач.
+43 Урок. Функции и решения 6 задач.    
+
+Передаём значение через функцию:
+```
+function printText(name, age) {
+    console.log("hello my name is "+name+", Age: "+age)
+}
+printText("Petr", 15 );
+printText("Petr", 95 );
+printText("Petr", 5 );
+printText("Petr", 11 );
+```
+Через переменные
+```
+function printText(name, age) {
+    console.log("hello my name is "+name+", Age: "+age)
+}
+let name = "aza"
+let age = 2
+printText("Petr", 15 );
+printText(name, age );
+printText("Petr", 5 );
+printText("Petr", 11 );
+```
+С помощью return
+```
+function printText(name, age) {
+    return "hello my name is "+name+", Age: "+age
+}
+let name = "aza"
+let age = 2
+console.log(printText("Petr", 15 ));
+console.log(printText(name, age ));
+console.log(printText("Petr", 5 ));
+console.log(printText("Petr", 11 ));
+```
+
+Засовываем функцию в пеменную 
+```
+function printText(name, age) {
+    return "hello my name is "+name+", Age: "+age
+}
+let name = "aza"
+let age = 2
+
+let res = printText(name, age );
+alert(res)
+```
+
+Создаём обьект и в нём метод.
+```
+let obj = {
+    name: "ivan",
+    age: 18,
+    hello() {
+        console.log("Меня зовут "+this.name)
+    }
+}
+obj.hello()
+```
+
+Сортировка по возрастанию в массиве:
+```
+let arr = [1,4,2,32,4543,3,2,7,8]
+arr.sort(function(a,b){
+    if(a==b) return 0
+    if(a>b) return 1
+    if(a<b) return -1
+
+    или 
+    return a-b
+})
+console.log(arr)
+```
+Числа Фибоначчи - https://ru.wikipedia.org/wiki/%D0%A7%D0%B8%D1%81%D0%BB%D0%B0_%D0%A4%D0%B8%D0%B1%D0%BE%D0%BD%D0%B0%D1%87%D1%87%D0%B8
+Выводим с помочью функции:
+```
+function fib(count) {
+    let fib = []
+    for(let i=0; i<count; i++) {
+        if(i==0) fib[i] = 1;
+        else if(i==1) fib[i] = 2;
+        else fib[i] = fib[i-2] + fib[i-1];
+    }
+    return fib;
+}
+let f = fib(15)
+console.log(f)
+```

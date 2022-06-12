@@ -197,3 +197,42 @@ console.log(arr) */
 // }
 // console.log("Всего четных элементов: " + count)
 
+// 43 урок 
+
+// function printText(name, age) {
+//     return "hello my name is "+name+", Age: "+age
+// }
+// let name = "aza"
+// let age = 2
+
+// let res = printText(name, age );
+// alert(res)
+
+// let obj = {
+//     name: "ivan",
+//     age: 18,
+//     hello() {
+//         console.log("Меня зовут "+this.name)
+//     }
+// }
+// obj.hello()
+
+// let arr = [1,4,2,32,4543,3,2,7,8]
+// arr.sort(function(a,b){
+//     return a-b
+// })
+// console.log(arr)
+
+// arr.sort()
+ 
+function fib(count) {
+    let fib = []
+    for(let i=0; i<count; i++) {
+        if(i==0) fib[i] = 1;
+        else if(i==1) fib[i] = 2;
+        else fib[i] = fib[i-2] + fib[i-1];
+    }
+    return fib;
+}
+let f = fib(15)
+console.log(f)
