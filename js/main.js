@@ -225,14 +225,74 @@ console.log(arr) */
 
 // arr.sort()
  
-function fib(count) {
-    let fib = []
-    for(let i=0; i<count; i++) {
-        if(i==0) fib[i] = 1;
-        else if(i==1) fib[i] = 2;
-        else fib[i] = fib[i-2] + fib[i-1];
+// function fib(count) {
+//     let fib = []
+//     for(let i=0; i<count; i++) {
+//         if(i==0) fib[i] = 1;
+//         else if(i==1) fib[i] = 2;
+//         else fib[i] = fib[i-2] + fib[i-1];
+//     }
+//     return fib;
+// }
+// let f = fib(15)
+// console.log(f)
+
+// function fac(n){
+//     let fact = 1;
+//     if(n==0) return fact;
+//     for(let i=1; i<=n; i++) {
+//         fact *= i;
+//     }
+//     return fact;
+// }
+// let a = fac(0)
+// console.log(a)
+// let b = fac(3)
+// console.log(b)
+// let c = fac(8)
+// console.log(c)
+
+// let addAndMul = function(num) {
+//     num += "";
+//     let add = 0, mul = 1;
+//     for(let i = 0; i<num.length; i++) {
+//         add += +num[i];
+//         mul *= num[i];
+//     }
+//     return {
+//         "Сумма": add,
+//         "Произведение": mul
+//     }
+// }
+// console.log(addAndMul(795))
+
+// function number(number) {
+//     number += "";
+//     let chet = 0, nechet = 0;
+//     for(let i = 0; i<number.length; i++) {
+//         if(number[i] % 2 == 0) chet++;
+//         else nechet++;
+//     }
+//     return {
+//         "четные": chet ,
+//         "не чётные": nechet,
+//     }
+// }
+
+// console.log(number(1216789644532526))
+
+function randomNumber() {
+    let number = Math.floor(Math.random()*100);
+    for(let count=1; count<=10; count++) {
+        let result = +prompt('Попытка №${count}, Введите число:')
+        if(result == number) {
+            return alert('Вы угадали число! Попыток: ${count}, Число: ${number}')
+        } else if(result < number) {
+            alert('Ваше число ${result}, меньше загаданного!')
+        } else if(result > number) {
+            alert('Ваше число ${result}, болльше загаданного!')
+     }
     }
-    return fib;
+    return alert('Вы не угадали число! Число: ${number}')
 }
-let f = fib(15)
-console.log(f)
+randomNumber()

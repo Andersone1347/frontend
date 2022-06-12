@@ -390,7 +390,7 @@ arr.sort(function(a,b){
 console.log(arr)
 ```
 Числа Фибоначчи - https://ru.wikipedia.org/wiki/%D0%A7%D0%B8%D1%81%D0%BB%D0%B0_%D0%A4%D0%B8%D0%B1%D0%BE%D0%BD%D0%B0%D1%87%D1%87%D0%B8
-Выводим с помочью функции:
+Выводим с помочью функции до 15-ти:
 ```
 function fib(count) {
     let fib = []
@@ -404,3 +404,91 @@ function fib(count) {
 let f = fib(15)
 console.log(f)
 ```
+Вычисляем факториал числа - https://ru.wikipedia.org/wiki/%D0%A4%D0%B0%D0%BA%D1%82%D0%BE%D1%80%D0%B8%D0%B0%D0%BB
+```
+function fac(n){
+    let fact = 1;
+    if(n==0) return fact;
+    for(let i=1; i<=n; i++) {
+        fact *= i;
+    }
+    return fact;
+}
+let a = fac(0)
+console.log(a)
+let b = fac(3)
+console.log(b)
+let c = fac(8)
+console.log(c)
+```
+Функция
+Где в add переплюсование числа 795 а mul перемножение .
+add 7+9+5=21
+mul 7 * 9 * 5 = 315
+```
+let addAndMul = function(num) {
+    num += "";
+    let add = 0, mul = 1;
+    for(let i = 0; i<num.length; i++) {
+        add += +num[i];
+        mul *= num[i];
+    }
+    return {
+        "Сумма": add,
+        "Произведение": mul
+    }
+}
+console.log(addAndMul(795))
+```
+Конвертируем все цифры числа из 3486 в 6843.
+```
+function reverse(number) {
+    number += "";
+    let reverseNumber = "";
+    for(let i=number.length-1; i>=0; i-- ) {
+        reverseNumber += number[i]
+    }
+    return +reverseNumber
+}
+
+console.log(reverse(3486))
+```
+
+Узнаём кол-во чётных и нечетных цифр. result - 9-четных и 7 нечётных
+```
+function number(number) {
+    number += "";
+    let chet = 0, nechet = 0;
+    for(let i = 0; i<number.length; i++) {
+        if(number[i] % 2 == 0) chet++;
+        else nechet++;
+    }
+    return {
+        "четные": chet ,
+        "не чётные": nechet,
+    }
+}
+
+console.log(number(1216789644532526))
+```
+
+randomaizer от 0 до 100
+```
+function randomNumber() {
+    let number = Math.floor(Math.random()*100);
+    for(let count=1; count<=10; count++) {
+        let result = +prompt('Попытка №${count}, Введите число:')
+        if(result == number) {
+            return alert('Вы угадали число! Попыток: ${count}, Число: ${number}')
+        } else if(result < number) {
+            alert('Ваше число ${result}, меньше загаданного!')
+        } else if(result > number) {
+            alert('Ваше число ${result}, болльше загаданного!')
+     }
+    }
+    return alert('Вы не угадали число! Число: ${number}')
+}
+randomNumber()
+```
+
+Урок 44. Работа с датой и временем.
