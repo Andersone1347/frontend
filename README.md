@@ -492,3 +492,20 @@ randomNumber()
 ```
 
 Урок 44. Работа с датой и временем.
+
+**date.jpg**
+
+1. Шпаргалка по работе с датой и временем от ITDoctor
+https://yadi.sk/i/DeXmdtyb7LcFtg
+https://drive.google.com/file/d/1nkaZO_E9PNvW8UK15lvnr3nct30EwSqb/view?usp=sharing
+
+2. Работа с датой и временем
+https://learn.javascript.ru/datetime
+
+3. Интернационализация в JavaScript
+https://learn.javascript.ru/intl
+
+4. Библиотека moment.js для работы с датой и временем
+https://momentjs.com
+
+Урок 45. Документация кода на JSDoc и Исключения.

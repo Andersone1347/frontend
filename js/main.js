@@ -281,18 +281,23 @@ console.log(arr) */
 
 // console.log(number(1216789644532526))
 
-function randomNumber() {
-    let number = Math.floor(Math.random()*100);
-    for(let count=1; count<=10; count++) {
-        let result = +prompt('Попытка №${count}, Введите число:')
-        if(result == number) {
-            return alert('Вы угадали число! Попыток: ${count}, Число: ${number}')
-        } else if(result < number) {
-            alert('Ваше число ${result}, меньше загаданного!')
-        } else if(result > number) {
-            alert('Ваше число ${result}, болльше загаданного!')
-     }
-    }
-    return alert('Вы не угадали число! Число: ${number}')
-}
-randomNumber()
+// function randomNumber() {
+//     let number = Math.floor(Math.random()*100);
+//     for(let count=1; count<=10; count++) {
+//         let result = +prompt('Попытка №${count}, Введите число:')
+//         if(result == number) {
+//             return alert('Вы угадали число! Попыток: ${count}, Число: ${number}')
+//         } else if(result < number) {
+//             alert('Ваше число ${result}, меньше загаданного!')
+//         } else if(result > number) {
+//             alert('Ваше число ${result}, болльше загаданного!')
+//      }
+//     }
+//     return alert('Вы не угадали число! Число: ${number}')
+// }
+// randomNumber()
+
+// 44 урок 
+
+// let a = new Date()
+// console.log(a)
