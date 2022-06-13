@@ -726,3 +726,77 @@ console.log(people2.getFio())
 ```
 
 47 Урок. Возможности ECMAScript 2015 (ES6)
+
+Полезная информация из урока:
+
+1. Спецификация ECMAScript
+https://ru.wikipedia.org/wiki/ECMAScript
+
+2. JavaScript компилятор
+https://babeljs.io/
+
+3. Поддержка спецификации ECMAScript 5
+https://caniuse.com/es5
+
+4. Поддержка спецификации ECMAScript 2015 (ES6)
+https://caniuse.com/es6
+
+Константы нельзя переопределять.
+const a = 3.5  
+undefined   
+a  
+3.5   
+a = 1.5 
+(ошибка)
+
+Оператор расширения:
+```
+function sum(a,b) {
+    return a+b 
+} 
+let date = [4,8]
+sum(...date)
+12
+```
+Создадим несколько переменных и сразу присвоем им значения.
+Так сказать деструктивное присваевание 
+```
+let [a,b,c,d] = [10,5,8,9]
+undefined
+a
+10
+b
+5
+c
+8
+d
+9
+```
+
+Стрелочные функции:
+```
+let sum = (a,b,c) => a+b+c
+undefined
+
+sum(5,2,3)
+10
+let sum = (a,b,c) => {
+    return a+b+c
+}
+sum(5,2,3)
+10
+```
+* repeat() - для повтора вырожения 
+* startsWith() - поиск начального слова, end - конечного. 
+* Изменение содержимого массива например на ноль:
+```
+let arr = [5,8,9,2,4]
+arr.fill(0)
+console.log(arr)
+```
+Массив без дубликатов 
+```
+ler arr = [1,5,4,7,8,91,1,4,5]
+let arr2 = [...new Set(arr)]
+console.log(arr2)
+```
