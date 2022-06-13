@@ -539,3 +539,188 @@ function timeToMinute(time) {
 }
 console.log(timeToMinute("24:28"))
 ```
+
+46 урок. Объектно-Ориентированное Програмирование,Прототип,конструкторы,класс.
+С помощью цепочки наследования можем создавать комплексные объекты  и получать доступ к родительскому объекту :
+```
+let admin = {
+    ryles: 777
+}
+
+let user = {
+    name: "iva",
+    age: 20
+    __proto__: admin
+}
+```
+Благодоря прототипу можно наследовать свойства и методы у родительского объекта и с помощью функции конструктор можно создовать однотипные однотипные объекты просто.
+```
+let admin = {
+    ryles: 777
+}
+
+function User(name, age) {
+    this.name = name;
+    this.age = age;
+    this.__proto__ = admin;
+}
+let u1 = new User("Petr", 21)
+let u2 = new User("voland", 91)
+let u3 = new User("petir", 28)
+```
+
+Классы.   
+Класс это разновидность функции. Выводим в консоль тоже самое только с помощью класса.
+```
+class User {
+    constructor(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+    myInfo() {
+        console.log("Меня зовут "+this.name+", мне "+this.age+" лет ")
+    }
+}
+let u1 = new User("Petr", 21)
+let u2 = new User("voland", 91)
+let u3 = new User("petir", 28)
+```
+
+Так же как и методы статические свойства работают с самим классом:
+```
+class User {
+    constructor(name, age, admin=false) {
+        this.name = name;
+        this.age = age;
+        this.admin = admin;
+    }
+    myInfo() {
+        console.log("Меня зовут "+this.name+", мне "+this.age+" лет ")
+        if(this.admin == true) {
+            console.log("Я админ")
+        }
+    }
+}
+class Moderator extends User {
+    constructor(name,age,admin=false,moder=true) {
+        super(name, age, admin)
+        this.moder = moder;
+    }
+    static addPost() {
+        console.log("New Post")
+    }
+    static master = true;
+    myInfo() {
+            super.myInfo();
+            console.log("Я модер")
+    }
+}
+let u1 = new User("Petr", 21)
+let u2 = new User("voland", 91, true)
+let u3 = new User("petir", 28)
+let m1 = new Moderator("Kir", 18, true)
+
+```
+
+Создаём класс человек с помощью конструктора:
+```
+class People{
+/**
+ * Класс человек
+ * @param {string} fio по формату "фамилия имя отчество"
+ * @param {string} birthday по формату "21.11.1111"
+ * @param {string} numbers номер . если больше 2 номеров, то по формату "номер1, номер2"
+ * @param {string} room комната
+ */
+constructor(fio, birthday, numbers, room){
+    let name = fio.toLowerCase().split(" ");
+    this.name = {};
+    this.name.f = name[0][0].toUpperCase() + name[0].slice(1)
+    this.name.i = name[1][0].toUpperCase() + name[1].slice(1)
+    this.name.o = name[2][0].toUpperCase() + name[2].slice(1)
+
+    let date = birthday.split(".");
+    this.date = {};
+    this.date.d = +date[0]
+    this.date.m = +date[1]
+    this.date.y = +date[2]
+
+    this.numbers = numbers.split(", ")
+
+    this.room = +room
+  }
+}
+let people2 = new People("Панов Андрей Алексеевич", "09.07.1994", "9999,9999,9999", 1347)
+```
+
+Более сложный класс в котором есть конструктор ,статическое свойство, и 4 метода.
+```
+class People{
+/**
+ * Класс человек
+ * @param {string} fio по формату "фамилия имя отчество"
+ * @param {string} birthday по формату "21.11.1111"
+ * @param {string} numbers номер . если больше 2 номеров, то по формату "номер1, номер2"
+ * @param {string} room комната
+ */
+constructor(fio, birthday, numbers="", room="") {
+    let name = fio.toLowerCase().split(" ");
+    this.name = {};
+    this.name.f = name[0][0].toUpperCase() + name[0].slice(1)
+    this.name.i = name[1][0].toUpperCase() + name[1].slice(1)
+    this.name.o = name[2][0].toUpperCase() + name[2].slice(1)
+
+    let date = birthday.split(".");
+    this.date = {};
+    this.date.d = +date[0]
+    this.date.m = +date[1]
+    this.date.y = +date[2]
+
+    this.numbers = numbers.split(", ")
+
+    this.room = +room
+  }
+  static mounth = ["января","февраля","марта","апреля","мая","июня","июля","августа","сентября","октября","ноября","декабря"];
+   /**
+   * Фио
+   * @return {string} строка формата "Фамилия имя отчество"
+   */
+  getFio() {
+    return `${this.name.f} ${this.name.i} ${this.name.o}`
+}
+  /**
+   * вывести день рождения 
+   * @return {string} строка формата "24 июля 1997"
+   */
+  getBirthday() {
+    return `${this.date.d} ${People.month[this.date.m-1]} ${this.date.y}`
+  }
+  /**
+   * Вывести Фамилия_Имя_отчество.расширение
+   * @param {string} extention расширение, например "jpg" или "png"
+   * @return {string} для названия изображения
+   */
+  getImgSrc(extention) {
+    return `${this.name.f}_${this.name.i}_${this.name.o}.${extention}`
+  }
+ /**
+   * Вывести все номера телефона или только первый номер
+   * @param {boolean} allNumbers если true то все номера, если false только первый номер
+   * @return {string} Строка формата: "89606013478, 89026013478" 
+   */
+  getNumberList(allNumbers) {
+    if(this.numbers.length == 0 || this.numbers[0].length == 0) 
+        return undefined
+    if(allNumbers) {
+        return this.numbers.join(", ")
+    } else { 
+    return this.numbers[0];
+    }
+  }
+}
+let people1 = new People("Панов Андрей Алексеевич", "09.07.1994", "9999,9999,9999", 1347)
+let people2 = new People("ров рей реевич", "01.01.1991")
+
+console.log(people1.getFio())
+console.log(people2.getFio())
+```
