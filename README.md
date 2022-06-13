@@ -724,3 +724,5 @@ let people2 = new People("ров рей реевич", "01.01.1991")
 console.log(people1.getFio())
 console.log(people2.getFio())
 ```
+
+47 Урок. Возможности ECMAScript 2015 (ES6)
