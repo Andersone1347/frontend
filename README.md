@@ -903,3 +903,52 @@ before and after
 .replaceWith заменить тэг
 
 51 Урок. Генерация вложенных списков.
+
+* ex13
+insertAdjacentHTML - добавить html элемент в скрипт
+
+* beforebegin 
+* afterbegin
+* beforeend
+* afterend
+
+* ex14
+Удаляем элемент через 2 секунды.
+```
+  <div class="alert">
+    <p>Сообщение</p>
+  </div>
+
+  <div id="one">Один</div>
+  <div id="two">Два</div>
+
+  <script>
+let div = document.querySelector('div')
+setTimeout(() => {
+  div.remove()
+  two.after(one)
+}, 2000)
+  </script>
+```
+И с помощью методов after and before переместим 2 и 1 .
+
+* ex15 
+Клонируем **div** и меняем сожержимое **p** в клоне. 
+ ```
+  <div class="alert">
+    <p>Сообщение</p>
+  </div>
+
+  <script>
+    let div = document.querySelector('div')
+
+    let div2 = div.cloneNode(true)
+    div2.querySelector('p').textContent = "Ещё одно сообщение"
+    div.after(div2)
+  </script>
+  ```
+* ex16
+
+Создаём в пустом **body** **ul** с помощью **document.body.append.(ul)**
+
+Далее создаём цикл **while** , через **Prompt** всплывающее окно в котором будут обозначаться **li** , и услови **if** если в окне ничего не напишем и нажмём кнопку то **break**

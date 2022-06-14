@@ -16,7 +16,11 @@
   <div id="two">Два</div>
 
   <script>
-
+let div = document.querySelector('div')
+setTimeout(() => {
+  div.remove()
+  two.after(one)
+}, 2000)
   </script>
 </body>
 </html>
