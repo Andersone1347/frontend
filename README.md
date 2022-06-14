@@ -870,4 +870,13 @@ document.body.innerHTML = `
 * ex8 Можем именно заменить текст с помощью .textContent
 
 * ex9 Свойство hidden
-1
+Можем скрывать элементы на какое-то время.
+```
+  <p>Абзац текста</p>
+
+  <script>
+    let elem = document.querySelector('p')
+    setInterval(() => elem.hidden = !elem.hidden, 1000)
+  </script>
+```
+* ex10 
