@@ -952,3 +952,51 @@ setTimeout(() => {
 Создаём в пустом **body** **ul** с помощью **document.body.append.(ul)**
 
 Далее создаём цикл **while** , через **Prompt** всплывающее окно в котором будут обозначаться **li** , и услови **if** если в окне ничего не напишем и нажмём кнопку то **break**
+
+* ex17 
+Задачка сгенерировать список в списке с помощью **java script**
+```
+ <script>
+    let data = {
+      "Овощи": {
+        "огурцы": 5,
+        "помидоры": 3
+      },
+      "Фрукты": {
+        "красные": {
+          "клубника": 2,
+          "малина": 4
+        },
+        "зеленые": {
+          "яблоко": 6,
+          "лайм": 2
+        }
+      }
+    }
+    function createUl(obj) {
+      if(!Object.keys(obj).length)
+      return
+      let ul = document.createElement('ul')
+      for(let key in obj) {
+        let li = document.createElement('li')
+        if(!isNaN(obj[key]))
+        li.textContent = key +' '+obj[key]
+        else
+        li.textContent = key
+        let childrenU1 = createUl(obj[key])
+        if(childrenU1) {
+          li.append(childrenU1)
+        }
+        ul.append(li)
+      }
+     return ul
+    }
+    function createTree(cotainer, obj) {
+      document.querySelector(cotainer).append(createUl(obj))
+    }
+    createTree('body', data)
+  </script>
+```
+
+52 Урок. Календарь.
+* ex18
