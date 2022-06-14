@@ -870,3 +870,4 @@ document.body.innerHTML = `
 * ex8 Можем именно заменить текст с помощью .textContent
 
 * ex9 Свойство hidden
+1
