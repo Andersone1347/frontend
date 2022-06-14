@@ -880,3 +880,26 @@ document.body.innerHTML = `
   </script>
 ```
 * ex10 
+.setAttribute - можем добавить атрибут
+.removeAttribute - удалить атрибут
+console.dir() - можно посмотреть все свойства и методы.
+* ex11
+.dataset
+```
+  <p data-about="Это текст">Абзац текста</p>
+  <div data-about-block="Это блок">Блок текста</div>
+
+  <script>
+    let elem1 =  document.querySelector('p')
+    console.log(elem1.dataset.about)
+    let elem2 =  document.querySelector('div')
+    console.log(elem2.dataset.aboutBlock)
+  </script>
+```
+* ex12
+.append() добавить в конец
+.prepend() добавить в начало
+before and after
+.replaceWith заменить тэг
+
+51 Урок. Генерация вложенных списков.
