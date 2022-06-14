@@ -455,3 +455,5 @@ console.log(arr) */
 //     }, 1000);
 // }
 // var p = new Person();
+
+/* 48 урок  */
