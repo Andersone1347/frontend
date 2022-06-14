@@ -807,3 +807,66 @@ console.log(arr2)
 Скачиваем каталог к себе в папку из архива урока.
 
 ## 49 Урок.Выбор элемента DOM.
+
+  
+  С помощью этого скрипта обращаемся ко всем первым лишкам в теге ул и меняем цвет на серый и переименовываем в "новое значение" 
+  ```
+  <ul>
+    <li>Пункт 1</li>
+    <li>Пункт 2</li>
+  </ul>
+  <ul>
+    <li>Пункт 3</li>
+    <li>Пункт 4</li>
+  </ul>
+
+  <script>
+let elements = document.querySelectorAll('ul > li:first-child')
+for(let element of elements) {
+  element.style.color = "gray"
+  element.innerHTML = 'Новое значение' 
+}
+  </script>
+```
+querySelector - находит просто первый и единственный элемент.
+
+* ex5 
+Element.closest() возвращает ближайший родительский элемент (или сам элемент), который соответствует заданному CSS-селектору или null, если таковых элементов вообще нет.
+
+## 50 Урок. Атрибуты, Создание элементов.
+
+* ex6
+С помощью этого метода можем проверить содержиться ли один элемент внутри другова и получить ответ в консоли true или false
+```
+    let list = document.querySelector('.list')
+    let item = document.querySelector('.item')
+
+    console.log(list.contains(item))
+    console.log(list.contains(item))
+```
+* ex7
+Можем полностью заменить боди на массив скрипта
+```
+<body>
+  
+  <p>Абзац текста</p>
+  <div>Текст в блоке div</div>
+  <h3>Заголовок 3 уровня</h3>
+
+  <script>
+let strs = ["элемент 1","элемент 2","элемент 3"]
+document.body.innerHTML = `
+<ol>
+  <li>${strs[0]}</li>
+  <li>${strs[1]}</li>
+  <li>${strs[2]}</li>
+</ol>
+  `
+
+  console.log(document.querySelector('body').innerHTML)
+  </script>
+</body>
+```
+* ex8 Можем именно заменить текст с помощью .textContent
+
+* ex9 Свойство hidden
