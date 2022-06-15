@@ -1,4 +1,6 @@
-/*  37 урок */
+/*36 урок*/
+
+/*  37 урок  */
 /* let name = 5;
 let str = "10";
 let boolean = true;
