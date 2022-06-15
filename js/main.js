@@ -1,4 +1,8 @@
 /*36 урок*/
+// console.log(3+5);
+
+let name = 5;
+let str = "5";
 
 /*  37 урок  */
 /* let name = 5;
