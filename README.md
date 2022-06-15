@@ -224,27 +224,17 @@ arr
 ```
 
 
-ƒ Text() { [native code] }
-arr[3] = "Text"
-'Text'
-arr
-(4) [5, 2, ƒ, 'Text']
-arr[4] = 7
-7
-arr
-(5) [5, 2, 'Str', true, 7]
-```
 Создаём массив в масиве:
 ```
-let matrix = [
-    [1,2,4],
-    [4,7,9],
-    [1,0,3]
-    ]
-undefined
+let matrix = [   
+    [1,2,4],   
+    [4,7,9],   
+    [1,0,3]   
+    ]   
+undefined    
 
-matrix
-(3) [Array(3), Array(3), Array(3)]
+matrix    
+(3) [Array(3), Array(3), Array(3)]    
 0: (3) [1, 2, 4]
 1: (3) [4, 7, 9]
 2: (3) [1, 0, 3]
