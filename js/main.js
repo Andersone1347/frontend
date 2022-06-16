@@ -29,8 +29,8 @@ console.log(randomInteger(1,5))  */
 
 
 /* 39 урок */
- let arr = [5,2,"Str", true]
- let arr2 = [1,2,3] 
+/*  let arr = [5,2,"Str", true]
+ let arr2 = [1,2,3]  */
 
 /* 40 урок */
 /* let obj = {
@@ -56,6 +56,23 @@ console.log(randomInteger(1,5))  */
     "checked": true
 }
 ] */
+/* let cats = [
+    {
+        "name": "Barsik",
+        "age": ["10"],
+        "color": "orange"
+    },
+    {
+        "name": "Vaselisa",
+        "age": ["7"],
+        "color": "grey"
+    },
+    {
+        "name": "Monika",
+        "age": ["3mount"],
+        "color": "white-black"
+    }
+    ] */
 
 /* 41 урок */
 
