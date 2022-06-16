@@ -18,14 +18,14 @@ console.log(5+8); */
 console.log("Text\non 2 line "+a ); */
 
           /*   проверка числа , рандом */
- function isNumber(n) {
+/*  function isNumber(n) {
     return !isNaN(parseFloat(n)) && !isNaN(n - 0)
-}
+} */
 function randomInteger(min, max) {
     let rand = min + Math.random() * (max + 1 - min);
     return Math.floor(rand);
 }
-console.log(isNumber(5)) 
+console.log(randomInteger(1,5)) 
 
 
 /* 39 урок */
