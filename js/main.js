@@ -1,8 +1,8 @@
 /*36 урок*/
 // console.log(3+5);
 
-let name = 5;
-let str = "5";
+// let name = 5;
+// let str = "5";
 
 /*  37 урок  */
 /* let name = 5;
@@ -29,8 +29,8 @@ console.log(randomInteger(1,5))  */
 
 
 /* 39 урок */
-let arr = [5,2,"Str", true]
-let arr2 = [1,2,3] 
+// let arr = [5,2,"Str", true]
+// let arr2 = [1,2,3] 
 
 /* 40 урок */
 /* let obj = {
