@@ -56,7 +56,7 @@ console.log(randomInteger(1,5))  */
     "checked": true
 }
 ] */
-/* let cats = [
+let cats = [
     {
         "name": "Barsik",
         "age": ["10"],
@@ -72,7 +72,7 @@ console.log(randomInteger(1,5))  */
         "age": ["3mount"],
         "color": "white-black"
     }
-    ] */
+    ]
 
 /* 41 урок */
 
