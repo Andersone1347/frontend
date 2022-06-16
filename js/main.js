@@ -21,16 +21,16 @@ console.log("Text\non 2 line "+a ); */
 /*  function isNumber(n) {
     return !isNaN(parseFloat(n)) && !isNaN(n - 0)
 } */
-function randomInteger(min, max) {
+/* function randomInteger(min, max) {
     let rand = min + Math.random() * (max + 1 - min);
     return Math.floor(rand);
 }
-console.log(randomInteger(1,5)) 
+console.log(randomInteger(1,5))  */
 
 
 /* 39 урок */
-// let arr = [5,2,"Str", true]
-// let arr2 = [1,2,3] 
+ let arr = [5,2,"Str", true]
+ let arr2 = [1,2,3] 
 
 /* 40 урок */
 /* let obj = {
