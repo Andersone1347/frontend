@@ -155,13 +155,13 @@ while(count < 10) {
 //     console.log(i)
 //   }
  
- let arr = [5, 7, 9, 1, 0];
- for(let i=0; i<arr.length; i++) {
-  console.log(arr[i]*2)
-}  
+//  let arr = [5, 7, 9, 1, 0];
+//  for(let i=0; i<arr.length; i++) {
+//   console.log(arr[i]*2)
+// }  
 
 // for(let item of arr) {
-//     console.log(item) 
+//     console.log(item*2) 
 // } 
 
 /* let obj = {
