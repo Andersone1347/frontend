@@ -96,7 +96,7 @@ alert("мой возвраст " + age)
 /* confirm("удалить ваш код?") ? alert("Удалено") : 
 alert("Отменено")    */   /*   сокращённый код записанного выше */
 
- let age = prompt("Введите ваш возраст?")
+//  let age = prompt("Введите ваш возраст?")
 /* if(age < 18) {
     alert("Мой возраст меньше 18")
 } else if(age > 18) {
@@ -105,21 +105,36 @@ alert("Отменено")    */   /*   сокращённый код запис�
     alert("Мой возраст  18")
 }
  */
-switch(true) {
-    case age > 18:
-        alert("мне бол 18")
-        break;
-    case age < 18 && age > 0:
-        alert("мне мен 18")
-        break;
-    case age == 18:
-        alert("Мне 18 лет")    
-        break;
-        default:
-            alert("no")
-}
+// switch(true) {
+//     case age > 18:
+//         alert("мне бол 18")
+//         break;
+//     case age < 18 && age > 0:
+//         alert("мне мен 18")
+//         break;
+//     case age == 18:
+//         alert("Мне 18 лет")    
+//         break;
+//         default:
+//             alert("no")
+// }
 
 /* 42 урок */
+
+// let count = 0;
+// while(count < 10) {
+//     console.log(count);
+//     count++;
+// }
+
+// let count = 0;
+// while(count < 10) {
+//     console.log(count);
+//     if(count==4) {
+//       break;
+//     }
+//     count++;
+// }
 
 /* let count = 0;
 while(count < 10) {
@@ -130,20 +145,24 @@ while(count < 10) {
     count++;
 } */
 
-/* let count = 10;
-do {
-    console.log(count);
-    count--;
-} while(count>7)  */
+//  let count = 11;
+// do {
+//     console.log(count);
+//     count--;
+// } while(count>7)  
+
+// for(let i=0; i<100; i+=2) {
+//     console.log(i)
+//   }
  
- /*let arr = [5, 7, 9, 1, 0];
+ let arr = [5, 7, 9, 1, 0];
  for(let i=0; i<arr.length; i++) {
   console.log(arr[i]*2)
 }  
 
-for(let item of arr) {
-    console.log(item) 
-} */
+// for(let item of arr) {
+//     console.log(item) 
+// } 
 
 /* let obj = {
     "name": "Petr",
