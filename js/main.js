@@ -164,15 +164,15 @@ while(count < 10) {
 //     console.log(item*2) 
 // } 
 
-/* let obj = {
+ let obj = {
     "name": "Petr",
     "age": 25,
     "number": 909090909090
 }
 
 for(let key in obj) {
-    console.log("Ключ ${key}, Значение ${obj[key]}") 
-} */
+    console.log(`Ключ ${key}, Значение ${obj[key]}`) 
+} 
 
 /* let arr = [5, 7, 9, 1, 0];
 arr.forEach(function(item, i, array){
