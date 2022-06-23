@@ -145,16 +145,22 @@ console.log(item.closest('.list')) // null
 ## 50 Урок. Атрибуты, Создание элементов.  
 
 #### ex6.   
-С помощью этого метода можем проверить содержиться ли один элемент внутри другова и получить ответ в консоли true или false
+С помощью метода **contains** можем проверить содержиться ли один элемент внутри другого и получить логический ответ в консоли **true** или **false**.
+Проверяем вложеность, есть ли в **list** **item** и наоборот.
 ```
+  <ul class="list">
+    <li class="item">Пункт 1</li>
+    <li class="item">Пункт 2</li>
+  </ul>
+  <script>
     let list = document.querySelector('.list')
     let item = document.querySelector('.item')
-
-    console.log(list.contains(item))
-    console.log(list.contains(item))
+    console.log(list.contains(item)) // true
+    console.log(item.contains(list)) // false
+  </script>
 ```
-* ex7
-Можем полностью заменить боди на массив скрипта
+#### ex7.
+Можем полностью заменить боди на массив скрипта.
 ```
 <body>
   
@@ -171,11 +177,16 @@ document.body.innerHTML = `
   <li>${strs[2]}</li>
 </ol>
   `
-
-  console.log(document.querySelector('body').innerHTML)
   </script>
 </body>
 ```
+Этим методом проверяем **body** в консоле.
+```
+  console.log(document.querySelector('body').innerHTML)
+```
+
+
+
 * ex8 Можем именно заменить текст с помощью .textContent
 
 * ex9 Свойство hidden
