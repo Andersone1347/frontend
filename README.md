@@ -100,8 +100,24 @@ HTMLCollection(7) [a, br, a, br, a, br, script]
 length: 7
 [[Prototype]]: HTMLCollection
 ```
-
-* ex5 
+Воспользуемся методом **el.matches()** который вернёт **true** или **false**, в зависимости от того, соответствует ли элемент указанному **css-селектору**.
+В данной ситуации яндекс и маил соответствуют заданному в скобках значению **matches('a[href$=".ru"')**, поэтому выполниться **el.innerHTML**.
+```
+<script>
+    for(let element of document.body.children){
+      if(element.matches('a[href$=".ru"')){
+        element.innerHTML = "Сайт в зоне .ru"
+      }
+    }   
+  </script>
+```
+Рассмотрим более простой вариант через **querySelectorAll()**.
+```
+   for(let element of document.querySelectorAll('a[href$=".ru"')) {
+       element.innerHTML = "Cайт в хоне .ru"  
+       }  
+```
+#### ex5.
 Element.closest() возвращает ближайший родительский элемент (или сам элемент), который соответствует заданному CSS-селектору или null, если таковых элементов вообще нет.
 
 ## 50 Урок. Атрибуты, Создание элементов.
