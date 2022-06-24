@@ -293,20 +293,26 @@ class = text
 id = basic
 ```
 
-* ex11
-.dataset
+#### ex11.
+
+Можем создать свои атрибуты для **html**-тегов лучше всего начинать с **data-**.
 ```
   <p data-about="Это текст">Абзац текста</p>
   <div data-about-block="Это блок">Блок текста</div>
-
+```
+**dataset** - позволяет считывать или устанавливать любые дата-атрибуты на **HTML**-элемент.
+Дата-атрибут — это пользовательский атрибут на элементе, название которого начинается с **data-**, например **data-about**. Дата атрибуты используются, чтобы хранить значения на элементах в **HTML**.
+```
+  <p data-red="Красный">Абзац текста</p>
+  <div data-red-green="Красно-зелёный">Блок текста</div>
   <script>
     let elem1 =  document.querySelector('p')
-    console.log(elem1.dataset.about)
+    console.log(elem1.dataset.red) // Красный
     let elem2 =  document.querySelector('div')
-    console.log(elem2.dataset.aboutBlock)
+    console.log(elem2.dataset.redGreen) // Красно-зелёный
   </script>
 ```
-* ex12
+#### ex12.
 .append() добавить в конец
 .prepend() добавить в начало
 before and after
