@@ -184,22 +184,115 @@ document.body.innerHTML = `
 ```
   console.log(document.querySelector('body').innerHTML)
 ```
+ 
 
 
+#### ex8.
 
-* ex8 Можем именно заменить текст с помощью .textContent
-
-* ex9 Свойство hidden
-Можем скрывать элементы на какое-то время.
+**innerHTML** - позволяет получить **html** элемента или же его изменить.     
+**textContent** - позволяет задавать или получать текстовое содержимое элемента и его потомков.   
+body  
 ```
   <p>Абзац текста</p>
+  <div>
+    <h3>Заголовок</h3>
+    <p>Текст</p>
+  </div>
+```
+Если в консоль введём **innerHtml** то увидим теги **html**.  
+script
+```
+let strs = ["фамилия","имя","отчество"]
+document.querySelector('p').textContent = `${strs[0]} - ${strs[1]} - ${strs[2]}`
+console.log(document.querySelector('div').innerHTML)
+// <h3>Заголовок</h3>
+//    <p>Текст</p>
+```
+А если **textcontent** то нет.
+```
+console.log(document.querySelector('div').textContent)
+// Заголовок
+//    Текст
+```
 
+
+#### ex9.
+
+**hidden** - является **Boolean** типом данных , который принимает значение **true** , если содержимое спрятано, в противном случае значение будет **false**.      
+**setInterval** - позволяет регулярно исполнять функцию через указанный промежуток времени.    
+```
+  <p>Абзац текста</p>
   <script>
     let elem = document.querySelector('p')
     setInterval(() => elem.hidden = !elem.hidden, 1000)
   </script>
 ```
-* ex10 
+
+#### ex10.
+
+Работа с атрибутами **html**:    
+**elem.hasAttribute(name)** – проверяет наличие атрибута
+```
+  <p title="Подсказка" class="text">Абзац текста</p>
+  <script>
+    let elem = document.querySelector('p')
+    console.log(elem.hasAttribute('title')) // true
+  </script>
+```
+**elem.getAttribute(name)** – получает значение атрибута
+```
+  <p title="Подсказка" class="text">Абзац текста</p>
+  <script>
+    let elem = document.querySelector('p')
+    console.log(elem.getAttribute('title')) // Подсказка
+```
+**elem.setAttribute(name, value)** – устанавливает атрибут
+```
+  <p title="Подсказка" class="text">Абзац текста</p>
+  <script>
+    let elem = document.querySelector('p')
+    elem.setAttribute("class", "basic")
+    console.log(elem.getAttribute('class')) // basic
+```
+  Так как **class** уже был установим **id**
+```
+    let elem = document.querySelector('p')
+    elem.setAttribute("id", "basic")
+    console.log(elem.getAttribute('class')) // text
+    console.log(elem.getAttribute('id')) // basic
+```
+Так же можем получить название и значение атрибутов через цикл **for...of**.
+```
+  <p title="Подсказка" class="text">Абзац текста</p>
+  <script>
+    let elem = document.querySelector('p')
+    elem.setAttribute("id", "basic")
+    for(let atrr of elem.attributes) {
+      console.log(`${atrr.name} = ${atrr.value}`)
+    }
+  </script>
+```
+  Консоль:
+```
+title = Подсказка
+class = text
+id = basic
+```
+**elem.removeAttribute(name)** – удаляет атрибут
+```
+    let elem = document.querySelector('p')
+    elem.setAttribute("id", "basic")
+    elem.removeAttribute("title")
+    for(let atrr of elem.attributes) {
+      console.log(`${atrr.name} = ${atrr.value}`)
+    }
+```
+Консоль:
+```
+class = text
+id = basic
+```
+
 .setAttribute - можем добавить атрибут
 .removeAttribute - удалить атрибут
 console.dir() - можно посмотреть все свойства и методы.
