@@ -7,14 +7,14 @@
 </head>
 <body>
   
-  <p data-about="Это текст">Абзац текста</p>
-  <div data-about-block="Это блок">Блок текста</div>
+  <p data-red="Красный">Абзац текста</p>
+  <div data-red-green="Красно-зелёный">Блок текста</div>
 
   <script>
     let elem1 =  document.querySelector('p')
-    console.log(elem1.dataset.about)
+    console.log(elem1.dataset.red) // Красный
     let elem2 =  document.querySelector('div')
-    console.log(elem2.dataset.aboutBlock)
+    console.log(elem2.dataset.redGreen) // Красно-зелёный
   </script>
 </body>
 </html>
