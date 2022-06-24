@@ -48,7 +48,7 @@ NodeList(5) [li, li,]
 length: 5
 [[Prototype]]: NodeList
 ```
-Далее создаём цикл **for** в цикле создаём переменную **el** указываем **of elements** цикл по всем элементам (первым li), и изменим название и стили.
+Далее создаём цикл **for** в цикле создаём переменную **el** указываем **of elements** цикл по всем элементам (первым **li**), и изменим название и стили.
 
 ```
 for(let el of elements) {
@@ -191,7 +191,7 @@ document.body.innerHTML = `
 
 **innerHTML** - позволяет получить **html** элемента или же его изменить.     
 **textContent** - позволяет задавать или получать текстовое содержимое элемента и его потомков.   
-body  
+**body**  
 ```
   <p>Абзац текста</p>
   <div>
@@ -200,7 +200,7 @@ body
   </div>
 ```
 Если в консоль введём **innerHtml** то увидим теги **html**.  
-script
+**script**
 ```
 let strs = ["фамилия","имя","отчество"]
 document.querySelector('p').textContent = `${strs[0]} - ${strs[1]} - ${strs[2]}`
@@ -293,9 +293,6 @@ class = text
 id = basic
 ```
 
-.setAttribute - можем добавить атрибут
-.removeAttribute - удалить атрибут
-console.dir() - можно посмотреть все свойства и методы.
 * ex11
 .dataset
 ```
