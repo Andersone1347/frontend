@@ -10,14 +10,14 @@
   <p>Разделитель</p>
   <hr>
   <script>
-let div = document.createElement('div')
-div.className = "alert"
-div.innerHTML = "coobchenie"
-document.querySelector('hr').before(div)
+let qwerty = document.createElement('div')
+qwerty.className = "and"
+qwerty.innerHTML = '<h2>Сложно</h2>'
+document.querySelector('hr').before(qwerty)
 
 let p = document.createElement('p')
 p.textContent =  "Важное сообщение!"
-div.replaceWith
+qwerty.replaceWith(p)
   </script>
 </body>
 </html>
