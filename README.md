@@ -313,14 +313,69 @@ id = basic
   </script>
 ```
 #### ex12.
-.append() добавить в конец
-.prepend() добавить в начало
-before and after
-.replaceWith заменить тэг
 
-51 Урок. Генерация вложенных списков.
+Создадим свои собственные элнменты.
 
-* ex13
+Метод **createElement** позволяет создать новый элемент, передав в параметре имя тега. После создания с элементом можно работать как с обычным элементом, а также его можно добавить на страницу методами **prepend**, **append**, **appendChild**, **insertBefore** или **insertAdjacentElement**.
+
+В **body**:
+```
+  <p>Разделитель</p>
+  <hr>
+```
+
+Создаём переменную **qwerty** обозначаем **document.createElement('div')** и создаём тег **div**, устанавливаем диву класс **qwerty.className = "and"** и добавим в див загаловок.    
+```
+let qwerty = document.createElement('div')
+qwerty.className = "and"
+qwerty.innerHTML = '<h2>Сложно</h2>'
+```
+Что бы добавить его используем **document.body** c методами:
+* append() - добавить в конец.
+* prepend() - добавить в начало.
+* before() - перед **body**.
+* after() - после **body**.
+* replaceWith() заменяет одни элементы другими.
+Пример:    
+```
+document.body.after(qwerty)
+```
+Сменим тег **body** на **hr**
+```
+document.querySelector('hr').before(qwerty)
+```
+В этой ситуации созданный **div** будет перед <hr>.
+```
+let qwerty = document.createElement('div')
+qwerty.className = "and"
+qwerty.innerHTML = '<h2>Сложно</h2>'
+document.querySelector('hr').before(qwerty)
+```
+По такому же принцепу создадим параграф и добавим в созданный **div**.
+```
+let p = document.createElement('p')
+p.textContent =  "Важное сообщение!"
+qwerty.append(p)
+```
+В **append** так же можем вставить через запятую новые элементы.
+```
+qwerty.append(p, document.createElement('hr'))
+```
+С помощью **replaceWith** заменим созданный **div** тегом **p**.
+```
+let qwerty = document.createElement('div')
+qwerty.className = "and"
+qwerty.innerHTML = '<h2>Сложно</h2>'
+document.querySelector('hr').before(qwerty)
+
+let p = document.createElement('p')
+p.textContent =  "Важное сообщение!"
+qwerty.replaceWith(p)
+```
+
+## 51 Урок. Генерация вложенных списков.
+
+## ex13.
 insertAdjacentHTML - добавить html элемент в скрипт
 
 * beforebegin 
