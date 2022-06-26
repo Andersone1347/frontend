@@ -376,13 +376,27 @@ qwerty.replaceWith(p)
 ## 51 Урок. Генерация вложенных списков.
 
 ## ex13.
-insertAdjacentHTML - добавить html элемент в скрипт
-
-* beforebegin 
-* afterbegin
-* beforeend
-* afterend
-
+**insertAdjacentHTML()** разбирает указанный текст как **HTML** или **XML** и вставляет полученные узлы **(nodes)** в **DOM** дерево в указанную позицию. Данная функция не переписывает имеющиеся элементы, что предотвращает дополнительную сериализацию и поэтому работает быстрее, чем манипуляции с **innerHTML**.     
+ Методы:   
+* 'beforebegin': до самого element (до открывающего тега).
+* 'afterbegin': сразу после открывающего тега  element (перед первым потомком).
+* 'beforeend': сразу перед закрывающим тегом element (после последнего потомка).
+* 'afterend': после element (после закрывающего тега).
+```
+  <ul>
+    <li>Пункт 1</li>
+    <li>Пункт 2</li>
+  </ul>
+```
+```
+  <script>
+let ul = document.querySelector('ul')
+ul.insertAdjacentHTML('beforebegin', '<p>beforebegin</p>')
+ul.insertAdjacentHTML('afterbegin', '<li>afterbegin</li>')
+ul.insertAdjacentHTML('beforeend', '<li>beforeend</li>')
+ul.insertAdjacentHTML('afterend', '<p>afterend</p>')
+  </script>
+```
 * ex14
 Удаляем элемент через 2 секунды.
 ```
