@@ -478,30 +478,21 @@ let newUl = document.createElement('ul');
         }
       }
     }
-    function createUl(obj) {
-      if(!Object.keys(obj).length)
-      return
-      let ul = document.createElement('ul')
-      for(let key in obj) {
-        let li = document.createElement('li')
-        if(!isNaN(obj[key]))
-        li.textContent = key +' '+obj[key]
-        else
-        li.textContent = key
-        let childrenU1 = createUl(obj[key])
-        if(childrenU1) {
-          li.append(childrenU1)
-        }
-        ul.append(li)
-      }
-     return ul
-    }
-    function createTree(cotainer, obj) {
-      document.querySelector(cotainer).append(createUl(obj))
-    }
-    createTree('body', data)
   </script>
 ```
+Создадим функцию **createUl(obj)** параметр **obj** потому что она будет приниать объект. 
+```
+function createUl(obj) {}
+```
+Проверочное условие **if**, если ключей в объекте не будет то будем выходить из функции.
+```
+if(!Object.keys(obj).length)
+return
+```
+А если будет то:   
+Создаём переменную newUl
+
+
 
 52 Урок. Календарь.
 * ex18
