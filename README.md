@@ -489,10 +489,47 @@ function createUl(obj) {}
 if(!Object.keys(obj).length)
 return
 ```
-А если будет то:   
-Создаём переменную newUl
-
-
+А если будет объект то:   
+Создаём переменную **newUl** обозначаем **document.createElement('ul')** создаём новый элемент **ul**.
+```
+let NewUl = document.createElement('ul')
+```
+Укажем цикл **for** и для обхода по объекту **(let key in obj)**. **obj** взяли параметр из функции **creatrUl(obj)**. И нам нужен вывод именно числовой вывод объектов, например **яблоко:6**  а не **фрукты:красные** поэтому пишем условие **if(isNaN(obj[key]))** 
+```
+      for(let key in obj) {
+        let NewLi = document.createElement('li')
+        if(!isNaN(obj[key]))
+```
+Для **newLi** указываем **textContent = key + obj[key]** где **key** это будет ключ объекта (огурцы, помидоры, клубника) а obj[key] будет цифровое значение, для того что бы всё работало поставим **else** если **newLi** не число то устанавливаем равное значение ключа.
+```
+        NewLi.textContent = key +' '+obj[key]
+        else
+        li.textContent = key
+```
+Теперь установим переменную **childrenUl** равную значению функции **createUl(obj[key])**, что бы эта функция сделала всё тоже самое для вложенных объектов.
+```
+let childrenU1 = createUl(obj[key])
+```
+И добавим проверку **if**, если **childrenUl** существует то мы добавляем в **newLi** добавляем переменную **childrenUl**, а уже после добавляем в переменную **newUl** c помощью **append** тег **li**.
+```
+ if(childrenU1) {
+          newLi.append(childrenU1)
+        } 
+        newUl.append(newLi)
+        }
+```
+Как цикл завершиться, повторим снова. 
+```
+return newUl
+```
+Напишем ещё одну функцию для вывода.    
+Назовём её **createTree** указываем (cotainer, obj)  добавлять будем в контейнер с помощью **append(createUl(obj))**, и вставляем всё в пустое **body**.
+```
+    function createTree(cotainer, obj) {
+      document.querySelector(cotainer).append(createUl(obj))
+    }
+    createTree('body', data)
+```
 
 52 Урок. Календарь.
 * ex18

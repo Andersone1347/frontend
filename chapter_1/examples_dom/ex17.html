@@ -30,20 +30,20 @@
     function createUl(obj) {
       if(!Object.keys(obj).length)
       return
-      let ul = document.createElement('ul')
+      let newUl = document.createElement('ul')
       for(let key in obj) {
-        let li = document.createElement('li')
+        let newLi = document.createElement('li')
         if(!isNaN(obj[key]))
-        li.textContent = key +' '+obj[key]
+        newLi.textContent = key +' '+obj[key]
         else
-        li.textContent = key
+        newLi.textContent = key
         let childrenU1 = createUl(obj[key])
         if(childrenU1) {
-          li.append(childrenU1)
+          newLi.append(childrenU1)
         }
-        ul.append(li)
+        newUl.append(newLi)
       }
-     return ul
+     return newUl
     }
     function createTree(cotainer, obj) {
       document.querySelector(cotainer).append(createUl(obj))
