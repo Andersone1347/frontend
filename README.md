@@ -530,6 +530,52 @@ return newUl
     }
     createTree('body', data)
 ```
+```
+<body>
+
+  <script>
+    let data = {
+      "Овощи": {
+        "огурцы": 5,
+        "помидоры": 3
+      },
+      "Фрукты": {
+        "красные": {
+          "клубника": 2,
+          "малина": 4
+        },
+        "зеленые": {
+          "яблоко": 6,
+          "лайм": 2
+        }
+      }
+    }
+    function createUl(obj) {
+      if(!Object.keys(obj).length)
+      return
+      let newUl = document.createElement('ul')
+      for(let key in obj) {
+        let newLi = document.createElement('li')
+        if(!isNaN(obj[key]))
+        newLi.textContent = key +' '+obj[key]
+        else
+        newLi.textContent = key
+        let childrenU1 = createUl(obj[key])
+        if(childrenU1) {
+          newLi.append(childrenU1)
+        }
+        newUl.append(newLi)
+      }
+     return newUl
+    }
+    function createTree(cotainer, obj) {
+      document.querySelector(cotainer).append(createUl(obj))
+    }
+    createTree('body', data)
+  </script>
+</body>
+```
+
 
 52 Урок. Календарь.
 * ex18
