@@ -229,7 +229,7 @@ console.log(document.querySelector('div').textContent)
 #### ex10.
 
 Работа с атрибутами **html**:    
-**elem.hasAttribute(name)** – проверяет наличие атрибута
+**elem.hasAttribute(name)** – проверяет наличие атрибута.
 ```
   <p title="Подсказка" class="text">Абзац текста</p>
   <script>
@@ -237,14 +237,14 @@ console.log(document.querySelector('div').textContent)
     console.log(elem.hasAttribute('title')) // true
   </script>
 ```
-**elem.getAttribute(name)** – получает значение атрибута
+**elem.getAttribute(name)** – получает значение атрибута.
 ```
   <p title="Подсказка" class="text">Абзац текста</p>
   <script>
     let elem = document.querySelector('p')
     console.log(elem.getAttribute('title')) // Подсказка
 ```
-**elem.setAttribute(name, value)** – устанавливает атрибут
+**elem.setAttribute(name, value)** – устанавливает атрибут.
 ```
   <p title="Подсказка" class="text">Абзац текста</p>
   <script>
@@ -252,7 +252,7 @@ console.log(document.querySelector('div').textContent)
     elem.setAttribute("class", "basic")
     console.log(elem.getAttribute('class')) // basic
 ```
-  Так как **class** уже был установим **id**
+  Так как **class** уже был установим **id**.
 ```
     let elem = document.querySelector('p')
     elem.setAttribute("id", "basic")
@@ -276,7 +276,7 @@ title = Подсказка
 class = text
 id = basic
 ```
-**elem.removeAttribute(name)** – удаляет атрибут
+**elem.removeAttribute(name)** – удаляет атрибут.
 ```
     let elem = document.querySelector('p')
     elem.setAttribute("id", "basic")
@@ -338,11 +338,11 @@ qwerty.innerHTML = '<h2>Сложно</h2>'
 ```
 document.body.after(qwerty)
 ```
-Сменим тег **body** на **hr**
+Сменим тег **body** на **hr**.
 ```
 document.querySelector('hr').before(qwerty)
 ```
-В этой ситуации созданный **div** будет перед <hr>.
+В этой ситуации созданный **div** будет перед **hr**.
 ```
 let qwerty = document.createElement('div')
 qwerty.className = "and"
@@ -395,7 +395,7 @@ ul.insertAdjacentHTML('beforeend', '<li>beforeend</li>')
 ul.insertAdjacentHTML('afterend', '<p>afterend</p>')
   </script>
 ```
-#### ex14
+#### ex14.
 Мы можем вызвать функцию не в данный момент, а позже, через заданный интервал времени. Это называется «планирование вызова».
 
 Для этого существуют два метода:
@@ -422,6 +422,7 @@ setTimeout(() => {
 И с помощью методов **after** переместим **two** и **one**.
 
 #### ex15. 
+
  **cloneNode()** возвращает дубликат узла, из которого этот метод был вызван.   
 Клонируем **div** и меняем сожержимое **p** в клоне. 
  ```
@@ -437,10 +438,10 @@ setTimeout(() => {
     div.after(div2)
   </script>
   ```
-#### ex16
+#### ex16.
 
 Создаём всплывающее окно которое будет создавать в **ul** **li**.
-Создаём в пустом **body** **ul** с помощью **document.body.append.(newUl)**
+Создаём в пустом **body** **ul** с помощью **document.body.append.(newUl)**.
 
 Далее создаём цикл **while** , через **Prompt** всплывающее окно в котором будут обозначаться **li** , и услови **if** если в окне ничего не напишем и нажмём кнопку то **break**, потом создаём переменную **newLi** которая будет добавлять **li**, далее указываем **textContent = data** => c помощью append добавляем тег **li**.
 ```
@@ -458,7 +459,8 @@ let newUl = document.createElement('ul');
   }
 ```
 
-* ex17 
+#### ex17.   
+
 Задачка сгенерировать список в списке с помощью **java script**.
 ```
  <script>
