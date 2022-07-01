@@ -1224,8 +1224,7 @@ console.log(b)
 let c = fac(8)
 console.log(c)
 ```
-Функция
-Где в add переплюсование числа 795 а mul перемножение .
+Функция, где в **add** переплюсование чисел **7**_**9**_**5** а **mul** перемножение.
 add 7+9+5=21
 mul 7 * 9 * 5 = 315
 ```
@@ -1257,7 +1256,7 @@ function reverse(number) {
 console.log(reverse(3486))
 ```
 
-Узнаём кол-во чётных и нечетных цифр. result - 9-четных и 7 нечётных
+Узнаём кол-во чётных и нечетных цифр.
 ```
 function number(number) {
     number += "";
@@ -1272,7 +1271,7 @@ function number(number) {
     }
 }
 
-console.log(number(1216789644532526))
+console.log(number(1216789644532526))// result - 9-четных и 7 нечётных
 ```
 
 randomaizer от 0 до 100
@@ -1280,16 +1279,16 @@ randomaizer от 0 до 100
 function randomNumber() {
     let number = Math.floor(Math.random()*100);
     for(let count=1; count<=10; count++) {
-        let result = +prompt('Попытка №${count}, Введите число:')
+        let result = +prompt(`Попытка №${count}, Введите число:`)
         if(result == number) {
-            return alert('Вы угадали число! Попыток: ${count}, Число: ${number}')
+            return alert(`Вы угадали число! Попыток: ${count}, Число: ${number}`)
         } else if(result < number) {
-            alert('Ваше число ${result}, меньше загаданного!')
+            alert(`Ваше число ${result}, меньше загаданного!`)
         } else if(result > number) {
-            alert('Ваше число ${result}, болльше загаданного!')
+            alert(`Ваше число ${result}, больше загаданного!`)
      }
     }
-    return alert('Вы не угадали число! Число: ${number}')
+    return alert(`Вы не угадали число! Число: ${number}`)
 }
 randomNumber()
 ```

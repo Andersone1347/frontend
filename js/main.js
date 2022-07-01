@@ -241,17 +241,21 @@ console.log(arr) */
 
 // 43 урок 
 
-function fib(count) {
-    let fib = []
-    for(let i=0; i<count; i++) {
-        if(i==0) fib[i] = 1;
-        else if(i==1) fib[i] = 2;
-        else fib[i] = fib[i-2] + fib[i-1];
+function randomNumber() {
+    let number = Math.floor(Math.random()*100);
+    for(let count=1; count<=10; count++) {
+        let result = +prompt(`Попытка №${count}, Введите число:`)
+        if(result == number) {
+            return alert(`Вы угадали число! Попыток: ${count}, Число: ${number}`)
+        } else if(result < number) {
+            alert(`Ваше число ${result}, меньше загаданного!`)
+        } else if(result > number) {
+            alert(`Ваше число ${result}, больше загаданного!`)
+     }
     }
-    return fib;
+    return alert(`Вы не угадали число! Число: ${number}`)
 }
-let f = fib(15)
-console.log(f)
+randomNumber()
 // let res = printText(name, age );
 // alert(res)
 
