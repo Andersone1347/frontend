@@ -241,21 +241,21 @@ console.log(arr) */
 
 // 43 урок 
 
-function randomNumber() {
-    let number = Math.floor(Math.random()*100);
-    for(let count=1; count<=10; count++) {
-        let result = +prompt(`Попытка №${count}, Введите число:`)
-        if(result == number) {
-            return alert(`Вы угадали число! Попыток: ${count}, Число: ${number}`)
-        } else if(result < number) {
-            alert(`Ваше число ${result}, меньше загаданного!`)
-        } else if(result > number) {
-            alert(`Ваше число ${result}, больше загаданного!`)
-     }
-    }
-    return alert(`Вы не угадали число! Число: ${number}`)
-}
-randomNumber()
+// function randomNumber() {
+//     let number = Math.floor(Math.random()*100);
+//     for(let count=1; count<=10; count++) {
+//         let result = +prompt(`Попытка №${count}, Введите число:`)
+//         if(result == number) {
+//             return alert(`Вы угадали число! Попыток: ${count}, Число: ${number}`)
+//         } else if(result < number) {
+//             alert(`Ваше число ${result}, меньше загаданного!`)
+//         } else if(result > number) {
+//             alert(`Ваше число ${result}, больше загаданного!`)
+//      }
+//     }
+//     return alert(`Вы не угадали число! Число: ${number}`)
+// }
+// randomNumber()
 // let res = printText(name, age );
 // alert(res)
 
@@ -350,8 +350,8 @@ randomNumber()
 
 // 44 урок 
 
-// let a = new Date()
-// console.log(a)
+let a = new Date(2022,07,1)
+console.log(+a)
 
 // // 45 урок
 // /**
