@@ -1325,6 +1325,8 @@ https://momentjs.com
 ## Урок 45. Документация кода на JSDoc и Исключения.
 
 Прописываем документацию к своим функциям.
+
+При наведение мышки на функцию высветиться подсказка что указана в коментарии.
 ```
 /**
  * Функция преобразует строку с временем в минуты
@@ -1337,6 +1339,7 @@ function timeToMinute(time) {
 timeToMinute()
 ```
 Метод проверки на ошибку try & catch.
+
 ```
 function timeToMinute(time) {
     try {
@@ -1344,15 +1347,28 @@ function timeToMinute(time) {
         let min = +time.split(":")[1]
         if( !(hour>=0 && hour<=23) || !(min>=0 && min<=59))
         {
-            throw new RangeError("Ошибка времени")
+            throw new RangeError("Аргумент должен быть в формате 'hh:mm' - 'hh' должен быть от 0 до 23, а 'mm' должен быть от 0 до 59. 'hh' и 'mm' должны быть числами и разделяться знаком ':'")
         }
         return hour*60+min
     } catch(error) {
         console.log(error)
     }
 }
-console.log(timeToMinute("24:28"))
+console.log(timeToMinute("1:28"))
 ```
+
+Полезная информация
+1. Моя библиотека stringTime.js для работы с временем в строковом формате.
+https://github.com/morphIsmail/stringTimeJS
+
+2. Генератор документации JSDoc.
+https://ru.wikipedia.org/wiki/JSDoc
+
+3. Обработка ошибок на JavaScript.
+https://learn.javascript.ru/try-catch
+
+4. Перехват ошибок на JavaScript.
+https://learn.javascript.ru/exception
 
 ## 46 урок. Объектно-Ориентированное Програмирование,Прототип,конструкторы,класс.
 С помощью цепочки наследования можем создавать комплексные объекты  и получать доступ к родительскому объекту :
