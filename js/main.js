@@ -241,12 +241,17 @@ console.log(arr) */
 
 // 43 урок 
 
-// function printText(name, age) {
-//     return "hello my name is "+name+", Age: "+age
-// }
-// let name = "aza"
-// let age = 2
-
+function fib(count) {
+    let fib = []
+    for(let i=0; i<count; i++) {
+        if(i==0) fib[i] = 1;
+        else if(i==1) fib[i] = 2;
+        else fib[i] = fib[i-2] + fib[i-1];
+    }
+    return fib;
+}
+let f = fib(15)
+console.log(f)
 // let res = printText(name, age );
 // alert(res)
 
