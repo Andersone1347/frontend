@@ -1629,15 +1629,19 @@ https://caniuse.com/es5
 4. Поддержка спецификации ECMAScript 2015 (ES6)
 https://caniuse.com/es6
 
+Новые функции появившиеся **ECMA 6**.
+
 Константы нельзя переопределять.
+```
 const a = 3.5  
 undefined   
 a  
 3.5   
 a = 1.5 
 (ошибка)
+```
 
-Оператор расширения:
+***...*** - Это оператор расширения.
 ```
 function sum(a,b) {
     return a+b 
@@ -1647,7 +1651,7 @@ sum(...date)
 12
 ```
 Создадим несколько переменных и сразу присвоем им значения.
-Так сказать деструктивное присваевание 
+Так сказать **деструктивное присваевание**.
 ```
 let [a,b,c,d] = [10,5,8,9]
 undefined
@@ -1674,20 +1678,70 @@ let sum = (a,b,c) => {
 sum(5,2,3)
 10
 ```
-* repeat() - для повтора вырожения 
+* repeat() - для повтора вырожения.
+```
+let a = "Str".repeat(3) // a "StrStrStr" 
+```
+* includes - для поиска в строке.
+```
+let str = "Hello, i`m simple String"
+console.log(str.includes("simple"))// true
+``` 
 * startsWith() - поиск начального слова, end - конечного. 
+```
+let str = "Hello, i`m simple String"
+console.log(str.startWith("Hello"))// true
+```
 * Изменение содержимого массива например на ноль:
 ```
 let arr = [5,8,9,2,4]
 arr.fill(0)
-console.log(arr)
+console.log(arr) //[0,0,0,0,0]
 ```
-Массив без дубликатов 
+let arr = ['a','b','c']
+let entries = arr.entries()
+let keys = arr.keys()
+let values = arr.values()
+
+console.log(...entries)
+console.log(...keys)
+console.log(...values)
 ```
-ler arr = [1,5,4,7,8,91,1,4,5]
+Array(2)0: 01: "a"
+length: 2[[Prototype]]: Array(0) Array(2) Array(2)
+0 1 2
+a b c
+```
+Объекты **Set** позволяют вам сохранять уникальные значения любого типа, как примитивы, так и другие типы объектов.
+Синтаксис
+ new Set([iterable]);
+Пример:
+```
+let set = new Set()
+set.add(1)
+set.add(2)
+set.add(3)
+set.add(1)
+console.log(...set)
+console.log(set.has("4"))
+console.log(set.size)
+set.delete(2)
+console.log(...set)
+set.clear()
+console.log(set)
+```
+```
+1 2 3
+false
+3
+1 3
+Set(0) {size: 0}
+```
+Массив без дубликатов.
+```
+let arr = [1,5,4,7,8,91,1,4,5]
 let arr2 = [...new Set(arr)]
-console.log(arr2)
+console.log(arr2) // (6) [1, 5, 4, 7, 8, 91]
 ```     
-   
-   **05 Работа с DOM деревом javaScript**
+
 
