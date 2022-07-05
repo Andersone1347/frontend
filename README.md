@@ -581,7 +581,7 @@ return newUl
 
 ## 52 Урок. Календарь.
 
-#### ex18
+#### ex18.
 
 Создаём функцию **getDay** c объектом **date** в тело функции создадим  переменную **day** в которую поместим **date.getDay()** метод стандартный у объекта, а в условии проверим. Если **day** равен нулю то устанавливаем **day** ровно **7** и возращаем **day -1**. Эта функция будет конвертировать в стандартные дни , где **0** понедельник а **6** воскресенье. 
 ```
@@ -706,7 +706,7 @@ createCalendar('body', 2022, 6)
     createCalendar('body', 2022, 6)
   </script>
 ```
-Css файл.
+**Css** файл.
  ```
 table {
   border-collapse: collapse;
@@ -731,3 +731,124 @@ th {
   background-color: #fff6ce;
 }
  ```
+
+## 53 Урок. Задание календарь.
+
+
+## 54 Урок. Сортировка таблицы. 
+
+#### ex19.
+
+В данном примере таблица.
+```
+<table id="table">
+  <tr>
+    <th>Имя</th>
+    <th>Возраст</th>
+    <th>Комната</th>
+  </tr>
+  <tr>
+    <td>Саша</td>
+    <td>10</td>
+    <td>1032</td>
+  </tr>
+  <tr>
+    <td>Маша</td>
+    <td>15</td>
+    <td>1090</td>
+  </tr>
+  <tr>
+    <td>Паша</td>
+    <td>11</td>
+    <td>1347</td>
+  </tr>
+  <tr>
+    <td>Даша</td>
+    <td>7</td>
+    <td>1344</td>
+  </tr>
+</table>
+```
+
+Задача отсортировать таблицу по возрасту.   
+Создаём переменную **sortedRows** обозначаем **Array.from(table.rows)**. Метод **Array.from()** создаёт новый экземпляр **Array** из массивоподобного или итерируемого объекта(создаёт массив из элемента). И берём всё кроме нулевого индекса, потому что там **thead**.
+```
+let sortedRows = Array.from(table.rows).slice(1)
+```
+Сортируем методом вычитания цифр друг из друга.
+```
+    .sort((rowA, rowB) => {
+      return rowA.cells[1].innerHTML - rowB.cells[1].innerHTML
+    })
+```
+И проверяем в консоли результат:
+```
+sortedRows[0]
+<td>Даша</td>
+<td>7</td>
+```
+Для того что бы изменения появились и на **html-страничке**:
+```
+    let sortedRows = Array.from(table.rows)
+    .slice(1)
+    .sort((rowA, rowB) => {
+      return rowA.cells[1].innerHTML - rowB.cells[1].innerHTML
+    })
+table.tBodies[0].append(...sortedRows)
+```
+Задание добавить новую колонку и отсортировать.
+```
+<table id="table">
+  <tr>
+    <th>Имя</th>
+    <th>Возраст</th>
+    <th>Комната</th>
+  </tr>
+  <tr>
+    <td>Саша</td>
+    <td>10</td>
+    <td>1032</td>
+  </tr>
+  <tr>
+    <td>Маша</td>
+    <td>15</td>
+    <td>1090</td>
+  </tr>
+  <tr>
+    <td>Паша</td>
+    <td>11</td>
+    <td>1347</td>
+  </tr>
+  <tr>
+    <td>Даша</td>
+    <td>7</td>
+    <td>1344</td>
+  </tr>
+</table>
+```
+```
+let sortedRows = Array.from(table.rows)
+    .slice(1)
+    .sort((rowA, rowB) => {
+      return rowA.cells[2].innerHTML - rowB.cells[2].innerHTML
+    })
+    table.tBodies[0].append(...sortedRows)
+```
+## 55 Урок. Часы.
+
+#### 20ex.
+
+Задание сделать часы как на видио, создаём функцию **update()** потом переменную **date** и запишем в неё текущую дату. Создаём часы, минуты и секунды и соответсвующий метод. Условие для того что бы к любому числу меньше **10** добавлялся **0**, и выведем через **id**.
+```
+function update() {
+  let date = new Date();
+  let hours = date.getHours();
+  let minutes = date.getMinutes();
+  let seconds = date.getSeconds();
+  if(hours < 10) hours = '0' + hours
+  if(minutes < 10) minutes = '0' + minutes
+  if(seconds < 10) seconds = '0' + seconds
+  
+
+}
+```
