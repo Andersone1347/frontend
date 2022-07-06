@@ -838,7 +838,7 @@ let sortedRows = Array.from(table.rows)
 
 #### 20ex.
 
-Задание сделать часы как на видио, создаём функцию **update()** потом переменную **date** и запишем в неё текущую дату. Создаём часы, минуты и секунды и соответсвующий метод. Условие для того что бы к любому числу меньше **10** добавлялся **0**, и выведем через **id**.
+Задание сделать часы как на видио, создаём функцию **update()** потом переменную **date** и запишем в неё текущую дату. Создаём часы, минуты и секунды и соответсвующий метод. Условие для того что бы к любому числу меньше **10** добавлялся **0**, и выведем через **id**. Выводим с помощью **textContent** и указываем **setInterval()** в параметры записываем название функции и время через которое выполнять её.
 ```
 function update() {
   let date = new Date();
@@ -849,6 +849,29 @@ function update() {
   if(minutes < 10) minutes = '0' + minutes
   if(seconds < 10) seconds = '0' + seconds
   
+    clock.textContent = `${hours}:${minutes}:${seconds}`;
+}
+  setInterval(update, 1000)
 
 }
 ```
+Уберём секунды и вызвем сразу функцию, что бы не ждать **setInterval()**.
+```
+function update() {
+  let date = new Date();
+  let hours = date.getHours();
+  let minutes = date.getMinutes();
+
+  if(hours < 10) hours = '0' + hours
+  if(minutes < 10) minutes = '0' + minutes
+
+
+  clock.textContent = `${hours}:${minutes}`;
+}
+update()
+  setInterval(update, 60000)
+```
+
+## Урок 56. Классы и метрика.
+
+#### ex21.
