@@ -875,3 +875,84 @@ update()
 ## Урок 56. Классы и метрика.
 
 #### ex21.
+body
+```
+  <div class="alert block">
+    <p>Сообщение</p>
+  </div>
+```
+Создадим переменную **div** помещаем тег **div** меняем класс с помощью **className**, запишем цикл **for...of** и используем метод **classList**, для того что бы вывести в консоль все классы тега **div**.
+```
+    let div = document.querySelector('div')
+    div.className = "alert text block"
+    for(let name of div.classList) {
+      console.log(name)
+    }
+    div.classList.remove('block')
+```
+Можем удалить класс.
+```
+div.classList.remove('block')
+```
+Добавить или если есть удалить класс.
+```
+div.classList.toggle('block')
+```
+Проверить есть класс или нет.
+```
+div.classList.contains('alert')
+true
+```
+#### 22ex.
+
+
+С методом **div.style** можем изменять **css** стили. 
+```
+    let div = document.querySelector('div')
+    div.style.color = "red"
+    div.style.width = "100px"
+    div.style.backgroundColor = "grenn"
+
+```
+Через метод **prompt** через всплывающее окно сделаем выбор цвета.
+```
+div.style.backgroundColor = prompt("Выбор цвета", "tomato")
+```
+Скроем через функцию элемент и откроем через 4 секунды.
+```
+    div.style.display = "none"
+    setTimeout(()=> div.style.display = "", 4000)
+```
+C помощью **getComputedStyle** можно посмотреть финальные стили которые применяться к элементу.
+```
+    let style = getComputedStyle(div)
+    console.log(style)
+```
+
+#### 23ex.
+
+body
+```
+  <main style="position: relative;" id="main">
+    <div id="example" style="
+      position: absolute; 
+      left: 150px; 
+      top: 120px; 
+      width: 350px; 
+      height: 150px; 
+      border: 10px solid black; 
+      padding: 15px;
+    ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur pariatur et animi blanditiis sapiente excepturi, aut modi dignissimos nisi veniam eveniet repellendus debitis similique porro non! Doloribus accusantium dolores nobis maxime eaque ut corporis est. Nobis quibusdam voluptatum suscipit accusamus necessitatibus nesciunt animi! Ullam autem eos error dolore adipisci repellendus itaque dolorem quod maxime quasi illum cumque eaque, architecto consequatur recusandae praesentium, consequuntur magni, omnis quam molestias labore. Voluptatibus, laborum sequi aliquid sed amet voluptatum fugit optio ipsam ex quam omnis ea, consequatur est sit explicabo mollitia maiores. Quis suscipit ipsam nisi maiores deserunt consectetur totam dolores et quo expedita?</div>
+  </main>
+```
+
+Запишем в скрипт, что бы вывести ближайшего родителя от улемента.
+```
+console.log(example.offsetParent)// <main style="position: relative;" id="main">…</main>
+```
+
+Что бы узнать растояние от блока до края, пропишем:
+* console.log(example.offsetTop)
+* console.log(example.offsetRight)
+* console.log(example.offsetLeft)
+* console.log(example.offsetDown)

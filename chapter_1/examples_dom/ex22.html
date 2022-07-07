@@ -13,7 +13,14 @@
   </div>
 
   <script>
-
+    let div = document.querySelector('div')
+    div.style.color = "red"
+    div.style.width = "100px"
+    div.style.backgroundColor = "tomato"
+    div.style.display = "none"
+    setTimeout(()=> div.style.display = "", 4000)
+    let style = getComputedStyle(div)
+    console.log(style)
   </script>
 </body>
 </html>
