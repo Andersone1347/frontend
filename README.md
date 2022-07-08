@@ -952,7 +952,35 @@ console.log(example.offsetParent)// <main style="position: relative;" id="main">
 ```
 
 Что бы узнать растояние от блока до края, пропишем:
-* console.log(example.offsetTop)
-* console.log(example.offsetRight)
-* console.log(example.offsetLeft)
-* console.log(example.offsetDown)
+* console.log(example.offsetTop)//120 - верхнего.
+* console.log(example.offsetRight)//undefined - правого.
+* console.log(example.offsetLeft)//150 - левого.
+* console.log(example.offsetDown)//undefined - нижнего.
+
+Ширину и высоту элемента.
+* console.log(example.offsetWidth)//400
+* console.log(example.offsetHeight)//200
+
+Растояние от внешнего угла до внутренего, в данном примере равна границе **border:10px;**.
+* console.log(example.clientLeft)//10
+* console.log(example.clientTop)//10
+
+Получаем ширину и высоту с учётом ширины и высоты и pading но не учитываеться полоса прокрутки.
+* console.log(example.clientHeight)//180
+* console.log(example.clientWidth)//380
+
+Учитывая **scroll**.
+* console.log(example.scrollWidth)//380
+* console.log(example.scrollHeight)//335
+
+Получить ширину и высоту прокрученой части элемента.
+* console.log(example.scrollTop)//0
+* console.log(example.scrollLeft)//0
+
+Узнаём ширину и высоту в данный момент открытого окна браузера.
+```
+document.documentElement.clientHeight 
+452
+document.documentElement.clientWidth 
+903
+```
