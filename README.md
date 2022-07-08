@@ -977,6 +977,9 @@ console.log(example.offsetParent)// <main style="position: relative;" id="main">
 * console.log(example.scrollTop)//0
 * console.log(example.scrollLeft)//0
 
+
+#### ex24.
+
 Узнаём ширину и высоту в данный момент открытого окна браузера.
 ```
 document.documentElement.clientHeight 
@@ -984,3 +987,48 @@ document.documentElement.clientHeight
 document.documentElement.clientWidth 
 903
 ```
+
+Что бы получить высоту включая **scroll**.
+```
+let elem = document.querySelector('div')
+
+let scrollHeight = Math.max(
+  document.body.scrollHeight,
+  document.body.offsetHeight,
+  document.body.clientHeight,
+  document.documentElement.scrollHeight,
+  document.documentElement.offsetHeight,
+  document.documentElement.clientHeight)
+```
+```
+scrollHeight//966
+```
+
+Сколько скрыто в прокрутке.     
+Вертикальной.
+```
+window.pageYOffset//0
+```
+Горизонтальной.
+```
+window.pageXOffset//0
+```
+
+
+Прокрутка текущей страници на 10 пикселей вниз и на 15 вправо.
+```
+window.scrollBy(15,10)
+```
+Постоянная прокрутка по кординате.
+```
+window.scrollTo(0,10)
+```
+Прокрутка до определённого элемента, имеет логическое значение.
+```
+elem.scrollIntoView(true)
+```
+
+## Урок 57. Таблица с журналами.
+
+#### ex25.
+Подключаем к индексу файл **cоnst.js**
