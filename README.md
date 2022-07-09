@@ -1053,3 +1053,17 @@ const JOURNALS = [
 ]
 ```
 Создаём цикл **forEach**, перменную **row** в которой будет тег **tr** и с помощью **innerHTML** выводим. Прописываем условие если второй индекс массива равен **yes** то через span указывем **color:green** если нет то **red**.
+```
+    JOURNALS.forEach(function(item) {
+      let row = document.createElement('tr')
+      row.innerHTML = `
+      <td>${item[0]}</td>
+      <td>${item[1]}</td>
+      <td>${item[2] == 'yes'? '<span style="color: #05da00">&#9745;</span>' : item[2] == 'no' ? '<span style="color: red">&#9746;</span>' : item[2]}</td>
+     `
+     document.querySelector('table').append(row)
+    })
+```
+## Урок 58. Номера из объекта.
+
+#### ex26.
