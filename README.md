@@ -1067,3 +1067,135 @@ const JOURNALS = [
 ## Урок 58. Номера из объекта.
 
 #### ex26.
+
+У нас есть объект из масивов.
+```
+const PHONE_NUMBER = {
+  'Группа номеров 1': [
+    ['Номер 1', '2591514'],
+    ['Номер 2', '2182742'],
+    ['Номер 3', '2791821']
+  ],
+  'Группа номеров 2': [
+    ['Номер 1', '2485841']
+  ],
+  'Группа номеров 3': [
+    ['Номер 1', '212433, 243574'],
+    ['Номер 2', '442431, 552432']
+  ]
+}
+```
+Задача создать структуру и вывести массивы в таблицу.
+Получаеться легко видоизменяемая таблица.
+```
+for(let key in PHONE_NUMBER) {
+  let row = document.createElement('tr')
+  row.innerHTML = `<th colspan="2">${key}</th>`
+  document.querySelector('table').append(row)
+  for(let i=0; i<PHONE_NUMBER[key].length; i++) {
+    let row = document.createElement('tr')
+    row.innerHTML = `
+<td>${PHONE_NUMBER[key][i][0]}</td>
+<td>${PHONE_NUMBER[key][i][1]}</td>
+    `
+    document.querySelector('table').append(row)
+  }
+}
+```
+## Урок 59. Вывод карточек с сортировкой.
+
+#### ex27.
+Выводим массив из объектов с большой вложеностью и отсортируем по номеру комнаты.
+```
+const people = [
+  {
+    room: "8",
+    name: {
+      f: "Степанов",
+      i: "Борис",
+      o: "Иванович"
+    },
+    date: {
+      d: 17,
+      m: 6,
+      y: 1996
+    },
+    number: ["89057999079"]
+  },
+  {
+    room: "3",
+    name: {
+      f: "Смирнов",
+      i: "Сергей",
+      o: "Борисович"
+    },
+    date: {
+      d: 22,
+      m: 9,
+      y: 1994
+    },
+    number: ["89097622050"]
+  },
+  {
+    room: "1",
+    name: {
+      f: "Архипов",
+      i: "Иван",
+      o: "Сергеевич"
+    },
+    date: {
+      d: 24,
+      m: 7,
+      y: 1993
+    },
+    number: ["89056664737"]
+  },
+  {
+    room: "2",
+    name: {
+      f: "Горшков",
+      i: "Кирилл",
+      o: "Петрович"
+    },
+    date: {
+      d: 25,
+      m: 6,
+      y: 1995
+    },
+    number: ["89137782447"]
+  },
+]
+```
+Создаём функцию с пустым массивом, с помощью цикла и метода **push** выводим нужные ключи и объекты, сортируем таблицу по **room**.
+```
+    function rooms() {
+      let rooms = [];
+      for(let i=0; i<people.length; i++){
+        rooms.push(
+          [people[i]["room"], `${people[i]["name"]["f"]} ${people[i]["name"]["i"]} ${people[i]["name"]["o"]}` ]
+        )
+        }
+        return rooms.sort((a, b) => +a[0]-b[0] )
+    }
+```
+Выводим комнаты и фио в таблицу, через цикл **for** внутри которого функция.
+```
+    document.querySelector('body').innerHTML = `<table></table>`
+    let title_rooms = document.createElement('tr')
+    title_rooms.innerHTML = `
+        <th>Комната</th>
+        <th>ФИО</th>`
+        document.querySelector('table').append(title_rooms)
+        for(let i=0; i<rooms().length; i++) {
+          let row = document.createElement('tr')
+          row.innerHTML = `
+<td>${rooms()[i][0]}</td>
+<td>${rooms()[i][1]}</td>
+          `
+          document.querySelector('table').append(row)
+        } 
+```
+
+## Урок 60. Вывод карточек людей.
+
+#### ex28.
