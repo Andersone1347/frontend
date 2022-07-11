@@ -1282,3 +1282,153 @@ css
 }
 ```
 Создаём функцию **myTimer** c параметром **seconds**, запишем в неё переменные **startDate** и **endDate** и обозначим их **new Date**, endDate изменим с помощью метода **setSeconds(endDate.getSeconds() + seconds)**. Далее создаём переменную **leftTime** которая будет обозначать (**endDate** - **startDate**) и **interval** это будет функция в которой будет выполняться таймер раз в секунду, и ещё переменные для процентного соотношения и выводим.
+```
+     function myTimer(seconds) {
+      let startDate = new Date()
+      let endDate = new Date()
+      endDate = endDate.setSeconds(endDate.getSeconds() + seconds)
+      let interval = setInterval(() => {
+        let currentDate = new Date()
+        let leftPercent = Math.trunc((endDate - currentDate) / (endDate -startDate) * 100)
+        let passedPercent = +(100 - leftPercent)
+
+        document.querySelector('.timer-progressbar__fill').textContent = passedPercent + '%'
+        document.querySelector('.timer-progressbar__fill').style.width = passedPercent + '%'
+        document.querySelector('.timer-progressbar__empty').textContent = leftPercent + '%'
+        document.querySelector('.timer-progressbar__empty').style.width = leftPercent + '%'
+
+        if(leftPercent == 0) {
+          clearInterval(interval)
+          document.querySelector('.timer-progressbar__empty').style.display = 'none'
+        }
+      console.log(1)
+      }, 1000)
+     }
+     myTimer(9)
+```
+
+## Урок 63. Генератор имен.
+
+#### ex31.
+
+Есть два больших массива.
+```
+let words1 = ["Непобедимый", "Визжащий", "Реальный", "Скоростной", "Экцентричный", "Кодовый", "Прожорливый", "Догадливый", "Гениальный", "Разрушительный", "Растерянный", "Торопливый", "Вопрошающий", "Космический", "Динамичный", "Паникующий", "Задумчивый", "Загадочный", "Рекордный", "Непонимающий", "Ультрафиолетовый", "Читающий", "Озорной", "Тормозной", "Волшебный", "Хардовый", "Тычущий", "Внимательный", "Криповый",];
+let words2 = ["Мозг", "Везунчик", "Повелитель", "Красавчик", "Печенька", "Тормоз", "Динозавр", "Индеец", "Экстрасенс", "Цыпленок", "Решала", "Ураган", "Взломщик", "Эрудит", "Сыщик", "Крушитель", "Паникер", "Шутник", "Обуза", "Капитан", "Ботаник", "Гриб", "Зомби", "Котик", "Ведьмак", "Храбрец", "Мастер", "Король",];
+```
+Задача сделать случайное склеивание строк разный массивов.     
+Создаём функцию с двумя циклами **for**, и для начала просто выведем всё возможные варианты словосочетаний.
+```
+    function allRandomNames(arr1, arr2) {
+      let result = []
+      for(let i=0; i < arr1.length; i++) {
+        for(let j=0; j < arr2.length; j++) {
+          result.push(`${arr1[i]} ${arr2[j]}`)
+      }
+    }
+    return result
+  }
+  let allNames = allRandomNames(words1, words2)
+
+  for(let i=0; i<allNames.length; i++) {
+    let item = document.createElement('div')
+    item.classList.add('menu_link')
+    item.textContent = allNames[i]
+    document.body.append(item)
+  }
+```
+С помощью **setInterval()** и **Math.random()** генерируем случайные существительные и прилагательные каждые две секунды.
+```
+    function allRandomNames(arr1, arr2) {
+      let result = []
+      for(let i=0; i < arr1.length; i++) {
+        for(let j=0; j < arr2.length; j++) {
+          result.push(`${arr1[i]} ${arr2[j]}`)
+      }
+    }
+    return result
+  }
+  let allNames = allRandomNames(words1, words2)
+
+
+    let item = document.createElement('div')
+    item.classList.add('menu_link')
+
+    setInterval(()=>{
+      item.textContent = allNames[Math.floor(Math.random() * allNames.length)]
+      document.body.append(item)
+  }, 2000)
+```
+## Урок 64. Локальное хранилище (localStorage).
+
+#### ex32.
+
+Заходи в инструменты разработчика(f12), выбераем Приложение=>Локальное хранилище и наблюдаем там ключи и объекты. Для того что бы что-то записать туда так и обращаемся:
+```
+localStorage.setItem('key1', 546)
+localStorage.setItem('key2', "54dsdasd6")
+localStorage.setItem('key3', false) 
+``` 
+Попробуем же получить от туда данные в консоль.
+```
+console.log(localStorage.getItem('key2'))//54dsdasd6
+```
+ Получаем ключ по индексу.
+ ```
+console.log(localStorage.key(0)//key2
+ ```
+ Проверим число элементов в локальном хранилище.
+ ```
+console.log(localStorage.length//3
+ ```
+ По локальному хранилищу можно пройти как по массиву с помощью цикла **for** и выведем в консоль.
+ ```
+for(let i=0; i<localStorage.length; i++) {
+  let key = localStorage.key(i)
+  console.log(`${key}: ${localStorage.getItem(key)}`)
+}
+ ```
+ C помощью **for..in** и отфильтруем поля с помощью проверки hasOwnProperty(key).
+```
+for(let key in localStorage) {
+  if(!localStorage.hasOwnProperty(key)) {
+    continue;
+  }
+  console.log(`${key}: ${localStorage.getItem(key)}`)//
+ key2: 54dsdasd6
+ key3: false
+ key1: 546
+}
+```
+И получим ключи с помощью цикла for..of
+```
+for(let key of Object.keys(localStorage)) {
+  console.log(`${key}: ${localStorage.getItem(key)}`)
+}\\
+ key2: 54dsdasd6
+ key3: false
+ key1: 546
+```
+
+# 06 Обработка события на JavaScript
+
+## Урок 62. Обработчик событий.
+
+#### ex1.
+
+События мыши:
+* click - при нажатии левой кнопкой мыши (на сенсорных при касании).
+* contextmenu - при нажатии правой кнопкой мыши.
+* mouseover / mouseout - когда мышь наводиться / покидает элемент.
+* mousedown / mouseup - когда нажали / отжали кнопку мыши.
+* mousemove - при движении мыши.
+
+События на элементах управления: 
+* submit - пользователь отправил форму.
+* focus - пользователь фокусируеться на элементе.
+
+Клавиатурные события:
+* keydown / keyup - когда пользователь нажимает / отпускает клавишу.
+
+События документа:
+* DOMContentLoaded - когда HTML загружен и обработан, DOM документа полностью построен и доступен.

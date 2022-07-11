@@ -30,6 +30,7 @@
 }
 .timer-progresbar {
   display: flex;
+  width: 666px;
 }
 .timer-progresbar > div {
   padding: 5px;
