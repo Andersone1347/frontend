@@ -1464,3 +1464,235 @@ document.querySelector('.btn').addEventListener ('click', addText3)
 ## Урок 66. Скрыть_Показать элемент.
 
 #### ex5.
+
+C помощью console.log(event) можем посмотреть все события которые могут быть.    
+Например:
+```
+      document.querySelector('.btn').onclick = function(event) {
+        console.log(event.type)
+      }// после нажатия на кнопку консоль выведет // click
+```
+* event.currentTarget или this - получаем тот элемент на котором произошло событие.
+* event.clientX и event.clientY - кординаты курсора нажатые на кнопке.//21 //23.
+
+#### ex6.
+
+Сделаем так что бы тег p скрывался при нажати на кнопку.
+body
+```
+  <button class="btn">Кнопка</button>
+  <p>Lorem ipsum dolor sit amet consectetur.</p>
+
+```
+script
+```
+  <script>
+document.querySelector('.btn').onclick = function() {
+  document.querySelector('p').hidden = !document.querySelector('p').hidden
+}
+  </script>
+```
+
+#### ex7.
+
+Имеються три карточки, задача сделать на них крестик и что бы по нажатию они закрывались.
+body
+```
+  <div class="item">
+    <div class="item-title">
+      <h3>Петр Иванович</h3>
+    </div>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae aspernatur minima eos, fuga molestiae delectus.</p>
+  </div>
+  <div class="item">
+    <div class="item-title">
+      <h3>Кирил Сергеевич</h3>
+    </div>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae aspernatur minima eos, fuga molestiae delectus.</p>
+  </div>
+  <div class="item">
+    <div class="item-title">
+      <h3>Андрей Петрович</h3>
+    </div>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae aspernatur minima eos, fuga molestiae delectus.</p>
+  </div>
+```
+css
+```
+.item {
+  background-color: #c8c8c8;
+  margin-bottom: 10px;
+  padding: 15px;
+  font-size: 18px;
+  border-radius: 10px;
+}
+.item-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.close {
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
+  border: 2px solid black;
+  font-weight: bold;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.close:hover {
+  background-color: #000;
+  color: #fff;
+}
+```
+Используем метод **insertAdjacentHTML** для того что бы вставить HTML-тег.
+script
+```
+let items = document.querySelectorAll('.item')
+
+for(let item of items) {
+  item.querySelector('.item-title').insertAdjacentHTML("beforeend", '<button class="close">&times;</button>')
+}
+```
+И **item.remove()** что бы удалить.
+```
+let items = document.querySelectorAll('.item')
+
+for(let item of items) {
+  item.querySelector('.item-title').insertAdjacentHTML("beforeend", '<button class="close">&times;</button>')
+  item.querySelector('.close').onclick = () => item.remove()
+} 
+```
+
+## Урок 67. Простой слайдер.
+
+#### ex8.
+body
+```
+  <h4>Простой слайдер</h4>
+  <div class="slider">
+    <div class="slider__image">
+      <img src="../img/1.jpg">
+    </div>
+    <div class="slider__breadcrumbs">
+      <button class="slider__item active">1</button>
+      <button class="slider__item">2</button>
+      <button class="slider__item">3</button>
+      <button class="slider__item">4</button>
+      <button class="slider__item">5</button>
+      <button class="slider__item">6</button>
+      <button class="slider__item">7</button>
+    </div>
+  </div>
+```
+Для начала создадим функцию которая которая будет отображать нажатие на каждую кнопку в консоль.
+```
+    let btns = document.querySelectorAll('.slider__item')
+    for(let btn of btns) {
+      btn.onclick = function() {
+        console.log(this.innerHTML)
+      }
+    }
+```
+С помощью setAttribute меняем пути картинок.
+```
+    let btns = document.querySelectorAll('.slider__item')
+    for(let btn of btns) {
+      btn.onclick = function() {
+        document.querySelector('.slider__breadcrumbs .active').classList.remove('active')
+        this.classList.add('active')
+        document.querySelector('.slider__image img').setAttribute('src',`../img/${this.innerHTML}.jpg`)
+      }
+    }
+```
+## Урок 68. Тёмная тема.
+
+#### ex9.
+
+Делаем переключение светлой на тёмную тему используя **localstorage** и событие change.     
+Событие change происходит по окончании изменения значения элемента формы, когда это изменение зафиксировано.
+
+Для текстовых элементов это означает, что событие произойдёт не при каждом вводе, а при потере фокуса.
+
+Например, пока вы набираете что-то в текстовом поле ниже – события нет. Но как только вы уведёте фокус на другой элемент, например, нажмёте кнопку – произойдёт событие onchange.
+css-dark
+```
+body {
+  font-family: 'Calibri';
+  font-size: 20px;
+  background-color: rgb(9, 16, 22);
+  color: #ddd;
+}
+h4 {
+  font-size: 40px;
+}
+.container {
+  width: 500px;
+  margin: 0 auto;
+}
+```
+
+css-light
+```
+body {
+  font-family: 'Calibri';
+  font-size: 20px;
+  background-color: rgb(184, 226, 219);
+}
+h4 {
+  font-size: 40px;
+}
+.container {
+  width: 500px;
+  margin: 0 auto;
+}
+```
+
+body
+```
+  <div class="container">
+    <h4>Тёмная тема</h4>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aperiam sint cupiditate earum eligendi odit vero,
+      repellat architecto eius atque accusantium consequuntur optio velit illum necessitatibus sunt assumenda ipsam enim
+      amet.</p>
+    <label for="">
+      Включить тёмную тему?
+      <input type="checkbox" class="theme-checkbox">
+    </label>
+  </div>
+
+```
+Сохраняем данные в localStorage с помощью условия.
+```
+    if(localStorage.getItem('theme') == "true") {
+      theme.setAttribute('href', '../css/dark.css')
+      checkbox.checked = true
+    }
+```
+Теперь данные храняться в локальном хранилище.
+```
+    let checkbox = document.querySelector('.theme-checkbox')
+
+    if(localStorage.getItem('theme') == "true") {
+      theme.setAttribute('href', '../css/dark.css')
+      checkbox.checked = true
+    }
+
+checkbox.onchange = function() {
+  if(this.checked) {
+    localStorage.setItem('theme', true)
+    theme.setAttribute('href', '../css/dark.css')
+  } else {
+    localStorage.setItem('theme', false)
+    theme.setAttribute('href', '../css/light.css')
+  }
+}
+```
+
+## 69 Урок. Не jQuery.
+
+#### ex10.
