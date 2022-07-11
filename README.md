@@ -1199,3 +1199,24 @@ const people = [
 ## Урок 60. Вывод карточек людей.
 
 #### ex28.
+Задача вывести карточки людей с их информацией. Создаём цикл, карточки будут храниться в **div** с классом **item**. С помощью **innerHTML** выводим их, и возводим в функцию.
+```
+    function createCards(selector, array){
+    for(let i=0; i< array.length; i++) {
+      let item = document.createElement('div')
+      item.classList.add('item')
+      item.innerHTML = `
+      ФИО: ${array[i]["name"]["f"]} ${array[i]["name"]["i"]} ${array[i]["name"]["o"]}<br>
+      Номер телефона: ${array[i]["number"].join(', ')}<br>
+      День рождения: ${array[i]["date"]["d"]} ${month[+array[i]["date"]["m"]]} ${array[i]["date"]["y"]}<br>
+      Комната: ${array[i]["room"]}
+      `
+      document.querySelector('.items').append(item)
+    }
+  }
+  createCards('.items', people)
+```
+
+## Урок 61. Карточки с днями рождения.
+
+#### ex29.
