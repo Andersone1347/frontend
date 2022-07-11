@@ -1199,7 +1199,7 @@ const people = [
 ## Урок 60. Вывод карточек людей.
 
 #### ex28.
-Задача вывести карточки людей с их информацией. Создаём цикл, карточки будут храниться в **div** с классом **item**. С помощью **innerHTML** выводим их, и возводим в функцию.
+Задача вывести карточки людей с их информацией массива **people**. Создаём цикл, карточки будут храниться в **div** с классом **item**. С помощью **innerHTML** выводим их, и возводим в функцию.
 ```
     function createCards(selector, array){
     for(let i=0; i< array.length; i++) {
@@ -1220,3 +1220,65 @@ const people = [
 ## Урок 61. Карточки с днями рождения.
 
 #### ex29.
+Задача создать карточки с месяцами в которых будут содержаться люди у кого день рождение в этом месяце массива **people**.
+
+Создаём цикл **forEach** в теле создаём переменные fio в которой будет имя, фамилия, отчество и date с проверкой, если нет даты то выводим пустую строку.
+```
+ people.forEach(function(item) {
+  let fio = `${item["name"]["f"]} ${item["name"]["i"]} ${item["name"]["o"]}`
+  let date = item["date"] ? `${item["date"]["d"]} ${month[+item["date"]["m"]]} ${item["date"]["y"]}` : ``
+  
+ });
+```
+Далее создаём переменную с тегом **p**, установим ему **innerHTML** и выведем **fio** и **date**. Потом с помощью цикла **for** создадим карточки с месяцами, добавим проверку если месяц будет совпадать с индексом в цикле то добавляем карточку. и если карточка уже существует то не надо добавлять. И выводим в ** div**.
+```
+people.forEach(function(item) {
+  let fio = `${item["name"]["f"]} ${item["name"]["i"]} ${item["name"]["o"]}`
+  let date = item["date"] ? `${item["date"]["d"]} ${month[+item["date"]["m"]]} ${item["date"]["y"]}` : ``
+  
+ let element = document.createElement('p')
+ element.innerHTML = fio +" "+ date
+ for(let i=1; i<=12; i++) {
+  if(item["date"]["m"] == i) {
+    if(document.querySelector(`.items > div .item${i}`) == null ) {
+      let div = document.createElement('div')
+      div.classList.add('item')
+      div.innerHTML = `
+      <h4>${monthIp[i]}</h4>
+      <div class="item${i}"></div>
+      `
+      document.querySelector('.items').append(div)
+    }
+    document.querySelector(`.items > div .item${i}`).append(element)
+  }
+ }
+ })
+```
+
+## Урок 62. Таймер с прогрессбаром.
+
+#### ex30.
+
+body
+```
+  <div class="timer-progresbar">
+    <div class="timer-progressbar__fill"></div>
+    <div class="timer-progressbar__empty"></div>
+  </div>
+```
+css
+```
+.timer-progresbar {
+  display: flex;
+}
+.timer-progresbar > div {
+  padding: 5px;
+}
+.timer-progressbar__fill {
+  background-color: springgreen;
+}
+.timer-progressbar__empty {
+  background-color: tomato;
+}
+```
+Создаём функцию **myTimer** c параметром **seconds**, запишем в неё переменные **startDate** и **endDate** и обозначим их **new Date**, endDate изменим с помощью метода **setSeconds(endDate.getSeconds() + seconds)**. Далее создаём переменную **leftTime** которая будет обозначать (**endDate** - **startDate**) и **interval** это будет функция в которой будет выполняться таймер раз в секунду, и ещё переменные для процентного соотношения и выводим.
