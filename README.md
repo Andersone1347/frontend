@@ -1434,3 +1434,33 @@ for(let key of Object.keys(localStorage)) {
 * DOMContentLoaded - когда HTML загружен и обработан, DOM документа полностью построен и доступен.
 
 #### ex2. 
+
+#### ex3.
+
+#### ex4.
+Повесим сразу несколько обработчиков на одно событие.
+
+body
+```
+  <button class="btn">Кнопка</button>
+```
+script
+```
+function addText1() {
+  alert('Первый текст')
+}
+function addText2() {
+  alert('2 текст')
+}
+function addText3() {
+  alert('3 текст')
+}
+
+document.querySelector('.btn').onclick = addText1
+document.querySelector('.btn').addEventListener ('click', addText2)
+document.querySelector('.btn').addEventListener ('click', addText3)
+```
+
+## Урок 66. Скрыть_Показать элемент.
+
+#### ex5.
