@@ -1696,3 +1696,27 @@ checkbox.onchange = function() {
 ## 69 Урок. Не jQuery.
 
 #### ex10.
+
+Есть такой body:
+```
+  <div class="block">Text</div>
+
+  <input type="text" placeholder="Text">
+  <input type="text" placeholder="Text">
+  <input type="text" placeholder="Text">
+
+```
+Постараемся облегчить работу с помощью классов. Вместо:
+```
+document.querySelector('.block').innerHTML = "Новый текст"
+```
+Выводим через класс.
+```
+    class $ {
+      constructor(selector, where = document) {
+        this.self = where.querySelector(selector)
+      }
+    }
+
+    new $('.block').self.innerHTML = "Новый текст"
+```

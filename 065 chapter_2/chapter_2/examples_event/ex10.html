@@ -21,7 +21,14 @@
   <input type="text" placeholder="Text">
 
   <script>
-    
+    class $ {
+      constructor(selector, where = document) {
+        this.self = where.querySelector(selector)
+      }
+    }
+
+    new $('.block').self.innerHTML = "Новый текст"
+   
   </script>
 </body>
 
