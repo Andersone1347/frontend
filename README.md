@@ -1909,3 +1909,160 @@ function hover(td) {
 ## Урок 71. Счётчик.
 
 ### ex14.
+body
+```
+  <input type="button" value="1" data-counter>
+  <input type="button" value="3" data-counter>
+  <input type="button" value="8" data-counter>
+  <input type="button" value="4">
+```
+Благодаря условию проверяем элемент **data-counter**, и при клике плюсуем **value**.
+```
+document.addEventListener('click', function(e){
+  if(e.target.dataset.counter != undefined) {
+    e.target.value++
+  }
+})
+```
+
+## Урок 72. Переключатель.
+
+### ex15.
+
+Создадим кнопки с открытием и закрытием форм.
+**body**
+```
+  <button data-toggle-id="email">
+    Показать/Скрыть Email
+  </button>
+
+  <form id="email" hidden>
+    Email: <input type="email">
+  </form>
+
+  <button data-toggle-id="password">
+    Показать/Скрыть Password
+  </button>
+
+  <form id="password" hidden>
+    Пароль: <input type="password">
+  </form>
+
+```
+```
+document.addEventListener('click', function(e){
+  let id = e.target.dataset.toggleId
+  if(!id) return
+  let elem = document.getElementById(id)
+  elem.hidden = ! elem.hidden
+})
+```
+
+## Урок 73. Удаление карточек.
+
+### ex16.
+Задача, сделать так что бы карточки удалялись при нажатии на кнопку с класом **close** c помощью делегирования.
+body
+```
+<div class="item">
+    <div class="item-title">
+      <h3>Петр Иванович</h3>
+      <button class="close">&times;</button>
+    </div>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae aspernatur minima eos, fuga molestiae delectus.</p>
+  </div>
+  <div class="item">
+    <div class="item-title">
+      <h3>Кирил Сергеевич</h3>
+      <button class="close">&times;</button>
+    </div>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae aspernatur minima eos, fuga molestiae delectus.</p>
+  </div>
+  <div class="item">
+    <div class="item-title">
+      <h3>Андрей Петрович</h3>
+      <button class="close">&times;</button>
+    </div>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae aspernatur minima eos, fuga molestiae delectus.</p>
+  </div>
+```
+```
+ document.querySelector('body').onclick = function(e) {
+  if(e.target.className != 'close') return
+  let item = e.target.closest('.item')
+  item.remove()
+ }
+```
+
+## Урок 74. Разворачиваемые подменю.
+
+### ex17.
+Задача сделать так чтобы **li** сворачивались в **ul**. Скрипт из прошлых занятий.   
+ Cвойство **nextSibling** объекта Node возвращает дочерний узел следующий за указанным узлом внутри родительского элемента, или **null**, если указанный узел является последним дочерним узлом в родительском элементе, а parentNode возвращает родителя определённого элемента DOM дерева.
+ ```
+  <script>
+    let data = {
+      "Овощи": {
+        "огурцы": 5,
+        "помидоры": 3
+      },
+      "Фрукты": {
+        "красные": {
+          "клубника": 2,
+          "малина": 4
+        },
+        "зеленые": {
+          "яблоко": 6,
+          "лайм": 2
+        }
+      }
+    }
+
+    function createTree(container, obj) {
+      document.querySelector(container).append(createUl(obj))
+    }
+
+    function createUl(obj) {
+      if(!Object.keys(obj).length) return
+      let ul = document.createElement('ul')
+      for(let key in obj) {
+        let li = document.createElement('li')
+
+        if(!isNaN(obj[key]))
+          li.textContent = key + ` ${obj[key]}`
+        else
+          li.textContent = key
+
+        let childrenUl = createUl(obj[key])
+        if(childrenUl) {
+          li.append(childrenUl)
+        }
+        ul.append(li)
+      }
+      return ul
+    }
+
+    createTree('body', data);
+    
+  </script>
+ ```
+ При клике сворачиваем **li** в **span**.
+ ```
+    let ul = document.querySelector('ul')
+    for(let li of ul.querySelectorAll('li')) {
+      let span = document.createElement('span')
+      li.prepend(span)
+      span.append(span.nextSibling)
+    }
+
+    ul.onclick = function (event) {
+      if(event.target.tagName != 'SPAN') return
+      let childrenContainer = event.target.parentNode.querySelector('ul')
+      if(!childrenContainer) return
+      childrenContainer.hidden = !childrenContainer.hidden
+    }
+ ```
+
+ ## Урок 75. Сортировка таблицы.
+
+### ex18.
