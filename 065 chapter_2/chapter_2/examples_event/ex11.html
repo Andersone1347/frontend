@@ -25,7 +25,13 @@
   </div>
 
   <script>
-    
+    document.querySelector('.stop').addEventListener("click", function(e) {
+      console.log(this)
+      console.log(e.target)
+    })
+    document.querySelector('.stop').addEventListener("click", function(e) {
+      e.stopPropagation()
+    })
   </script>
 </body>
 

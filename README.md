@@ -1720,3 +1720,120 @@ document.querySelector('.block').innerHTML = "Новый текст"
 
     new $('.block').self.innerHTML = "Новый текст"
 ```
+callback — функция, которая будет вызвана по завершению асинхронного действия, сменим размер шрифта в инпутах.
+```
+    class $ {
+      constructor(selector, where = document) {
+        this.self = where.querySelector(selector)
+        this.elems = where.querySelectorAll(selector)
+      }
+    each(callback) {
+      for(let elem of this.elems) {
+        callback(elem)
+      }
+    }
+  }
+    new $('.block').self.innerHTML = "Новый текст"
+    new $('input').each(function(e) {
+      e.style.fontSize = '20px'
+    })
+```
+В конструкторе параметр **where = document** используем его.
+```
+new $('p', new $('div').self)
+```
+Сделаем событие, что бы по клику див менял класс.
+```
+    on(event, callback) {
+      for(let elem of this.elems) {
+        elem.addEventListener(event, callback)
+      }
+    }
+    new $('div').on('click', function() {
+      this.classList.toggle('bgc')
+    })
+```
+Для инпутов так же сделаем переключение стилей.
+```
+    on(event, callback) {
+      for(let elem of this.elems) {
+        elem.addEventListener(event, callback)
+      }
+    }
+  }
+      new $('input').on('focus',function() {
+      this.style.backgroundColor = 'tomato'
+    })
+    new $('input').on('blur',function() {
+      this.style.backgroundColor = ''
+    })
+```
+С помощью **return this** упростим выражение.
+```
+    on(event, callback) {
+      for(let elem of this.elems) {
+        elem.addEventListener(event, callback)
+      }
+   return this
+    }
+  }
+      new $('input').on('focus',function() {
+      this.style.backgroundColor = 'tomato'
+    }).on('blur',function() {
+      this.style.backgroundColor = ''
+    })
+```
+Для сравнения через циклы и переменные записали бы так:
+```
+    let elems = document.querySelectorAll('input')
+    for(let item of elems) {
+    item.addEventListener('focus', function() {
+      this.style.backgroundColor = 'tomato'
+    })
+    item.addEventListener('blur', function() {
+      this.style.backgroundColor = ''
+    })
+  }
+```
+
+## Урок 70. Фазы события и делегирование.
+
+### ex11.
+**body**
+```
+  <div class="alert" onclick="alert('Клик')">
+    <p>Lorem ipsum <span style="background-color: green; color: black; padding: 3px;">dolor sit</span> amet.</p>
+  </div>
+  
+  <div onclick="alert('DIV 1')" style="border: 2px solid tomato; padding: 10px" class="block">
+    DIV 1
+    <div onclick="alert('DIV 2')" style="border: 2px solid tomato; padding: 10px">
+      DIV 2
+      <div onclick="alert('DIV 3')" style="border: 2px solid tomato; padding: 10px" class="stop">
+        DIV 3
+      </div>
+    </div>
+  </div>
+```
+
+Клик по внутреннему <DIV 3> вызовет обработчик onclick:
+
+* Сначала на самом <DIV 3>.     
+* Потом на внешнем <DIV 2>.    
+* Затем на внешнем <DIV 1>.     
+И так далее вверх по цепочке до самого **document**.
+
+Поэтому если кликнуть на <DIV 3>, то мы увидим три оповещения: DIV 3 → DIV 2 → DIV 1.
+
+Этот процесс называется «всплытием», потому что события «всплывают» от внутреннего элемента вверх через родителей подобно тому, как всплывает пузырёк воздуха в воде.   
+Метод **event.stopPropagation()** препятствует продвижению события дальше.
+```
+    document.querySelector('.stop').addEventListener("click", function(e) {
+      console.log(this)
+      console.log(e.target)
+    })
+    document.querySelector('.stop').addEventListener("click", function(e) {
+      e.stopPropagation()
+    })
+```
+### ex12.
