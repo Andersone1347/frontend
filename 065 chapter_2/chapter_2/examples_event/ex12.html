@@ -21,7 +21,11 @@
   </form>
 
   <script>
-
+for(let elem of document.querySelectorAll('*')) {
+  elem.addEventListener('click', function(e) {
+    console.log(elem.tagName + " - Фаза " + e.eventPhase)
+  }, true)
+}
   </script>
 </body>
 

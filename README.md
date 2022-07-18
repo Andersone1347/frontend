@@ -1837,3 +1837,75 @@ new $('p', new $('div').self)
     })
 ```
 ### ex12.
+**body**
+```
+  <form style="border: 2px solid tomato; padding: 10px" class="block">
+    FORM
+    <div style="border: 2px solid tomato; padding: 10px">
+      DIV
+      <p style="border: 2px solid tomato; padding: 10px" class="stop">
+        P
+      </p>
+    </div>
+  </form>
+```
+Свойство **tagName** содержит имя тега в верхнем регистре (большими буквами),**eventPhase** – метод на какой фазе он сработал. 
+Нажмём на тег **p**.
+```
+for(let elem of document.querySelectorAll('*')) {
+  elem.addEventListener('click', function(e) {
+    console.log(elem.tagName + " - Фаза " + e.eventPhase)
+  }, true)
+} 
+  // HTML - Фаза 1
+     BODY - Фаза 1
+     FORM - Фаза 1
+     DIV - Фаза 1
+     P - Фаза 2
+```
+### ex13.
+задача, что бы при клике менялся цвет.
+```
+  <table id="table">
+    <tr>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>6</td>
+      <td>7</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>10</td>
+      <td>11</td>
+      <td>12</td>
+    </tr>
+  </table>
+```
+Смысл в том что это событие добавили в **table** и сколько бы туда **td** не вставили все будут работать. Свойство **target** интерфейса **Event** является ссылкой на объект, который был инициатором события. Он отличается от **Event.currentTarget**, если обработчик события вызывается во время всплытия **(bubbling)** или захвата события.
+```
+let currentTd
+table.onclick = function (e) {
+  let td = e.target.closest('td')
+  if(!td) return
+  if(!table.contains(td)) return
+  hover(td)
+}
+
+function hover(td) {
+  if(currentTd) {
+    currentTd.classList.remove('bgc')
+  }
+  currentTd = td
+  currentTd.classList.add('bgc')
+}
+```
+
+## Урок 71. Счётчик.
+
+### ex14.
