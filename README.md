@@ -2066,3 +2066,124 @@ body
  ## Урок 75. Сортировка таблицы.
 
 ### ex18.
+Сделаем по клику сортировку в таблице по **th**, по возрастанию числа и алфавитному порядку.
+**body**
+```
+<table id="table">
+    <thead>
+      <tr>
+        <th data-type="string">Имя</th>
+        <th data-type="number">Возраст</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Павел</td>
+        <td>19</td>
+      </tr>
+      <tr>
+        <td>Александр</td>
+        <td>22</td>
+      </tr>
+      <tr>
+        <td>Иван</td>
+        <td>15</td>
+      </tr>
+      <tr>
+        <td>Евгений</td>
+        <td>18</td>
+      </tr>
+      <tr>
+        <td>Мария</td>
+        <td>20</td>
+      </tr>
+    </tbody>
+  </table>
+```
+```
+    table.onclick = function(e) {
+      if(e.target.tagName != 'TH') return
+      let th = e.target
+      sortTable(th.cellIndex, th.dataset.type)
+    }
+
+    function sortTable(colNum, type) {
+      let tbody = table.querySelector('tbody')
+      let rowsArray = Array.from(tbody.rows)
+      let compare;
+      switch(type) {
+        case 'number':
+          compare = function(rowA, rowB) {
+            return rowA.cells[colNum].innerHTML - rowB.cells[colNum].innerHTML
+          }
+          break;
+      case 'string':
+        compare = function(rowA, rowB) {
+          return rowA.cells[colNum].innerHTML > rowB.cells[colNum].innerHTML ? 1 : -1
+        }
+       break;  
+      }
+      rowsArray.sort(compare)
+      tbody.append(...rowsArray)
+    }
+```
+
+ ## Урок 76. Всплывающая подсказка.
+
+### ex19.
+Всплывающие окна на кнопках.
+**body**
+```
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores beatae veniam voluptates hic! Dolorum doloremque modi suscipit harum magni, debitis sed facere, rerum magnam dolor pariatur, distinctio voluptatem rem animi.</p>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores beatae veniam voluptates hic! Dolorum doloremque modi suscipit harum magni, debitis sed facere, rerum magnam dolor pariatur, distinctio voluptatem rem animi.</p>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores beatae veniam voluptates hic! Dolorum doloremque modi suscipit harum magni, debitis sed facere, rerum magnam dolor pariatur, distinctio voluptatem rem animi.</p>
+  
+  <button data-tooltip="длинный текст с подсказкой">Кнопка 1</button>
+  <button data-tooltip="Подсказка с<br> HTML тегами">Кнопка 2</button>
+```
+**css**
+```
+.tooltip {
+  position: fixed;
+  padding: 15px;
+  border: 2px dashed #b3c9ce;
+  border-radius: 4px;
+  text-align: center;
+  color: #333;
+  background: #fff;
+}
+```
+```
+    let tooltioElem;
+    document.onmouseover = function(e) {
+      let target = e.target
+      let tooltipHtml = target.dataset.tooltip
+      if(!tooltipHtml) return
+      tooltioElem = document.createElement('div')
+      tooltioElem.className = "tooltip"
+      tooltioElem.innerHTML = tooltipHtml
+      document.body.append(tooltioElem)
+
+      let coords = target.getBoundingClientRect()
+      let left = coords.left + (target.offsetWidth - tooltioElem.offsetWidth) / 2
+      if(left < 0) left = 5
+
+      let top = coords.top - tooltioElem.offsetHeight - 5
+      if(top < 0) top = coords.top + target.offsetHeight + 5
+
+      tooltioElem.style.left = left + 'px'
+      tooltioElem.style.top = top + 'px'
+    }
+
+    document.onmouseout = function(e) {
+      if(tooltioElem){
+        tooltioElem.remove()
+        tooltioElem = null
+      }
+    }
+```
+Урок 77 Отмена стандартного поведения
+
+ ## Урок 77. Отмена стандартного поведения.
+
+### ex20.
