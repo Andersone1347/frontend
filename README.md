@@ -2515,7 +2515,7 @@ body
     console.log(selected)
     </script>
 ```
-Создадим новый option.
+Создадим новый **option**.
 ```
   <script>
     let form = document.forms[0]
@@ -2530,3 +2530,38 @@ body
 ## Урок 83. Фокус и потеря фокуса.
 
 ### ex31.
+
+Есть два инпута, задача сделать так если в первом инпуте не будет **@** то выводить ошибку и навешивать класс с красным бэкграундом, и нельзя перейти на другой инпут.
+```
+<body>
+
+  <form id="form">
+    <input name="mail" type="email">
+    <input type="text">
+  </form>
+  <div id="error"></div>
+
+  <script>
+    let input = document.forms[0].mail
+    input.onblur = function() {
+      if(!input.value.includes('@')) {
+    input.classList.add('invalid')
+    error.innerHTML = "Пожалуйста, введите правильный email."
+    input.focus()
+  }
+
+}
+  </script>
+```
+При активации фокуса срабатывает смена класса.
+```
+  <script>
+    let input = document.forms[0].mail
+    form.addEventListener('focus', ()=> form.classList.add('bgc'), true)
+    form.addEventListener('blur', ()=> form.classList.remove('bgc'), true)
+  </script>
+```
+
+## Урок 84. Перемещение по стрелкам.
+
+### ex32.

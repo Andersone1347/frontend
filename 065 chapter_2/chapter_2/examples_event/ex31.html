@@ -18,12 +18,8 @@
 
   <script>
     let input = document.forms[0].mail
-    input
-    input.classList.add('invalid')
-    error.innerHTML = "Пожалуйста, введите правильный email."
-  }
-  i
-}
+    form.addEventListener('focus', ()=> form.classList.add('bgc'), true)
+    form.addEventListener('blur', ()=> form.classList.remove('bgc'), true)
   </script>
 </body>
 
