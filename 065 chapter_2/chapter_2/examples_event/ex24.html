@@ -9,9 +9,14 @@
 </head>
 
 <body>
-  <div>Двойной клик выделит текст</в>
+  <div>Двойной клик выделит текст</div>
     <script>
-      
+       document.querySelector('div').ondblclick = function(e) {
+        console.log("Двойной клик")
+       }
+       document.querySelector('div').onmousedown = function(e) {
+        e.preventDefault()
+       }
     </script>
 </body>
 

@@ -2187,3 +2187,239 @@ body
  ## Урок 77. Отмена стандартного поведения.
 
 ### ex20.
+body
+```
+  <a class="menu_link" href="/index.html" onclick="return false">На главную</a>
+  <a class="menu_link" href="/index.html" onclick="event.preventDefault()">На главную</a>
+  <a class="menu_link" href="/index.html" id="link">На главную</a>
+
+  <p>Lorem ipsum dolor sit amet.</p>
+  <button class="menu_link" id="elem">Кнопка</button>
+```
+При нажатие правой кнопкой мыши на кнопку, отменям контекстное меню.
+```
+ link.onclick = function(e) {
+  return false
+ }
+
+ elem.oncontextmenu = function(e) {
+  e.preventDefault()
+  alert("Контекстное меню кнопки")
+ }
+```
+Метод **preventDefault()** интерфейса **Event** сообщает **User agent**, что если событие не обрабатывается явно, его действие по умолчанию не должно выполняться так, как обычно. Событие продолжает распространяться как обычно, до тех пор, пока один из его обработчиков не вызывает методы **stopPropagation()** или **stopImmediatePropagation()**, любой из которых сразу же прекращает распространение.
+Как отмечено ниже, вызов метода **preventDefault()** для события, не подлежащего отмене, например события, отправленного через **EventTarget.dispatchEvent()**, без указания **cancelable:true** не имеет эффекта.           
+**Event.defaultPrevented** - возвращает **boolean**-значение, информирующее о том, был ли вызван **event.preventDefault()** в текущем обработчике события.       
+Пример использования:
+```
+ link.onclick = function(e) {
+  return false
+ }
+
+ elem.oncontextmenu = function(e) {
+  e.preventDefault()
+  alert("Контекстное меню кнопки")
+ }
+ document.oncontextmenu = function(e) {
+  if(e.defaultPrevented) return
+  e.preventDefault()
+  alert("Контекстное меню документа")
+ }
+```
+### ex21
+
+Вопрос о переходе на сайт:
+```
+<body>
+  <a href="https://www.google.com/">На Google</a>
+
+  <script>
+   document.body.onclick = function(e) {
+    function handleLink(href) {
+      let isLeaving = confirm(`Перейти на ${href}?`)
+      if(!isLeaving) return false
+    }
+    let target = e.target.closest('a')
+    if(target && document.body.contains(target)) {
+      return handleLink(target.getAttribute('href'))
+    }
+   }
+  </script>
+</body>
+```
+
+ ## Урок 78. Сочетание клавиш.
+
+### ex22.
+Выводим в консоль нажатия всех кнопок мыши по зелёному квадрату.
+```
+<body>
+  <div class="bgc" style="width: 150px; height: 150px"></div>
+  <script>
+    document.querySelector('.bgc').addEventListener('mousedown', function(e){
+      switch (e.which){
+        case 1:
+          console.log('Нажата левая кнопка мыши')
+          break
+          case 2:
+          console.log('Нажата средняя кнопка мыши')
+          break
+          case 3:
+          console.log('Нажата правая кнопка мыши')
+          break
+      }
+    })
+```
+
+### ex23.
+
+В этом событии выводим стринг в консоль при условие зажатия **ctrl+shift** и клике по кнопке или вариант с команд для мак.
+```
+<body>
+  <button>Кнопка</button>
+  <script>
+    document.querySelector('button').onclick = function(e) {
+      if((e.ctrlKey && e.shiftKey) || (e.metaKey && e.shiftKey)) {
+        console.log('Ctrl+Shift+Клик')
+        console.log('CMD+Shift+Клик')
+      }
+    }
+  </script>
+</body>
+```
+
+### ex24.
+ Убираем выделение текста но оставляем рабочий двойной клик.
+ ```
+<body>
+  <div>Двойной клик выделит текст</div>
+    <script>
+       document.querySelector('div').ondblclick = function(e) {
+        console.log("Двойной клик")
+       }
+       document.querySelector('div').onmousedown = function(e) {
+        e.preventDefault()
+       }
+    </script>
+</body>
+ ```
+  ## Урок 79. Выделение через CTRL.
+
+### ex25.
+
+Запрещаем копировать тег **p**.
+```
+<body>
+  <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illo beatae blanditiis laboriosam consequuntur provident tenetur veniam quidem, rerum, eligendi voluptates nihil saepe voluptate vitae, nisi enim? Ducimus reprehenderit necessitatibus eaque!</p>
+  <textarea name="" id="" cols="30" rows="10"></textarea>
+  <script>
+    document.querySelector('p').oncopy = function(e) {
+      e.preventDefault()
+    }
+  </script>
+</body>
+
+```
+### ex26.
+
+Задача сделать так что бы с зажатым **ctrl** выделялись элементы списка, а с помощью клика один раз.
+```
+<body>
+  <ul id="list">
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+    <li>Item 4</li>
+    <li>Item 5</li>
+    <li>Item 6</li>
+  </ul>
+  
+  <script>
+    list.onclick = function(e) {
+      if(e.target.tagName != 'LI') return
+      if(e.ctrlKey || e.metaKey) {
+        toggleSelect(e.target)
+      } else {
+        singleSelect(e.target)
+      }
+    }
+
+    list.onmousedown = function() {
+      return false
+    }
+
+    function toggleSelect(li) {
+      li.classList.toggle('bgc')
+    }
+    function singleSelect(li) {
+      for(let elem of list.querySelectorAll('.bgc')) {
+        elem.classList.remove('bgc')
+      }
+      li.classList.add('bgc')
+    }
+  </script>
+</body>
+```
+
+## Урок 80. Range-Слайдер.
+
+### ex27.
+css
+```
+.slider {
+  width: 300px;
+  height: 10px;
+  background-color: #eee;
+  border-radius: 5px;
+}
+.slider__btn {
+  cursor: pointer;
+  background-color: dodgerblue;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  position: relative;
+  left: 0px;
+  top: -5px;
+```
+body
+```
+<body style="background-color: #333; margin: 25px;">
+
+  <div id="slider" class="slider">
+    <div class="slider__btn"></div>
+  </div>
+```
+Задача, сделать ползунок наподобие **input** **type=range**.
+
+```
+<script>
+    let btn = slider.querySelector('.slider__btn')
+    btn.onmousedown = function(e) {
+      e.preventDefault()
+      let shiftX = e.clientX - btn.getBoundingClientRect().left
+     
+      document.addEventListener('mousemove', onMouseMove)
+      document.addEventListener('mouseup', onMouseUp)
+
+      function onMouseMove(e) {
+        let newLeft = e.clientX - shiftX - slider.getBoundingClientRect().left
+        if(newLeft < 0)
+        newLeft = 0
+        let rightEdge = slider.offsetWidth - btn.offsetWidth
+        if(newLeft > rightEdge)
+        newLeft = rightEdge
+
+        btn.style.left = newLeft + 'px'
+      }
+     function onMouseUp() {
+      document.removeEventListener('mousemove', onMouseMove)
+      document.removeEventListener('mouseup', onMouseUp)
+     }
+    }
+  </script>
+```
+
+## Урок 81. События клавиатуры.
+
+### ex28.
