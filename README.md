@@ -2423,3 +2423,110 @@ body
 ## Урок 81. События клавиатуры.
 
 ### ex28.
+Выведем в консоль нажатие клавишь на клавиатуре.
+```
+  <script>
+    document.addEventListener('keyup', function(e) {
+      console.log('Код: ' + e.code )
+      console.log('Символ: ' + e.key )
+    })
+  </script>
+```
+Выводим в консоль **string** при нажатие определённых клавишь.
+```
+    document.addEventListener('keydown', function(e) {
+    if(e.code == "KeyZ" && (e.ctrlKey || e.metaKey)) {
+      console.log('Вы нажали CTRL+Z')
+    }
+  })
+```
+
+### ex29.
+функция для cочетания 2-ух клавишь в консоль.
+```
+  <script>
+    function hotKeys(func, ...codes) {
+      let pressed = new Set()
+      document.addEventListener('keydown', function(e) {
+        pressed.add(e.code)
+        for(let code of codes) {
+          if(!pressed.has(code)){
+            return
+        }
+      }
+      pressed.clear()
+      func()
+      })
+      document.addEventListener('keyup', function(e) {
+        pressed.delete(e.code)
+      })
+    }
+
+    hotKeys(function() {
+     console.log("вы нажали F+G")
+     }, "KeyF","KeyG")
+
+     hotKeys(function() {
+     console.log("вы нажали T+L")
+     }, "KeyT","KeyL")
+  </script>
+```
+## Урок 82. Работа с формами.
+
+### ex30.
+body
+```
+ <form name="form1">
+    <input type="text" name="input1" value="1">
+    <input type="text" name="input2" value="2">
+    <input type="radio" name="radioBtn" value="btn1" checked>
+    <input type="radio" name="radioBtn" value="btn2">
+    <input type="radio" name="radioBtn" value="btn3">
+    <fieldset name="myFieldset">
+      <legend>Title</legend>
+      <input name="password" type="password">
+    </fieldset>
+    <select name="mySelect">
+      <option value="item1" selected>Элемент 1</option>
+      <option value="item2">Элемент 2</option>
+      <option value="item3">Элемент 3</option>
+    </select>
+    <select name="mySelect2" multiple>
+      <option value="item4" selected>Элемент 1</option>
+      <option value="item5">Элемент 2</option>
+      <option value="item6">Элемент 3</option>
+    </select>
+  </form>
+```
+Возводим все элементы **HTML** в массив и выводим в консоль.
+```
+    let form = document.forms[0]
+    let radioBtns = form.elements.radioBtn
+    console.log(radioBtns)
+```
+Создадим масив и выведем в консоль 2 элемента **option** с атрибутом **selected**.
+```
+  <script>
+    let form = document.forms[0]
+    let select = form.elements.mySelect2
+    let selected = Array.from(select.options)
+    .filter(option => option.selected)
+    .map(option => option.value)
+    console.log(selected)
+    </script>
+```
+Создадим новый option.
+```
+  <script>
+    let form = document.forms[0]
+    let select = form.elements.mySelect2
+    let selected = Array.from(select.options)
+    .filter(option => option.selected)
+    .map(option => option.value)
+    console.log(selected)
+    </script>
+```
+
+## Урок 83. Фокус и потеря фокуса.
+
+### ex31.

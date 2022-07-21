@@ -27,14 +27,19 @@
     </select>
     <select name="mySelect2" multiple>
       <option value="item4" selected>Элемент 1</option>
-      <option value="item5">Элемент 2</option>
+      <option value="item5" selected>Элемент 2</option>
       <option value="item6">Элемент 3</option>
     </select>
   </form>
 
   <script>
-    
-  </script>
+    let form = document.forms[0]
+    let select = form.elements.mySelect2
+    let selected = Array.from(select.options)
+    .filter(option => option.selected)
+    .map(option => option.value)
+    console.log(selected)
+    </script>
 </body>
 
 </html>
