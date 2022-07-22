@@ -2565,3 +2565,371 @@ body
 ## Урок 84. Перемещение по стрелкам.
 
 ### ex32.
+Задача сделать фокус на элементе и передвигать его с помощью стрелок.
+body
+```
+<img src="..//img/1.jpg" id="image">
+```
+```
+  <script>
+    image.tabIndex = 0
+
+    image.onclick = function() {
+      this.style.left = this.getBoundingClientRect().left + 'px'
+      this.style.top = this.getBoundingClientRect().top + 'px'
+      this.style.position = 'fixed'
+    }
+
+    image.onkeydown = function(e) {
+      switch(e.key) {
+        case 'ArrowLeft':
+          this.style.left = parseInt(this.style.left) - this.offsetWidth + 'px'
+          return false
+          case 'ArrowRight':
+          this.style.left = parseInt(this.style.left) + this.offsetWidth + 'px'
+          return false
+          case 'ArrowUp':
+          this.style.top = parseInt(this.style.top) - this.offsetHeight + 'px'
+          return false
+          case 'ArrowDown':
+          this.style.top = parseInt(this.style.top) + this.offsetHeight + 'px'
+          return false
+      }
+    }
+  </script>
+```
+
+## Урок 85. События форм и буфера обмена.
+
+### ex33.
+
+body
+```
+  <input type="text" id="input">
+```
+Всё записанное в **input** выводиться в консоль.
+```
+    input.oninput = function() {
+      console.log(input.value)
+    }
+```
+После того как убираем фокус **input**
+фиксируеться данные в консоле.
+```
+    input.onchange = function() {
+      console.log(input.value)
+    }
+```
+
+### ex34.
+Взаимодействия с текстом из **input** а вчастности **cut**, **cope**, **paste** выводяться в консоль.
+```
+  <script>
+    input.oncut = input.oncopy = input.onpaste = function(e) {
+     console.log(e.type + ' - ' + e.clipboardData.getData('text/plain'))
+     return false
+    }
+  </script>
+```
+
+### ex35.    
+Отправка формы по клику.
+body
+```
+ <form class="form">
+    <input type="text">
+    <input type="submit" value="Кнопка Submit">
+    <input type="image" value="Кнопка Image">
+  </form>
+```
+```
+  <script>
+    let form = document.forms[0]
+    form.onsubmit = function(e) {
+      console.log('fsdfsf')
+      e.preventDefault()
+    }
+  </script>
+```
+
+## Урок 86. События страницы, async и defer скрипты.
+
+### ex36.
+Событие **DOMContentLoaded** происходит когда весь **HTML** был полностью загружен и пройден парсером, не дожидаясь окончания загрузки таблиц стилей, изображений и фреймов. Значительно отличающееся от него событие **load** используется для отслеживания только полностью загруженной страницы. Широко распространённой ошибкой является использование **load** в ситуации когда **DOMContentLoaded** является более подходящим, будьте внимательны.
+```
+document.addEventListener("DOMContentLoaded", function(e) {
+  console.log('DOM построен')
+})
+```
+Обновление страницы
+```
+window.onbeforwunload = function(e) {
+  return false
+}
+```
+## Урок 87. Диапозон и Выделение.
+
+### ex38.
+Работа с диапозоном:
+```
+<body>
+
+  <p id="p">Текст: <i>курсивный текст</i> и <b>жирный текст</b></p>
+  <p id="result"></p>
+
+  <script>
+    let range = new Range();
+    // Каждый описанный метод представлен здесь:
+    let methods = {
+      // deleteContents() удалить содержимое диапазона из документа
+      deleteContents() {
+        range.deleteContents()
+      },
+      extractContents() {
+        // extractContents() удалить содержимое диапазона из документа и вернуть как DocumentFragment
+        let content = range.extractContents();
+        result.innerHTML = "";
+        result.append("Извлечено: ", content);
+      },
+      cloneContents() {
+        // cloneContents() склонировать содержимое диапазона и вернуть как DocumentFragment
+        let content = range.cloneContents();
+        result.innerHTML = "";
+        result.append("Клонировано: ", content);
+      },
+      insertNode() {
+        // insertNode(node) вставить node в документ в начале диапазона
+        let newNode = document.createElement('u');
+        newNode.innerHTML = "НОВЫЙ УЗЕЛ";
+        range.insertNode(newNode);
+      },
+      surroundContents() {
+        // surroundContents(node) обернуть node вокруг содержимого диапазона
+        let newNode = document.createElement('u');
+        try {
+          range.surroundContents(newNode);
+        } catch (e) { alert(e) }
+      },
+      resetExample() {
+        p.innerHTML = `Текст: <i>курсивный текст</i> и <b>жирный текст</b>`;
+        result.innerHTML = "";
+        //range.setStart(p.firstChild, 2);
+        //range.setEnd(p.querySelector('b').firstChild, 3);
+        range.setStart(p, 0);
+        range.setEnd(p, 4);
+        window.getSelection().removeAllRanges();
+        window.getSelection().addRange(range);
+      }
+    };
+    for (let method in methods) {
+      document.write(`<div><button onclick="methods.${method}()">${method}</button></div>`)
+    }
+    methods.resetExample();
+
+  </script>
+</body>
+```
+### ex39
+
+C помощью этой функции всё выделенное на странице будет отображенно в консоли.
+```
+  <p id="p">Текст: <i>курсивный текст</i> и <b>жирный текст</b></p>
+
+  От<br>
+  <input type="text" disabled id="from"><br>
+  До<br>
+  <input type="text" disabled id="to"><br>
+
+  <textarea id="area" cols="30" rows="4">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Explicabo a quaerat praesentium cum, repellat rem dolores eos totam minus reprehenderit quae nulla ullam delectus, expedita quos magni quasi. Fuga, exercitationem!</textarea>
+  <br>
+  <button id="button">Кнопка с текстом</button>
+
+  <script>
+    document.onselectionchange = function() {
+      let {anchorNode, anchorOffset, focusNode, focusOffset} = document.getSelection()
+      from.value = `${anchorNode && anchorNode.data}:${anchorOffset}`
+      to.value = `${focusNode && focusNode.data}:${focusOffset}`
+
+      console.log(document.getSelection().toString())
+    }
+  </script>
+```
+
+Запретить удаление в данном моменте для тега **p**.
+```
+ p.onselectstart = () => false
+```
+
+## Урок 88. Депозитный калькулятор.
+
+### ex40.
+```
+<body id="dark">
+  <h1>Депозитный калькулятор</h1>
+
+  <div class="d-flex">
+    <form name="calculator">
+      <table>
+        <tr>
+          <td>Первоначальный депозит</td>
+          <td>
+            <input name="money" type="number" value="10000" required>
+          </td>
+        </tr>
+        <tr>
+          <td>Срок вклада?</td>
+          <td>
+            <select name="months">
+              <option value="3">3 (минимум)</option>
+              <option value="6">6 (полгода)</option>
+              <option value="12" selected>12 (год)</option>
+              <option value="18">18 (1.5 года)</option>
+              <option value="24">24 (2 года)</option>
+              <option value="30">30 (2.5 года)</option>
+              <option value="36">36 (3 года)</option>
+              <option value="60">60 (5 лет)</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>Годовая процентная ставка?</td>
+          <td>
+            <input name="interest" type="number" value="5" required>
+          </td>
+        </tr>
+      </table>
+    </form>
+
+    <table id="diagram">
+      <tr>
+        <th>Было</th>
+        <th>Станет</th>
+      </tr>
+      <tr>
+        <th id="money-before"></th>
+        <th id="money-after"></th>
+      </tr>
+      <td>
+        <div style="background: tomato;width:40px;height:100px"></div>
+      </td>
+      <td>
+        <div style="background: springgreen;width:40px;height:0" id="height-after"></div>
+      </td>
+    </table>
+  </div>
+
+  <script>
+   let form = document.forms.calculator
+
+   form.money.oninput = calculate
+   form.money.onchange = calculate
+   form.interest.oninput = calculate
+
+   function calculate() {
+    let inital = +form.money.value
+    if(!inital) return
+    let interest = form.interest.value * 0.01
+    if(!interest) return
+    let year = form.months.value / 12
+    if(!year) return 
+
+    let result = Math.round(inital * (1+interest*year))
+    let height = result / form.money.value * 100 + 'px'
+    document.getElementById('height-after').style.height = height
+    document.getElementById('money-before').innerHTML = form.money.value
+    document.getElementById('money-after').innerHTML = result 
+  }
+
+  calculate()
+```
+
+## Урок 89. Генератор CSS тени.
+
+### ex40.
+body
+```
+  
+  <h2>Box-shadow Generator</h2>
+  
+  <form>
+    <h3>Настройки</h3>
+    
+    <div class="form-group">
+      <label for="inset">Тень внутри элемента?</label>
+      <input type="checkbox" id="inset" checked>
+    </div>
+
+    <label for="offsetX">Смещение по оси x</label>
+    <input type="range" id="offsetX" min="-25" max="25" step="1" value="0">
+    
+    <label for="offsetY">Смещение по оси y</label>
+    <input type="range" id="offsetY" min="-25" max="25" step="1" value="0">
+    
+    <label for="blur">Разымытие</label>
+    <input type="range" id="blur" min="0" max="25" step="1" value="8">
+    
+    <label for="stretch">Растяжение</label>
+    <input type="range" id="stretch" min="-20" max="20" step="1" value="6">
+    
+    <label for="color">Цвет</label>
+    <input type="color" id="color">
+    
+    <label for="opacity">Прозрачность</label>
+    <input type="range" id="opacity" min="0" max="1" step="0.01" value="0.5">
+    
+    <h3>Результат</h3>
+    <div id="result"></div>
+    <textarea id="cssCode" readonly></textarea>
+  </form>
+```
+css
+```
+body {
+  font-family: "Calibri";
+}
+h2, h3 {
+  text-transform: uppercase; 
+}
+h3 {
+  margin-top: -10px;
+  margin-right: -10px;
+  margin-left: -10px;
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: rgb(53, 109, 173);
+  color: white;
+}
+form {
+  padding: 10px;
+  width: 320px;
+  display: inline-flex;
+  flex-direction: column;
+}
+#result {
+  width: 60px;
+  height: 60px;
+  background-color: rgb(219, 157, 56);
+  margin-bottom: 10px;
+}
+textarea {
+  resize: none;
+  height: 50px;
+}
+.form-group {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 2px dashed gray;
+}
+#color {
+  width: 40px;
+  height: 40px;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+#opacity {
+  margin-bottom: 30px;
+}
+```
