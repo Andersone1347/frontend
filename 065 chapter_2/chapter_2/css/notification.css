@@ -89,3 +89,15 @@ button[data-time]:hover {
 .notification__list h3 {
   margin: 0 0 15px 0;
 }
+
+button.clearButton { 
+  display: flex;
+  order: -1;
+  margin-left: 3px;
+  border-radius: 50%;
+  background-color: #e67d7d;
+}
+input {
+  display: flex;
+  order: -2;
+}

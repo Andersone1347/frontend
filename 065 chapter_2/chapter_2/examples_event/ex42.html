@@ -17,13 +17,16 @@
     </div>
     <div class="notification__info"></div>
     <div class="notification__form">
-      <input type="time">
+      <input type="time" >
+      
       <textarea placeholder="Введите текст уведомления" maxlength="100"></textarea>
-      <button>ОК</button>
+      <button class="ok">ОК</button>
+      <button class="clearButton" id="clearButton">r</button>
     </div>
     <div class="notification__list">
       <h3>Список уведомлений</h3>
       <div></div>
+      <source src="../source/alert.mp3" type="audio/mpeg">
       <button>Очистить список</button>
     </div>
   </div>
@@ -32,3 +35,5 @@
 </body>
 
 </html>
+
+<span><button class="reset">r</button></span>
