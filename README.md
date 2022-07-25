@@ -2442,7 +2442,7 @@ body
 ```
 
 ### ex29.
-функция для cочетания 2-ух клавишь в консоль.
+Функция для cочетания 2-ух клавишь в консоль.
 ```
   <script>
     function hotKeys(func, ...codes) {
@@ -2565,7 +2565,7 @@ body
 ## Урок 84. Перемещение по стрелкам.
 
 ### ex32.
-Задача сделать фокус на элементе и передвигать его с помощью стрелок.
+Задача сделать фокус на элементе и передвигать его с помощью стрелок.    
 body
 ```
 <img src="..//img/1.jpg" id="image">
@@ -2846,6 +2846,9 @@ C помощью этой функции всё выделенное на стр
 ## Урок 89. Генератор CSS тени.
 
 ### ex40.
+
+Программа которая будет генерировать **css** код для свойства **box-shadow**.
+
 body
 ```
   
@@ -2931,5 +2934,161 @@ textarea {
 }
 #opacity {
   margin-bottom: 30px;
+}
+```
+```
+  <script>
+    function generateCss() {
+      let inset = document.getElementById('inset').checked
+      inset = inset ? ' inset' : ''
+
+      let offsetX = document.getElementById('offsetX').value
+      let offsetY = document.getElementById('offsetY').value
+      let blur = document.getElementById('blur').value
+      let stretch = document.getElementById('stretch').value
+
+      let color = document.getElementById('color').value
+      let red = parseInt(color.slice(1,3), 16)
+      let green = parseInt(color.slice(3,5), 16)
+      let blue = parseInt(color.slice(5,7), 16)
+      let opacity = document.getElementById('opacity').value
+      
+      let result = document.getElementById('result')
+      let textarea = document.getElementById('cssCode')
+
+      let str = `${inset} ${offsetX}px ${offsetY}px ${blur}px ${stretch}px rgba(${red}, ${green}, ${blue}, ${opacity})`
+      
+      textarea.value = 'box-shadow:' + str
+      result.style.boxShadow = str
+    }
+    for(let item of document.querySelectorAll('input')) {
+      item.addEventListener('input', generateCss)
+    }
+  </script>
+```
+
+## Урок 90. Задание.
+
+Сделать пару похожих программ как в прошлом задании.
+
+## Урок 91. Система уведомлений.   
+body
+```
+<body>
+
+  <div class="notification">
+    <div class="notification__header">
+      <img src="../img/notification.png">
+      <h2>Уведомления</h2>
+    </div>
+    <div class="notification__info"></div>
+    <div class="notification__form">
+      <input type="time">
+      <textarea placeholder="Введите текст уведомления" maxlength="100"></textarea>
+      <button>ОК</button>
+    </div>
+    <div class="notification__list">
+      <h3>Список уведомлений</h3>
+      <div></div>
+      <button>Очистить список</button>
+    </div>
+  </div>
+
+  <script src="../js/notification.js"></script>
+</body>
+```
+
+css
+```
+body {
+  font-family: "Calibri";
+  background-color: #eee;
+}
+.notification {
+  background-color: #fff;
+  max-width: 500px;
+  margin: 0 auto;
+}
+.notification__header {
+  background-color: #bcd7e7;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 15px;
+  margin-bottom: 10px;
+}
+.notification__header img {
+  align-self: center;
+  max-width: 25px;
+}
+.notification__header h2 {
+  margin: 0;
+}
+.notification__info {
+  padding: 0 15px;
+  font-weight: bold;
+  color: red;
+  transition: 1s;
+  opacity: 0;
+}
+.notification__form {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 15px;
+}
+.notification__form input {
+  height: 30px;
+  min-width: 75px;
+}
+.notification__form textarea {
+  resize: none;
+  margin: 0px 10px;
+  padding: 10px;
+  font-family: "Calibri";
+  width: 100%;
+  height: 70px;
+}
+.notification__form > button, .notification__list > button {
+  cursor: pointer;
+  margin: 0;
+  text-transform: uppercase;
+  border: none;
+  padding: 10px 15px;
+  background-color: #bcd7e7;
+}
+.notification__form > button:hover, .notification__list > button:hover {
+  opacity: 0.9;
+}
+.notification__list {
+  padding: 15px;
+}
+.notification__item {
+  display: flex;
+  justify-content: space-between;
+  background-color: #eee;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.notification__warning {
+  background-color: #fff1d7;
+}
+button[data-time] {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+  background-color: #a01b1b;
+  color: white;
+  border: none;
+}
+button[data-time]:hover {
+  background-color: #e00f0f;
+}
+.notification__list h3 {
+  margin: 0 0 15px 0;
 }
 ```
