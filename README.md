@@ -3475,4 +3475,50 @@ ex7. Специальные символы.
 
 ### ex8. 
 ### ex9. Формат времени.
+```
+  <script>
+   let regexp = /^\d\d:\d\d$/
+   while(true) {
+    let str = prompt("Введите время")
+    if(regexp.test(str)) {
+      alert('Вы ввели время ' + str)
+      break;
+    }
+    
+   }
+  </script>
+  ```
+  ### ex10. Многострочный режим якорей из последних букв.
+  ```
+<body>
+  
+  <script>
+    let str = `1. Первая строка
+    2. Вторая строка
+    3. Третья\n4.строка`
 
+    console.log(str.match(/\D$/gm))
+  </script>
+</body>
+  ```
+  ### ex11. Граница слова.
+    ```
+    <script>
+    console.log("Hello World".match(/\bWorld\b/))   //['World', index: 6, input: 'Hello World', groups: undefined]
+    console.log("Hello My World".match(/\bWorld\b/)) //['World', index: 9, input: 'Hello My World', groups: undefined]
+    console.log("Hello 44 22 555 777".match(/\b\d\d\b/g)) //(2) ['44', '22']
+  </script>
+  ```
+  ### ex12. Экранирование, специальные символы.
+  ```
+  <script>
+    // Специальные символы, чтобы их использовать необходимо их экранировать
+    // [\^$.|?*+()
+    console.log("6.2".match(/\d.\d/)) // ['6.2', index: 0, input: '6.2', groups: undefined]
+  </script>
+  ```
+  ```
+    console.log("/".match(/\//)) // ['/', index: 0, input: '/', groups: undefined]
+  ```
+  ### ex13. Наборы и диапозоны(посимвольный поиск).
+  

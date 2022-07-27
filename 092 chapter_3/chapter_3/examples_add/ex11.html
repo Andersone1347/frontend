@@ -10,7 +10,12 @@
 <body>
   
   <script>
-    
+    console.log("Hello World".match(/\bWorld\b/))
+    console.log("Hello My World".match(/\bWorld\b/))
+    console.log("Hello 44 22 555 777".match(/\b\d\d\b/g))
   </script>
 </body>
 </html>
+['World', index: 6, input: 'Hello World', groups: undefined]
+['World', index: 9, input: 'Hello My World', groups: undefined]
+(2) ['44', '22']
