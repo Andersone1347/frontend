@@ -3454,3 +3454,25 @@ css
 * u - Включает полную поддержку Юникода. Флаг разрешает корректную обработку суррогатных пар.
 * y - Режим поиска на конкретной позиции в тексте.
 
+Замена значений.
+```
+  <script>
+  let string = 'Строка, ещё одна строка'
+  console.log(string.replace(/строка/ig, "Новая строка"))
+  </script>
+```
+Добавление значений.
+```
+  <script>
+  let string = 'Строка, ещё одна строка'
+  console.log(string.replace(/строка/ig, "$& showtime "))
+  </script>
+```
+
+ex7. Специальные символы.
+
+ Специальные символы в регулярных выражениях --  https://developer.mozilla.org/ru/docs/Web/JavaScript/Guide/Regular_Expressions#%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5_%D1%81%D0%BF%D0%B5%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D1%85_%D1%81%D0%B8%D0%BC%D0%B2%D0%BE%D0%BB%D0%BE%D0%B2
+
+### ex8. 
+### ex9. Формат времени.
+
