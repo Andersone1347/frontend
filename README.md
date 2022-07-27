@@ -3218,4 +3218,239 @@ document.querySelector('.notification__form button').addEventListener('click', f
 
 ## Урок 92. Работа с текстовыми файлами и FileReader.   
 
-### ex1.
+### ex1. Содержимое txt файла открываем в консоле.
+**FileReader** объект, цель которого читать данные из **Blob** (и, следовательно, из **File** тоже).
+
+Данные передаются при помощи событий, так как чтение с диска может занять время.     
+
+Конструктор:
+```
+let reader = new FileReader(); // без аргументов
+```          
+Основные методы:        
+
+**readAsArrayBuffer(blob)** – считать данные как **ArrayBuffer**
+**readAsText(blob, [encoding])** – считать данные как строку (кодировка по умолчанию: **utf-8**)
+**readAsDataURL(blob)** – считать данные как **base64**-кодированный **URL**.
+**abort()** – отменить операцию.
+Выбор метода для чтения зависит от того, какой формат мы предпочитаем, как мы хотим далее использовать данные.
+
+**readAsArrayBuffer** – для бинарных файлов, для низкоуровневой побайтовой работы с бинарными данными. Для высокоуровневых операций у **File** есть свои методы, унаследованные от **Blob**, например, **slice**, мы можем вызвать их напрямую.
+**readAsText** – для текстовых файлов, когда мы хотим получить строку.
+**readAsDataURL** – когда мы хотим использовать данные в **src** для **img** или другого тега. Есть альтернатива – можно не читать файл, а вызвать **URL.createObjectURL(file)**, детали в главе **Blob**.
+
+```
+<body>
+  <input type="file" onchange="openFile(this)">
+
+  <script>
+function openFile(input) {
+  let file = input.files[0]
+  let reader = new FileReader()
+  reader.readAsText(file)
+  reader.onload = function() {
+     console.log(reader.result) // содержимое файла
+  }
+  reader.onerror = function() {
+    console.log(reader.error)
+  }
+}
+  </script>
+</body>
+```
+## Урок 93. Создание анимации на JS и CSS.
+### ex2. 4 перехода и кривая Безье.
+
+Существует 4 свойства для описания CSS-переходов:
+
+* transition-property – свойство перехода
+* transition-duration – продолжительность перехода
+* transition-timing-function – временная функция перехода
+* transition-delay – задержка начала перехода          
+Далее мы рассмотрим их все, а сейчас ещё заметим, что есть также общее свойство **transition**, которое позволяет задать их одновременно в последовательности: **property duration timing-function delay**, а также анимировать несколько свойств одновременно.
+
+**Кривая Безье**
+Пример:
+html
+```
+  <div class="move move0">linear<br>cubic-bezier(0, 0, 1,
+    1)
+    <img src="../img/animationLinear.jpg">
+  </div>
+  <div class="move move1">ease<br>cubic-bezier(0.25, 0.1, 0.25,
+    1.0)
+    <img src="../img/animationEase.jpg">
+  </div>
+  <div class="move move2">ease-in<br>cubic-bezier(0.42, 0, 1.0,
+    1.0)
+    <img src="../img/animationEaseIn.jpg">
+  </div>
+  <div class="move move3">ease-out<br>cubic-bezier(0, 0, 0.58, 1.0)
+    <img src="../img/animationEaseOut.jpg">
+  </div>
+  <div class="move move4">ease-in-out<br>cubic-bezier(0.42, 0, 0.58,
+    1.0)
+    <img src="../img/animationEaseInOut.jpg">
+  </div>
+  <button>Анимация</button>
+  <button>Сбросить</button>
+```
+css
+```
+.animated {
+  transition-property: background-color;
+  transition-duration: 3s;
+  transition-delay: 1s;
+}
+.move {
+  position: relative;
+  width: 320px;
+  height: 100px;
+  color: #eee;
+  left: 0;
+  cursor: pointer;
+  display: flex;
+  padding: 10px;
+  justify-content: space-between;
+}
+.move img {
+  width: 100px;
+  height: 100px;
+}
+.move0 {
+  background-image: url(../img/1.jpg);
+  transition: left 5s linear;
+}
+.move1 {
+  background-image: url(../img/2.jpg);
+  transition: left 5s ease;
+}
+.move2 {
+  background-image: url(../img/3.jpg);
+  transition: left 5s ease-in;
+}
+.move3 {
+  background-image: url(../img/4.jpg);
+  transition: left 5s ease-out;
+}
+.move4 {
+  background-image: url(../img/5.jpg);
+  transition: left 5s ease-in-out;
+}
+```
+script
+```
+    document.querySelector('button').onclick = function () {
+      document.querySelector('.move0').style.left = '450px'
+      document.querySelector('.move1').style.left = '450px'
+      document.querySelector('.move2').style.left = '450px'
+      document.querySelector('.move3').style.left = '450px'
+      document.querySelector('.move4').style.left = '450px'
+    }
+
+    document.querySelectorAll('button')[1].onclick = function () {
+      document.querySelector('.move0').style.left = '0px'
+      document.querySelector('.move1').style.left = '0px'
+      document.querySelector('.move2').style.left = '0px'
+      document.querySelector('.move3').style.left = '0px'
+      document.querySelector('.move4').style.left = '0px'
+    }
+```
+### ex3. Плавное скрытие блока.
+
+Событие **transitionend** срабатывает, когда **CSS transition** закончил своё выполнение. В случае, когда анимация удаляется до её завершения, то событие не срабатывает.
+Пример:
+```
+<body>
+  <img class="img-animate" src="../img/1.jpg" width="100">
+  <br>
+  Текст после картинки
+  <script>
+    document.querySelector('.img-animate').onclick = function() {
+      this.style.opacity = 0
+    }
+    document.querySelector('.img-animate').addEventListener('transitionend', function(e) {
+      if(!e.propertyName == 'opacity') return
+      console.log(e.propertyName)
+      console.log(e.elapsedTime)
+      e.target.hidden = true
+    })
+  </script>
+</body>
+```
+css
+```
+.img-animate {
+  transition-property: opacity;
+  transition-duration: 2s;
+}
+```
+
+### ex4. Цикличная анимация без js.
+html
+```
+<body>
+  <img src="../img/1.jpg" class="imgKeyframes" width="50">
+  <script>
+  </script>
+</body>
+```
+css
+```
+@keyframes move {
+  from {
+    left: 0px
+  }
+  to {
+    left: 150px;
+  }
+}
+.imgKeyframes {
+  animation: move 3s infinite alternate;
+  position: absolute;
+}
+```
+### ex5. Анимация без css.
+```
+<body>
+  
+  <img src="../img/1.jpg" width="100" id="img" style="position: relative;">
+
+  <script>
+    img.onclick = function() {
+      let start = Date.now()
+      let timer = setInterval(function(){
+        let timePassed = Date.now() - start
+        img.style.left = timePassed / 5 + 'px'
+        if(timePassed > 2000) clearInterval(timer)
+      },20)
+    }
+  </script>
+</body>
+```
+
+## Урок 94. Регулярные выражения.
+Регулярные выражения - это шаблоны, используемые для сопоставления последовательностей символов в строках. В **JavaScript** регулярные выражения также являются объектами. Эти шаблоны используются в методах **exec** и **test** объекта **RegExp**, а также **match**, **replace**, **search** и **split** объекта **String**. 
+
+### ex6. Пример.
+
+```
+<body>
+  
+  <script>
+    let tag = prompt("введите HTML тег", "h2")
+    let regexp = new RegExp(`<${tag}>`)
+    console.log(regexp)// h2
+  </script>
+</body>
+```
+#### Флаги.
+Регулярные выражения могут иметь флаги, которые влияют на поиск.        
+В JavaScript их всего шесть:
+* i - С этим флагом поиск не зависит от регистра: нет разницы между A и a (см. пример ниже).
+* g - С этим флагом поиск ищет все совпадения, без него – только первое.
+* m - Многострочный режим .
+* s - Включает режим «dotall», при котором точка . может соответствовать символу перевода строки \n .
+* u - Включает полную поддержку Юникода. Флаг разрешает корректную обработку суррогатных пар.
+* y - Режим поиска на конкретной позиции в тексте.
+
