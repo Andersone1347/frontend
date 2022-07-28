@@ -3696,6 +3696,12 @@ null
 
 ## 95 Урок. Библиотека list.js_ Поиск и сортировка обычных списков.
 
-Ссылка на сайт библиотеки.
+Ссылка на сайт  https://listjs.com/.
 
-Установка через CDN
+Установка через CDN производиться в самый низ **body**
+```
+<body>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/list.js/2.3.1/list.min.js"></script>
+</body>
+```
