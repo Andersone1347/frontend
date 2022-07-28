@@ -549,7 +549,21 @@ console.log(+a) */
 // console.log(...set)
 // set.clear()
 // console.log(set)
-
+/* 
 let arr = [1,5,4,7,8,91,1,4,5]
 let arr2 = [...new Set(arr)]
-console.log(arr2) // (6) [1, 5, 4, 7, 8, 91]
+console.log(arr2) // (6) [1, 5, 4, 7, 8, 91] */
+
+/* function isNumber(n) {
+    return !isNaN(parseFloat(n)) && !isNaN(n - 0)
+}
+console.log(isNumber("dasd"))  */
+
+let age = prompt("Введите ваш возраст?")
+if(age < 18) {
+   alert("Мой возраст меньше 18")
+} else if(age > 18) {
+   alert("Мой возраст больше 18")
+} else if(age == 18) {
+   alert("Мой возраст  18")
+}
