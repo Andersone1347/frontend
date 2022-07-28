@@ -12,7 +12,15 @@
 <body>
 
   <script>
-    
+    let str = 'let varName = "value"';
+
+let regexp = /\w+/y;
+
+regexp.lastIndex = 3;
+console.log( regexp.exec(str) ); // null (на позиции 3 пробел, а не слово)
+
+regexp.lastIndex = 4;
+console.log( regexp.exec(str) ); // varName (слово на позиции 4)
   </script>
 </body>
 

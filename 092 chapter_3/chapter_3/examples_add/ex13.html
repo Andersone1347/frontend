@@ -11,7 +11,9 @@
   
   <script>
     console.log("16 56 46 76".match(/[15]6/g))
-    console.log("#F5D".match(/#[]))
+    console.log("#F5D".match(/#[0-9A-F][\da-f][0-0-9A-f]/i))
+
+    console.log('email@yandex.ru'.match(/[^\d\sA-Z]/gi))
   </script>
 </body>
 </html>

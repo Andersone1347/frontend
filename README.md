@@ -3521,4 +3521,175 @@ ex7. Специальные символы.
     console.log("/".match(/\//)) // ['/', index: 0, input: '/', groups: undefined]
   ```
   ### ex13. Наборы и диапозоны(посимвольный поиск).
+  ```
+  <script>
+    console.log("16 56 46 76".match(/[15]6/g))
+    console.log("#F5D".match(/#[0-9A-F][\da-f][0-0-9A-f]/i))
+
+    console.log('email@yandex.ru'.match(/[^\d\sA-Z]/gi))
+  </script>
+  ```
+  Вывод консоли:
+  ```
+(2) ['16', '56']
+['#F5D', index: 0, input: '#F5D', groups: undefined]
+(2) ['@', '.']
+  ``` 
+  **console.log('email@yandex.ru'.match(/[^\d\sA-Z]/gi))**- разберём этот код.
+  * **'email@yandex.ru'** среди этого будет происходить поиск.
+  * Метод **match()** возвращает получившиеся совпадения при сопоставлении строки с регулярным выражением.
+  * **[^\d\sA-Z]** - исключение всех чисел, пробелов и букв от A до Z.
+  * Флаги:        
+  1. i - c этим флагом поиск не зависит от регистра: нет разницы между A и a.
+  2. g - c этим флагом поиск ищет все совпадения, без него – только первое.       
   
+   ### ex14. Квантификаторы.
+  Поиск от трёх точек и более.
+  ```  
+     <script>
+    console.log('выфвфы...... вфыввф.. вфывфв..фвывыфвф... выфв.'.match(/\.{3,}/g)) \\ ['......', '...']
+  </script>
+  ```
+  Жадный и ленивый режим.
+```
+  <script>
+// жадный режим
+console.log('текст "кавы" текст "кавы" снова текст'.match(/".+"/g))
+console.log('текст "кавы" текст "кавы" снова текст'.match(/"[^"]+"/g))
+// ленивый режим
+console.log('текст "кавы" текст "кавы" снова текст'.match(/".+?"/g))
+  </script>
+```
+Консоль;     
+```
+['"кавы" текст "кавы"']
+(2) ['"кавы"', '"кавы"']
+(2) ['"кавы"', '"кавы"']
+```
+   
+   Подробнее в учебнике https://learn.javascript.ru/regexp-quantifiers.
+
+   ### ex15. Скобочные группы.
+   Примеры:
+   ```
+<script>
+    console.log("go gogo gooo goooog".match(/(go)+/g)) // (4) ['go', 'gogo', 'go', 'go']
+  </script>
+   ```
+   ```
+  <script>
+    console.log("user.mail.ru @ isers-mail.ru usercom".match(/([\w-]+\.)+\w+/g)) // (2) ['user.mail.ru', 'isers-mail.ru']
+  </script> 
+   ```
+   Проверка правильного введения почты.
+   ```
+  <script>
+    console.log("user@mail.ru @ isers-mail.ru user.com email@yandex.ru".match(/[-.\w]+@([\w-]+\.)+[\w-]+/g)) // (2) ['user@mail.ru', 'email@yandex.ru']
+  </script>
+   ```
+   Запишем в переменную и выведем в консоли.
+   ```
+  <script>
+    let tag = '<h1 class="title">hellow world</h1>'.match(/<(.*?)>/)
+  </script>
+  // tag
+(2) ['<h1 class="title">', 'h1 class="title"', index: 0, input: '<h1 class="title">hellow world</h1>', groups: undefined]
+   ```
+   Массив из 3 элементов.
+   ```
+  <script>
+    let tag = 'a'.match(/a(z)?(c)?/)
+    // tag
+(3) ['a', undefined, undefined, index: 0, input: 'a', groups: undefined]
+  </script>
+   ```
+   Добавим значения поиска, теперь можно по этим индификаторам найти значения.
+   ```
+  <script>
+    let tag = 'azc'.match(/a(?<first>z)?(?<second>c)?/)
+  </script>
+   ```
+   Консоль:
+   ```
+tag.groups
+{first: 'z', second: 'c'}
+```
+### ex16. Обратные ссылки в шаблоне.
+```
+     <script>
+    console.log(`he said: "she's the one!".`.match(/['"](.*?)['"]/g))
+    // \1 найти тоже самое что в первой скобочной группе
+    console.log(`he said: "she's the one!".`.match(/(['"])(.*?)\1/g))
+    // \k<имя_группы>
+    console.log(`he said: "she's the one!".`.match(/(?<first>['"])(.*?)\k<first>/g))
+  </script>
+  ```
+  Консоль:
+  ```
+[`"she'`]
+[`"she's the one!"`]
+[`"she's the one!"`]
+  ```
+### ex17. Альтернация (ИЛИ).
+```
+  <script>
+    let regexp = /html|css|java(script)?/gi
+    let str = "JAva Cyfxfkf HTML появился джава, потом хтбл . потом JavaScript"
+    console.log(str.match(regexp))
+
+    let timeRegExp = /([01]\d|2[0-3]):[0-5]\d/g
+    console.log("00:00 10:20 23:99 1:3".match(timeRegExp))        
+    // (3) ['JAva', 'HTML', 'JavaScript']
+    // (2) ['00:00', '10:20']
+  </script>
+```
+### ex18. Опережающая и ретроспективная проверка.
+
+* X(?=Y)	Позитивная опережающая	X, если за ним следует Y
+```
+let str = "1 индейка стоит 30€";
+
+alert( str.match(/\d+(?=€)/) ); // 30, число 1 проигнорировано, так как за ним НЕ следует €
+```
+* X(?!Y)	Негативная опережающая	X, если за ним НЕ следует Y
+```
+let str = "2 индейки стоят 60€";
+
+alert( str.match(/\d+(?!€)/) ); // 2 (в этот раз проигнорирована цена)
+```
+* (?<=Y)X	Позитивная ретроспективная	X, если следует за Y
+```
+let str = "1 индейка стоит $30";
+
+// знак доллара экранируем \$, так как это специальный символ
+alert( str.match(/(?<=\$)\d+/) ); // 30, одинокое число игнорируется
+```
+* (?<!Y)X	Негативная ретроспективная	X, если НЕ следует за Y
+```
+let str = "2 индейки стоят $60";
+
+alert( str.match(/(?<!\$)\d+/) ); // 2 (проигнорировалась цена)
+```
+
+Подробная информация https://learn.javascript.ru/regexp-lookahead-lookbehind#:~:text=%D0%9E%D0%BF%D0%B5%D1%80%D0%B5%D0%B6%D0%B0%D1%8E%D1%89%D0%B8%D0%B5%20%D0%BF%D1%80%D0%BE%D0%B2%D0%B5%D1%80%D0%BA%D0%B8%20%D0%BF%D0%BE%D0%B7%D0%B2%D0%BE%D0%BB%D1%8F%D1%8E%D1%82%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%B2%D0%B0%D1%82%D1%8C%20%D1%83%D1%81%D0%BB%D0%BE%D0%B2%D0%B8%D1%8F,%D0%B5%D1%81%D1%82%D1%8C%20%D1%87%D1%82%D0%BE%2D%D1%82%D0%BE%20%D0%B7%D0%B0%D1%80%D0%B0%D0%BD%D0%B5%D0%B5%20%D0%BE%D0%BF%D1%80%D0%B5%D0%B4%D0%B5%D0%BB%D1%91%D0%BD%D0%BD%D0%BE%D0%B5.
+
+### ex19. Поиск на заданной позиции.
+Пример использования флага y.
+```
+  <script>
+    let str = 'let varName = "value"';
+
+let regexp = /\w+/y;
+
+regexp.lastIndex = 3;
+console.log( regexp.exec(str) ); // null (на позиции 3 пробел, а не слово)
+
+regexp.lastIndex = 4;
+console.log( regexp.exec(str) ); // varName (слово на позиции 4)
+  </script>
+```
+Консоль:
+```
+null
+['varName', index: 4, input: 'let varName = "value"', groups: undefined]
+```

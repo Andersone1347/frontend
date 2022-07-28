@@ -10,7 +10,11 @@
 <body>
   
   <script>
-    
+    console.log(`he said: "she's the one!".`.match(/['"](.*?)['"]/g))
+    // \1 найти тоже самое что в первой скобочной группе
+    console.log(`he said: "she's the one!".`.match(/(['"])(.*?)\1/g))
+    // \k<имя_группы>
+    console.log(`he said: "she's the one!".`.match(/(?<first>['"])(.*?)\k<first>/g))
   </script>
 </body>
 </html>
