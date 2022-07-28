@@ -3693,3 +3693,9 @@ console.log( regexp.exec(str) ); // varName (слово на позиции 4)
 null
 ['varName', index: 4, input: 'let varName = "value"', groups: undefined]
 ```
+
+## 95 Урок. Библиотека list.js_ Поиск и сортировка обычных списков.
+
+Ссылка на сайт библиотеки.
+
+Установка через CDN
