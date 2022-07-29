@@ -5470,3 +5470,13 @@ null
 Git => Code => Download ZIP => dist.
 
 ## 100 Урок. Библиотека flatpickr.js_ Календарь.
+Ссылка на сайт https://sachinchoolur.github.io/lightgallery.js/.
+
+## 101 Урок. Библиотека cleave.js_ Валидация форм.      
+Ссылка на сайт https://nosir.github.io/cleave.js/
+
+## 102 Урок. Библиотека mixItUp3.js_ Фильтрация элементов.      
+Ссылка на сайт https://www.kunkalabs.com/mixitup/docs/mixitup-factory/.
+
+## 103 Урок. Библиотека swiper.js_ Слайдер изображений.      
+Ссылка на сайт https://swiperjs.com/.

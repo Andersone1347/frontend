@@ -4,29 +4,55 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/092 chapter_3/chapter_3/examples_add/js_biblia/baguetteBox.css">
+  <link rel="stylesheet" href="/092 chapter_3/chapter_3/examples_add/js_biblia/swiper-bundle.css">
   <title>Пример 18 - Опережающая и ретроспективная проверка</title>
 </head>
 <body>
-  <div class="gallery">
-    <a href="../img/animationEase.jpg" data-caption="Image caption">
-        <img src="../img/1.jpg" alt="First image">
-    </a>
-    <a href="../img/animationEaseOut.jpg">
-        <img src="../img/2.jpg" alt="Second image">
-    </a>
+<!-- Slider main container -->
+<div class="swiper">
+  <!-- Additional required wrapper -->
+  <div class="swiper-wrapper">
+    <!-- Slides -->
+    <div class="swiper-slide">Slide 1</div>
+    <div class="swiper-slide">Slide 2</div>
+    <div class="swiper-slide">Slide 3</div>
     ...
+  </div>
+  <!-- If we need pagination -->
+  <div class="swiper-pagination"></div>
+
+  <!-- If we need navigation buttons -->
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div>
+
+  <!-- If we need scrollbar -->
+  <div class="swiper-scrollbar"></div>
 </div>
 
-<script src="/092 chapter_3/chapter_3/examples_add/js_biblia/baguetteBox.js"></script>
+<script src="/092 chapter_3/chapter_3/examples_add/js_biblia/swiper-bundle.js"></script>
 
 <script>
-  window.addEventListener('load', function() {
-    baguetteBox.run('.gallery'{
-      captions: true,
-      fullScreen: true
-    });
-  });
+const swiper = new Swiper('.swiper-container', {
+  // Optional parameters
+  direction: 'vertical',
+  loop: true,
+
+  // If we need pagination
+  pagination: {
+    el: '.swiper-pagination',
+  },
+
+  // Navigation arrows
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+
+  // And if we need scrollbar
+  scrollbar: {
+    el: '.swiper-scrollbar',
+  },
+});
   </script>
 </body>
 </html>
