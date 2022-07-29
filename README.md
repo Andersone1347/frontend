@@ -5453,7 +5453,20 @@ null
 
 ## 96 Урок. Библиотека sweetalert2.js_ Всплывающие модальные окна с иконками.
 
-
+Ссылка на сайт https://sweetalert2.github.io/.
+Переходим на сайт => download => ссылка **jsdelivr CDN** => файлы библиотеки находяться в каталоге **dist**.
+ 
 ## 97 Урок. Библиотека popper.js_ Всплывающие текстовые подсказки.
+Ссылка на сайт https://popper.js.org/.
+
 
 ## 98 Урок. Библиотека baguetteBox.js_ Галерея изображений.
+Ссылка на сайт https://feimosi.github.io/baguetteBox.js/.
+
+С сайта переходим на гит => **dist**
+
+## 99 Урок. Библиотека lightgallery.js_ Галерея изображений.
+Ссылка на сайт https://sachinchoolur.github.io/lightgallery.js/.
+Git => Code => Download ZIP => dist.
+
+## 100 Урок. Библиотека flatpickr.js_ Календарь.
