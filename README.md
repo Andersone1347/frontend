@@ -5499,4 +5499,240 @@ https://bootstrap-4.ru/
 ```
     <link rel="shortcut icon" href="/js_bootstrap/img/favicon.ico" type="image/x-icon">
 ```
-Создаём **header** как на видио, добавляем **bootstrap** классы, кнопку с якорем на **footer**, в **css** прописываем градиент.
+Создаём **header** как на видио по документации бутстрап https://bootstrap-4.ru/docs/5.2/layout/grid/, добавляем **bootstrap** классы, кнопку с якорем на **footer**, в **css** прописываем градиент https://www.colorzilla.com/gradient-editor/. Кнопка плэй с помощью https://morphismail.github.io/myInstruments/, делаем видио адаптивным в модальном окне http://embedresponsively.com/.
+body
+```
+
+  <header>
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h1 class="text-center text-white">Видео курс по вёрстке для начинающих</h1>
+          <div class="itd_play" data-bs-toggle="modal" data-bs-target="#mu">
+          <div class="itd_triangle"></div>
+        </div>
+       <a href="#footer" class="btn btn-itd btn-lg text-uppercase">заказать</a>
+      </div>
+    </div>
+  </header>
+
+<footer id="footer">
+  
+</footer>
+
+<div class="modal fade" id="mu" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Заголовок</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+      </div>
+      <div class="modal-body">
+<div class='embed-container'><iframe src='https://www.youtube.com/embed/ndNLN1ZMrIY' frameborder='0' allowfullscreen></iframe></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <script src="/js_bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+```
+css
+```
+:root {
+    --color1: green;
+    --color2: red;
+}
+
+header,
+footer,
+section {
+    padding: 100px 0;
+}
+
+header {
+    padding: 200px 0;
+}
+
+header,
+footer {
+    background: url(../img/pattern.png), var(--color1);
+    background: url(../img/pattern.png), -moz-linear-gradient(left, var(--color1) 0%, var(--color2) 100%);
+    background: url(../img/pattern.png), -webkit-linear-gradient(left, var(--color1) 0%, var(--color2) 100%);
+    background: url(../img/pattern.png), linear-gradient(to right, var(--color1) 0%, var(--color2) 100%);
+    filter: url(../img/pattern.png), progid:DXImageTransform.Microsoft.gradient(startColorstr=var(--color1), endColorstr=var(--color2), GradientType=1);
+    background-size: contain;
+}
+
+.itd_play {
+    background-color: var(--color1);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin: 30px auto 30px;
+    transition: all 0.2s ease;
+}
+
+.itd_play:hover {
+    background-color: var(--color2);
+}
+
+.itd_triangle {
+    margin-right: -3px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 10px 0 10px 20px;
+    border-color: transparent transparent transparent var(--bs-white);
+}
+
+.btn-itd {
+    display: block;
+    max-width: 200px;
+    margin: 0 auto;
+    padding: 8px 30px;
+    color: var(--bs-white);
+    background-color: var(--color2);
+}
+
+.btn-itd:hover {
+    color: var(--bs-white);
+    background-color: var(--color1);
+}
+
+.embed-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+}
+
+.embed-container iframe,
+.embed-container object,
+.embed-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+```
+
+## 106 Урок. Сетка 3 на 3 и иконки.
+Создаём секцию с иконками в дивах по сетки https://bootstrap-4.ru/docs/4.0/layout/grid/.
+```
+        <div class="col-xl-4 col-md-6 col-sm-12">
+          <div class="itd_circle"><i class="icon-battery-1"></i></div>
+          <h5 class="text-center">батарея</h5>
+          <div class="line"></div>
+        </div>
+```
+section
+```
+<section class="about">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h2 class="text-center text-uppercase color1 md-5">о курсе</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xl-4 col-md-6 col-sm-12">
+          <div class="itd_circle"><i class="icon-github-circled-alt2"></i></div>
+          <h5 class="text-center">Структура</h5>
+          <div class="line"></div>
+        </div>
+        <div class="col-xl-4 col-md-6 col-sm-12">
+          <div class="itd_circle"><i class="icon-mixi"></i></div>
+          <h5 class="text-center">Структура 2</h5>
+          <div class="line"></div>
+        </div>
+        <div class="col-xl-4 col-md-6 col-sm-12">
+          <div class="itd_circle"><i class="icon-mail"></i></div>
+          <h5 class="text-center">СЫВЫА</h5>
+          <div class="line"></div>
+        </div>
+        <div class="col-xl-4 col-md-6 col-sm-12">
+          <div class="itd_circle"><i class="icon-github-circled-alt2"></i></div>
+          <h5 class="text-center">Структура3</h5>
+          <div class="line"></div>
+        </div>
+        <div class="col-xl-4 col-md-6 col-sm-12">
+          <div class="itd_circle"><i class="icon-heart-broken"></i></div>
+          <h5 class="text-center">сердце</h5>
+          <div class="line"></div>
+        </div>
+        <div class="col-xl-4 col-md-6 col-sm-12">
+          <div class="itd_circle"><i class="icon-mail"></i></div>
+          <h5 class="text-center">Маил</h5>
+          <div class="line"></div>
+        </div>
+        <div class="col-xl-4 col-md-6 col-sm-12">
+          <div class="itd_circle"><i class="icon-emo-unhappy"></i></div>
+          <h5 class="text-center">Эмо</h5>
+          <div class="line"></div>
+        </div>
+        <div class="col-xl-4 col-md-6 col-sm-12">
+          <div class="itd_circle"><i class="icon-github-circled-alt2"></i></div>
+          <h5 class="text-center">Гит</h5>
+          <div class="line"></div>
+        </div>
+        <div class="col-xl-4 col-md-6 col-sm-12">
+          <div class="itd_circle"><i class="icon-battery-1"></i></div>
+          <h5 class="text-center">батарея</h5>
+          <div class="line"></div>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+```
+css
+```
+/* -----------------о курсе--------------- */
+.about {
+    background-color: #eee;
+}
+.about i {
+    font-size: 25px;
+    color: var(--color2);
+}
+.itd_circle {
+    margin: 0 auto 15px;
+    width: 70px;
+    height: 70px;
+    border: 3px solid var(--color2);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.line {
+    width: 100px;
+    height: 3px;
+    background-color: var(--color1);
+    margin: 15px auto 30px;
+}
+
+
+/*------------------ цвет--------------- */
+.colo1 {
+    color: var(--color1);
+}
+
+.colo2 {
+    color: var(--color2);
+}
+.bg2 {
+    background-color: var(--color1);
+}
+.bg2 {
+    background-color: var(--color2);
+}
+```
+## 107 Урок. Сетка 2 на 2.
