@@ -5632,6 +5632,8 @@ footer {
           <div class="line"></div>
         </div>
 ```
+**mb-5** - это отступ снизу.
+
 section
 ```
 <section class="about">
@@ -5736,3 +5738,45 @@ css
 }
 ```
 ## 107 Урок. Сетка 2 на 2.
+Как и в прошлом уроке создаём секцию и ещё добавим такую же ссылку с якорем как в прошлых уроках.
+```
+  <section class="forwhom">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h2 class="text-center text-uppercase color2 mb-5">курс для кого-то</h2>
+        </div>
+      </div>
+      <div class="row mb-5">
+        <div class="col-md-6 col-sm-12">
+          <h5 class="text center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident?</h5>
+        </div>
+        <div class="col-md-6 col-sm-12">
+          <h5 class="text center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident?</h5>
+        </div>
+        <div class="col-md-6 col-sm-12">
+          <h5 class="text center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident?</h5>
+        </div>
+        <div class="col-md-6 col-sm-12">
+          <h5 class="text center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident?</h5>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <a href="#footer" class="btn btn-itd btn-lg text-uppercase">заказать</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+```
+css
+```
+/*---------------- для кого --------------- */
+.forwhom h5 {
+    padding: 50px;
+    border: 3px solid var(--color1);
+}
+```
+## 108 Урок. Как сделать Аккордеон на Bootstrap 5.
+https://bootstrap-4.ru/docs/5.0/components/accordion/
