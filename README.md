@@ -5780,3 +5780,10 @@ css
 ```
 ## 108 Урок. Как сделать Аккордеон на Bootstrap 5.
 https://bootstrap-4.ru/docs/5.0/components/accordion/
+
+Что бы сделать акардион развёрнутым надо убрать у кнопки класс **collapsed** а у **diva**с контентом добавить класс **show**.
+```
+              <div id="flush-collapseOne" class="accordion-collapse collapse show" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the first item's accordion body.</div>
+              </div>
+```
