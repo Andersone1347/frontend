@@ -5787,3 +5787,23 @@ https://bootstrap-4.ru/docs/5.0/components/accordion/
                 <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the first item's accordion body.</div>
               </div>
 ```
+Кнопка и контент связанны по индификаторам. 
+* accordion1, f1, div1.
+```
+<div class="row">
+        <div class="col-md-4 col-sm-12">
+          <h4 class="text-center fw-bold mb-3 mt-3">Модуль 1<br>(HTML)</h4>
+          
+          <div class="accordion accordion-flush" id="accordion1">
+
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="f1">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#div1" aria-expanded="false" aria-controls="div1">
+                  она #1
+                </button>
+              </h2>
+              <div id="div1" class="accordion-collapse collapse show" aria-labelledby="f1" data-bs-parent="#accordion1">
+                <div class="accordion-body fst-italic">первый текст.</div>
+              </div>
+            </div>
+```
