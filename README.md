@@ -5928,3 +5928,22 @@ https://bootstrap-4.ru/docs/5.2/getting-started/introduction/
 # 09 Система управления версиями Git и GitHub.
 
 ## 114 Урок. Что такое Git.
+## 115 Урок. Установка Git.
+Знакомство с терминалом.
+## 116 Урок. Регистрация на GitHub.
+## 117 Урок. Первые команды Git.
+Установка расширения **Git History Diff**.
+## 118 Урок. Работа с Git в VS Code.
+## 119 Урок. Алиасы для Git.
+Сокращения для команд в терминале. Находим gitconfig на диске С, и дописывает:
+```
+[alias]
+	s = status --short
+	l = log --oneline --graph --decorate --all
+	g = log --graph --abbrev-commit --decorate --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(dim white) - %an%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n %C(white)%s%C(reset)'
+	br = branch
+	co = checkout
+
+```
+
+## 120 Урок. Отмена изменений и возврат к коммиту.
