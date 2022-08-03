@@ -559,11 +559,18 @@ console.log(arr2) // (6) [1, 5, 4, 7, 8, 91] */
 }
 console.log(isNumber("dasd"))  */
 
-let age = prompt("Введите ваш возраст?")
-if(age < 18) {
-   alert("Мой возраст меньше 18")
-} else if(age > 18) {
-   alert("Мой возраст больше 18")
-} else if(age == 18) {
-   alert("Мой возраст  18")
-}
+// let age = prompt("Введите ваш возраст?")
+// if(age < 18) {
+//    alert("Мой возраст меньше 18")
+// } else if(age > 18) {
+//    alert("Мой возраст больше 18")
+// } else if(age == 18) {
+//    alert("Мой возраст  18")
+// }
+
+let arr = [5, 7, 9, 1, 0];
+arr.forEach(function(item, i, array){
+    console.log(`Элемент: ${item}
+    Индекс: ${i}
+    Массив: ${array}`)
+})

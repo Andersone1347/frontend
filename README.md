@@ -975,9 +975,9 @@ for(let key in obj) {
 ```
 let arr = [5, 7, 9, 1, 0];
 arr.forEach(function(item, i, array){
-    console.log('Элемент: ${item}
+    console.log(`Элемент: ${item}
     Индекс: ${i}
-    Массив: ${array}')
+    Массив: ${array}`)
 })
 ```
 Получаем такой результат для каждого элемента массива:
