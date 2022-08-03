@@ -5936,7 +5936,7 @@ https://bootstrap-4.ru/docs/5.2/getting-started/introduction/
 ## 118 Урок. Работа с Git в VS Code.
 ## 119 Урок. Алиасы для Git.
 Сокращения для команд в терминале. Находим gitconfig на диске С, и дописывает:
-```
+```     
 [alias]
 	s = status --short
 	l = log --oneline --graph --decorate --all
@@ -5945,5 +5945,6 @@ https://bootstrap-4.ru/docs/5.2/getting-started/introduction/
 	co = checkout
 
 ```
+
 
 ## 120 Урок. Отмена изменений и возврат к коммиту.
