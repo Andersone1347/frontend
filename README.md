@@ -5807,3 +5807,124 @@ https://bootstrap-4.ru/docs/5.0/components/accordion/
               </div>
             </div>
 ```
+css 
+```
+/* Программа курса */
+.accordion-button:not(.collapsed) {
+    color: var(--bs-white);
+    background-color: var(--color1);
+}
+.accordion-button:not(.collapsed)::after {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='white'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+```
+## 109 Урок. Адаптивные изображения на Bootstrap 5.
+
+Работа с изображением https://getbootstrap.com/docs/5.2/content/images/.          
+Изображения в Bootstrap делаются адаптивными с помощью **.img-fluid**. Это относится **max-width: 100%;** и **height: auto;**к изображению, чтобы оно масштабировалось вместе с родительской шириной.
+html
+```
+<section class="learning">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h2 class="text-center text-uppercase color2 mb-5">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet, porro magni! Minima non repudiandae sed perspiciatis aliquid?</h2>
+      </div>
+    </div>
+    <div class="row align-items-center mb-5">
+      <div class="col-lg-9 col-sm-12">
+        <h5>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Qui quae nesciunt dolorum, omnis sed, illum consequuntur quisquam asperiores corrupti corporis labore quibusdam nisi animi eum? Minima qui eius quisquam eaque!</h5>
+        <h5>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Qui quae nesciunt dolorum, omnis sed, illum consequuntur quisquam asperiores corrupti corporis labore quibusdam nisi animi eum? Minima qui eius quisquam eaque!</h5>
+        <h5>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Qui quae nesciunt dolorum, omnis sed, illum consequuntur quisquam asperiores corrupti corporis labore quibusdam nisi animi eum? Minima qui eius quisquam eaque!</h5>
+        <h5>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Qui quae nesciunt dolorum, omnis sed, illum consequuntur quisquam asperiores corrupti corporis labore quibusdam nisi animi eum? <a href="https://github.com/Andersone1347/frontend" target="_blank"> qui eius quisquam</a> eaque!</h5>
+        <h5>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Qui quae nesciunt dolorum, omnis sed, illum consequuntur quisquam asperiores corrupti corporis labore quibusdam nisi animi eum? Minima qui eius quisquam eaque!</h5>
+      </div>
+    <div class="col-lg-3 col-sm-12 mb-sm-5 mt-sm-5 text-center">
+      <img src="/js_bootstrap/img/mockup.png" alt="kjk" class="img-fluid">
+    </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <a href="#footer" class="btn btn-itd btn-lg text-uppercase">заказать</a>
+      </div>
+    </div>
+  </div>
+</section>
+```
+## 110 Урок. Практика и задание по работе с Bootstrap 5.
+
+Если возникает противоречие, когда стиль автора страницы и пользователя для одного и того же элемента не совпадает, то **!important** позволяет повысить приоритет стиля.
+Задание:
+```
+<section class="reviews">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h2 class="text-center text-uppercase color2 mb-5">отзывы</h2>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-lg-4 col-md-6 col-sm-12">
+        <img src="/js_bootstrap/img/people.jpg" alt="chel" class="rounded mx-auto d-block">
+        <h4 class="text-center mb-3 mt-3">kristina dsda</h4>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis rerum necessitatibus ut minima ab, perferendis officia nesciunt consectetur animi porro esse ipsum quia. Aspernatur ullam vero iste placeat doloribus quas dignissimos, maiores atque voluptatum sint quae voluptate? Temporibus, ducimus laborum!</p>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo porro deleniti repudiandae facere sapiente. Expedita vero magni deserunt quam voluptatem, ab accusantium maiores omnis iure? Qui laudantium delectus, reprehenderit exercitationem, ut veniam quisquam nemo modi adipisci, vitae optio et nisi quas expedita sed velit molestias nobis. Quo eligendi illum saepe laborum itaque tenetur facilis delectus, aut quisquam, nesciunt consectetur iure autem odit enim perferendis asperiores quis accusamus iusto hic nulla voluptatum! Recusandae rerum quibusdam ipsum minima, est nisi eveniet.</p>
+        <div class="line bg1"></div>
+      </div>
+    </div>
+  </div>
+</section>
+```
+
+## 111 Урок. Форма сбора средств Yoomoney.
+
+https://yoomoney.ru/get
+
+```
+<section class="buy">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h2 class="text-center text-uppercase color1 mb-5">купить</h2>
+      </div>
+    </div>
+    <div class="row align-items-center justify-content-center">
+      <div class="col-lg-5 col-sm-12">
+        <img src="img/preview.png" alt="buy" class="img-fluid mx-auto d-block">
+        <iframe src="https://yoomoney.ru/quickpay/shop-widget?writer=seller&default-sum=800&button-text=13&payment-type-choice=on&fio=on&phone=on&successURL=http%3A%2F%2F127.0.0.1%3A5501%2Fjs_bootstrap%2Findex.html&quickpay=shop&account=4100111118832445&targets=%D0%9F%D0%B5%D1%80%D0%B5%D0%B2%D0%BE%D0%B4%20%D0%BF%D0%BE%20%D0%BA%D0%BD%D0%BE%D0%BF%D0%BA%D0%B5&" width="100%" height="222" frameborder="0" allowtransparency="true" scrolling="no"></iframe>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum expedita molestias odit, eius velit corrupti dolore quod similique neque reiciendis facilis itaque beatae harum soluta dolor est tenetur accusamus corporis repellat vero provident! Hic, voluptatibus error quasi pariatur esse architecto?</p>
+      </div>
+    </div>
+  </div>
+</section>
+```
+
+https://yoomoney.ru/quickpay/form?_openstat=iget%3Bshop%3Bicon&from=iget
+
+## 112 Урок. Создание футера.
+
+Делаем иконки в футер.
+```
+<footer id="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center">
+        <a href="https://yoomoney.ru/quickpay/form?_openstat=iget%3Bshop%3Bicon&from=iget" target="_blank" class="btn btn-outline-light"><i class="icon-mail"></i></a>
+        <a href="" target="_blank" class="btn btn-outline-light"><i class="icon-glass"></i></a>
+        <a href="https://www.youtube.com/watch?v=yZZn_g0nOPI" target="_blank" class="btn btn-outline-light"><i class="icon-emo-unhappy"></i></a>
+        <a href="" target="_blank" class="btn btn-outline-light"><i class="icon-infinity"></i></a>
+        <a href="" target="_blank" class="btn btn-outline-light"><i class="icon-erase"></i></a>
+        <a href="" target="_blank" class="btn btn-outline-light"><i class="icon-github-circled-alt2"></i></a>
+        <a href="http://htmlbook.ru/html/noscript" target="_blank" class="btn btn-outline-light"><i class="icon-mail"></i></a>
+        <a href="https://www.youtube.com/watch?v=yZZn_g0nOPI" target="_blank" class="btn btn-outline-light"><i class="icon-github-circled-alt2"></i></a>
+      </div>
+    </div>
+  </div>
+</footer>
+```
+## 113 Урок. Обзор документация Bootstrap 5.
+https://bootstrap-4.ru/docs/5.2/getting-started/introduction/
+
+# 09 Система управления версиями Git и GitHub.
+
+## 114 Урок. Что такое Git.
