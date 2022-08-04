@@ -1707,10 +1707,14 @@ let a = "Str".repeat(3) // a "StrStrStr"
 let str = "Hello, i`m simple String"
 console.log(str.includes("simple"))// true
 ``` 
-* startsWith() - поиск начального слова, end - конечного. 
+* startsWith() - поиск начального слова, ends - конечного. 
 ```
 let str = "Hello, i`m simple String"
-console.log(str.startWith("Hello"))// true
+console.log(str.startsWith("Hello"))// true
+```
+```
+let str = "Hello, i'm simple String"
+console.log(str.endsWith("ig"))
 ```
 * Изменение содержимого массива например на ноль:
 ```
@@ -1718,23 +1722,21 @@ let arr = [5,8,9,2,4]
 arr.fill(0)
 console.log(arr) //[0,0,0,0,0]
 ```
+* Методы **entries()**,**keys()**,**values()**.
+```
 let arr = ['a','b','c']
-let entries = arr.entries()
-let keys = arr.keys()
-let values = arr.values()
+let entries = arr.entries() // индекс и значение в виде массива
+let keys = arr.keys()  // индексы
+let values = arr.values() // значения
 
-console.log(...entries)
-console.log(...keys)
-console.log(...values)
+console.log(...entries) //Array(2)0: 01: "a" length: 2[[Prototype]]:Array(0) Array(2) Array(2)
+console.log(...keys)  //0 1 2
+console.log(...values)  //a b c
 ```
-Array(2)0: 01: "a"
-length: 2[[Prototype]]: Array(0) Array(2) Array(2)
-0 1 2
-a b c
-```
-Объекты **Set** позволяют вам сохранять уникальные значения любого типа, как примитивы, так и другие типы объектов.
+
+Объекты **Set** позволяют сохранять уникальные значения любого типа, как примитивы, так и другие типы объектов.
 Синтаксис
- new Set([iterable]);
+ **new Set([iterable]);**     
 Пример:
 ```
 let set = new Set()
@@ -1742,20 +1744,13 @@ set.add(1)
 set.add(2)
 set.add(3)
 set.add(1)
-console.log(...set)
-console.log(set.has("4"))
-console.log(set.size)
+console.log(...set) // 1 2 3
+console.log(set.has("4")) //false
+console.log(set.size)  // 3
 set.delete(2)
-console.log(...set)
+console.log(...set) // 1 3
 set.clear()
-console.log(set)
-```
-```
-1 2 3
-false
-3
-1 3
-Set(0) {size: 0}
+console.log(set)  // Set(0) {size: 0}
 ```
 Массив без дубликатов.
 ```
@@ -5992,7 +5987,7 @@ https://ru.stackoverflow.com/questions/431520/%D0%9A%D0%B0%D0%BA-%D0%B2%D0%B5%D1
 \# Экранировать \
 
 1 | 2 | 3 | 1 | 2 | 3
-:-|:-:|--:|:-:|
+:-|:-:|--:|:-:|-:-|:-|
 11213132|1312|1312
 1|3|2
 12|1

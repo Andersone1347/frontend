@@ -567,3 +567,7 @@ console.log(isNumber("dasd"))  */
 
 // let a = new Date(2015,6,21,10,51,54,458)
 // console.log(a.getFullYear()) 
+
+let arr = [1,5,4,7,8,91,1,4,5]
+let arr2 = [...new Set(arr)]
+console.log(arr2) // (6) [1, 5, 4, 7, 8, 91]
