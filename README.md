@@ -1874,10 +1874,13 @@ length: 7
        element.innerHTML = "Cайт в хоне .ru"  
        }  
 ```
-#### ex5. Метод closest.
+#### ex5. Метод closest - возвращает ближайший родительский элемент.
 **element.closest()** возвращает ближайший родительский элемент (или сам элемент), который соответствует заданному **CSS-селектору** или **null**, если таковых элементов вообще нет.   
 В данном примере выведем в консоль тег **ul** с классом **list**.
 ```
+
+ <h2>Заголовок</h2>
+
   <div id="content">
     <ul class="list">
       <li class="item">Пункт 1</li>
@@ -1916,7 +1919,9 @@ console.log(item.closest('.list')) // null
     console.log(item.contains(list)) // false
   </script>
 ```
-#### ex7. 
+#### ex7. innerHTML.
+
+**innerHTML** устанавливает или получает **HTML** или **XML** разметку дочерних элементов.
 Можем полностью заменить боди на массив скрипта.
 ```
 <body>
@@ -1944,11 +1949,10 @@ document.body.innerHTML = `
  
 
 
-#### ex8.
-
-**innerHTML** - позволяет получить **html** элемента или же его изменить.     
+#### ex8.textContent.
+ 
 **textContent** - позволяет задавать или получать текстовое содержимое элемента и его потомков.   
-**body**  
+body  
 ```
   <p>Абзац текста</p>
   <div>
@@ -1957,7 +1961,7 @@ document.body.innerHTML = `
   </div>
 ```
 Если в консоль введём **innerHtml** то увидим теги **html**.  
-**script**
+script
 ```
 let strs = ["фамилия","имя","отчество"]
 document.querySelector('p').textContent = `${strs[0]} - ${strs[1]} - ${strs[2]}`
@@ -1973,7 +1977,7 @@ console.log(document.querySelector('div').textContent)
 ```
 
 
-#### ex9.
+#### ex9.hidden,setInterval.
 
 **hidden** - является **Boolean** типом данных , который принимает значение **true** , если содержимое спрятано, в противном случае значение будет **false**.      
 **setInterval** - позволяет регулярно исполнять функцию через указанный промежуток времени.    
@@ -1985,7 +1989,7 @@ console.log(document.querySelector('div').textContent)
   </script>
 ```
 
-#### ex10.
+#### ex10.Attribute.
 
 Работа с атрибутами **html**:    
 **elem.hasAttribute(name)** – проверяет наличие атрибута.
@@ -2050,7 +2054,7 @@ class = text
 id = basic
 ```
 
-#### ex11.
+#### ex11.dataset.
 
 Можем создать свои атрибуты для **html**-тегов лучше всего начинать с **data-**.
 ```
@@ -2069,13 +2073,13 @@ id = basic
     console.log(elem2.dataset.redGreen) // Красно-зелёный
   </script>
 ```
-#### ex12.
+#### ex12. createElement,prepend, append, appendChild, insertBefore или insertAdjacentElement.
 
-Создадим свои собственные элнменты.
+Создадим свои собственные элементы.
 
 Метод **createElement** позволяет создать новый элемент, передав в параметре имя тега. После создания с элементом можно работать как с обычным элементом, а также его можно добавить на страницу методами **prepend**, **append**, **appendChild**, **insertBefore** или **insertAdjacentElement**.
 
-В **body**:
+body:
 ```
   <p>Разделитель</p>
   <hr>
@@ -2092,7 +2096,7 @@ qwerty.innerHTML = '<h2>Сложно</h2>'
 * prepend() - добавить в начало.
 * before() - перед **body**.
 * after() - после **body**.
-* replaceWith() заменяет одни элементы другими.
+* replaceWith() заменяет одни элементы другими.    
 Пример:    
 ```
 document.body.after(qwerty)
@@ -2132,7 +2136,7 @@ qwerty.replaceWith(p)
 
 ## 51 Урок. Генерация вложенных списков.
 
-#### ex13.
+#### ex13.insertAdjacentHTML.
 **insertAdjacentHTML()** разбирает указанный текст как **HTML** или **XML** и вставляет полученные узлы **(nodes)** в **DOM** дерево в указанную позицию. Данная функция не переписывает имеющиеся элементы, что предотвращает дополнительную сериализацию и поэтому работает быстрее, чем манипуляции с **innerHTML**.     
  Методы:   
 * 'beforebegin': до самого element (до открывающего тега).
@@ -2154,7 +2158,7 @@ ul.insertAdjacentHTML('beforeend', '<li>beforeend</li>')
 ul.insertAdjacentHTML('afterend', '<p>afterend</p>')
   </script>
 ```
-#### ex14.
+#### ex14.setTimeout.
 Мы можем вызвать функцию не в данный момент, а позже, через заданный интервал времени. Это называется «планирование вызова».
 
 Для этого существуют два метода:
@@ -2180,7 +2184,7 @@ setTimeout(() => {
 ```
 И с помощью методов **after** переместим **two** и **one**.
 
-#### ex15. 
+#### ex15.cloneNode().
 
  **cloneNode()** возвращает дубликат узла, из которого этот метод был вызван.   
 Клонируем **div** и меняем сожержимое **p** в клоне. 
@@ -2197,7 +2201,7 @@ setTimeout(() => {
     div.after(div2)
   </script>
   ```
-#### ex16.
+#### ex16.document.body.append.(newUl)(создаём всплывающее окно которое будет создавать в ul li)
 
 Создаём всплывающее окно которое будет создавать в **ul** **li**.
 Создаём в пустом **body** **ul** с помощью **document.body.append.(newUl)**.
@@ -2241,7 +2245,7 @@ let newUl = document.createElement('ul');
     }
   </script>
 ```
-Создадим функцию **createUl(obj)** параметр **obj** потому что она будет приниать объект. 
+Создадим функцию **createUl(obj)** параметр **obj** потому что она будет принимать объект. 
 ```
 function createUl(obj) {}
 ```
@@ -2530,6 +2534,7 @@ th {
 ```
 
 Задача отсортировать таблицу по возрасту.   
+
 Создаём переменную **sortedRows** обозначаем **Array.from(table.rows)**. Метод **Array.from()** создаёт новый экземпляр **Array** из массивоподобного или итерируемого объекта(создаёт массив из элемента). И берём всё кроме нулевого индекса, потому что там **thead**.
 ```
 let sortedRows = Array.from(table.rows).slice(1)

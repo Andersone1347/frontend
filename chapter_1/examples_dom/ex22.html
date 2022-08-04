@@ -17,8 +17,9 @@
     div.style.color = "red"
     div.style.width = "100px"
     div.style.backgroundColor = "tomato"
-    div.style.display = "none"
-    setTimeout(()=> div.style.display = "", 4000)
+    // div.style.display = "none"
+    div.style.backgroundColor = prompt("Выбор цвета", "tomato")
+    // setTimeout(()=> div.style.display = "", 5000)
     let style = getComputedStyle(div)
     console.log(style)
   </script>
