@@ -567,12 +567,3 @@ console.log(isNumber("dasd"))  */
 
 // let a = new Date(2015,6,21,10,51,54,458)
 // console.log(a.getFullYear()) 
-let admin = {
-    ryles: 777
-}
-
-let user = {
-    name: "iva",
-    age: 20,
-    __proto__: admin
-}
