@@ -568,9 +568,5 @@ console.log(isNumber("dasd"))  */
 //    alert("Мой возраст  18")
 // }
 
-let arr = [5, 7, 9, 1, 0];
-arr.forEach(function(item, i, array){
-    console.log(`Элемент: ${item}
-    Индекс: ${i}
-    Массив: ${array}`)
-})
+let a = new Date(2022,07,9)
+console.log(+a)

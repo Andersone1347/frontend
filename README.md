@@ -1102,7 +1102,7 @@ console.log("Всего чётных элементов " + count)
 
 ## 43 Урок. Функции и решения 6 задач.    
  
-Сама по себе функция это алгоритм, и она ничего не делает по её не вызвать.
+Сама по себе функция это алгоритм, и она ничего не делает пока её не вызовешь.
 ```
 function printText() {
     console.log("Hello")
@@ -1308,7 +1308,7 @@ console.log(a)
 let a = new Date(2022,07,1)
 console.log(+a) //1659301200000
 ```
-**date.jpg**
+![alt](/092%20chapter_3/chapter_3/img/datetime_javascript.jpg)
 
 1. Шпаргалка по работе с датой и временем от ITDoctor
 https://yadi.sk/i/DeXmdtyb7LcFtg
