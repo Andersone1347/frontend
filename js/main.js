@@ -359,25 +359,22 @@ console.log(+a) */
 //   * @param {string} time время в виде строки, например "02:04" . Может быть в диапозоне от "00:00" до "23:59" .
 //   * @return {number} целое число в минутах. Например time="02:08" вернет 128.
 //   */
-//  function timeToMinute(time) {
 
-//  }
-// timeToMinute()
-
-// function timeToMinute(time) {
-//     try {
-//         let hour = +time.split(":")[0]
-//         let min = +time.split(":")[1]
-//         if( !(hour>=0 && hour<=23) || !(min>=0 && min<=59))
-//         {
-//             throw new RangeError("Аргумент должен быть в формате 'hh:mm' - 'hh' должен быть от 0 до 23, а 'mm' должен быть от 0 до 59. 'hh' и 'mm' должны быть числами и разделяться знаком ':'")
-//         }
-//         return hour*60+min
-//     } catch(error) {
-//         console.log(error)
-//     }
-// }
-// console.log(timeToMinute("11:28"))
+/* 
+function timeToMinute(time) {
+    try {
+        let hour = +time.split(":")[0]
+        let min = +time.split(":")[1]
+        if( !(hour>=0 && hour<=23) || !(min>=0 && min<=59))
+        {
+            throw new RangeError("Аргумент должен быть в формате 'hh:mm' - 'hh' должен быть от 0 до 23, а 'mm' должен быть от 0 до 59. 'hh' и 'mm' должны быть числами и разделяться знаком ':'")
+        }
+        return hour*60+min
+    } catch(error) {
+        console.log(error)
+    }
+}
+console.log(timeToMinute("19:28")) */
 
 // урок 46
 // 
@@ -568,5 +565,14 @@ console.log(isNumber("dasd"))  */
 //    alert("Мой возраст  18")
 // }
 
-let a = new Date(2015,6,21,10,51,54,458)
-console.log(a.getTime()) 
+// let a = new Date(2015,6,21,10,51,54,458)
+// console.log(a.getFullYear()) 
+let admin = {
+    ryles: 777
+}
+
+let user = {
+    name: "iva",
+    age: 20,
+    __proto__: admin
+}
