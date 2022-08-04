@@ -1308,6 +1308,11 @@ console.log(a)
 let a = new Date(2022,07,1)
 console.log(+a) //1659301200000
 ```
+```
+let a = new Date(2015,6,21,10,51,54,458)
+console.log(a.getTime()) // 1437465114458
+```
+
 ![alt](/092%20chapter_3/chapter_3/img/datetime_javascript.jpg)
 
 1. Шпаргалка по работе с датой и временем от ITDoctor

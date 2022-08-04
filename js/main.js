@@ -568,5 +568,5 @@ console.log(isNumber("dasd"))  */
 //    alert("Мой возраст  18")
 // }
 
-let a = new Date(2022,07,9)
-console.log(+a)
+let a = new Date(2015,6,21,10,51,54,458)
+console.log(a.getTime()) 
