@@ -30,6 +30,7 @@
     }
 
 checkbox.onchange = function() {
+  console.log(this.checked)
   if(this.checked) {
     localStorage.setItem('theme', true)
     theme.setAttribute('href', '../css/dark.css')
