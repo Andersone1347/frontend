@@ -11,9 +11,13 @@
 <body>
 
   <script>
-window.onbeforwunload = function(e) {
-  return false
-}
+document.addEventListener("DOMContentLoaded", function(e) {
+  console.log('DOM построен')
+})
+
+// window.onbeforeunload = function() {
+//   return "Есть несохранённые изменения. Всё равно уходим?";
+// };
   </script>
 </body>
 
