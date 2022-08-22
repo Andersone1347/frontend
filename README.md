@@ -6071,4 +6071,4 @@ https://ru.stackoverflow.com/questions/431520/%D0%9A%D0%B0%D0%BA-%D0%B2%D0%B5%D1
 
 [Вверх](#anchor)
 
-## 126 Урок. Фрагменты кода Gist.
+## 126 Урок. Фрагменты кода Gist.   
