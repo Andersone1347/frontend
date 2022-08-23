@@ -6021,10 +6021,9 @@ https://bootstrap-4.ru/docs/5.2/getting-started/introduction/
 Знакомство с терминалом.         
 Установка [Git](https://gitforwindows.org/).
 
-![alt](/img_read/1.png)  Знакомство с терминалом.         
-Установка [Git](https://gitforwindows.org/).
+Проверка версии гита в терминале. 
+![alt](/img_read/1.png)
 
-![alt](../img_read/1.png)
 
 ## 116 Урок. Регистрация на GitHub.
 ## 117 Урок. Первые команды Git.
