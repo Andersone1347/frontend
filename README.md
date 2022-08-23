@@ -6024,6 +6024,7 @@ https://bootstrap-4.ru/docs/5.2/getting-started/introduction/
 Проверка версии гита в терминале. 
 ![alt](/img_read/1.png)
 
+Создаём 
 
 ## 116 Урок. Регистрация на GitHub.
 ## 117 Урок. Первые команды Git.
