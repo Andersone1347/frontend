@@ -6042,6 +6042,8 @@ https://bootstrap-4.ru/docs/5.2/getting-started/introduction/
 ![alt](/img_read/1.gif)
 
 ## 118 Урок. Работа с Git в VS Code.
+В **vscode** во вкладке **git** дополнительные действия(3 точки) команды как в терминале.
+![alt](/img_read/1.jpg)
 ## 119 Урок. Алиасы для Git.
 Сокращения для команд в терминале. Находим gitconfig на диске С, и дописывает:
 ```     
