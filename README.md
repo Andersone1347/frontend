@@ -5503,7 +5503,7 @@ let str = "2 индейки стоят $60";
 alert( str.match(/(?<!\$)\d+/) ); // 2 (проигнорировалась цена)
 ```
 
-Подробная информация https://learn.javascript.ru/regexp-lookahead-lookbehind#:~:text=%D0%9E%D0%BF%D0%B5%D1%80%D0%B5%D0%B6%D0%B0%D1%8E%D1%89%D0%B8%D0%B5%20%D0%BF%D1%80%D0%BE%D0%B2%D0%B5%D1%80%D0%BA%D0%B8%20%D0%BF%D0%BE%D0%B7%D0%B2%D0%BE%D0%BB%D1%8F%D1%8E%D1%82%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%B2%D0%B0%D1%82%D1%8C%20%D1%83%D1%81%D0%BB%D0%BE%D0%B2%D0%B8%D1%8F,%D0%B5%D1%81%D1%82%D1%8C%20%D1%87%D1%82%D0%BE%2D%D1%82%D0%BE%20%D0%B7%D0%B0%D1%80%D0%B0%D0%BD%D0%B5%D0%B5%20%D0%BE%D0%BF%D1%80%D0%B5%D0%B4%D0%B5%D0%BB%D1%91%D0%BD%D0%BD%D0%BE%D0%B5.
+[Подробная информация](https://learn.javascript.ru/regexp-lookahead-lookbehind#:~:text=%D0%9E%D0%BF%D0%B5%D1%80%D0%B5%D0%B6%D0%B0%D1%8E%D1%89%D0%B8%D0%B5%20%D0%BF%D1%80%D0%BE%D0%B2%D0%B5%D1%80%D0%BA%D0%B8%20%D0%BF%D0%BE%D0%B7%D0%B2%D0%BE%D0%BB%D1%8F%D1%8E%D1%82%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%B2%D0%B0%D1%82%D1%8C%20%D1%83%D1%81%D0%BB%D0%BE%D0%B2%D0%B8%D1%8F,%D0%B5%D1%81%D1%82%D1%8C%20%D1%87%D1%82%D0%BE%2D%D1%82%D0%BE%20%D0%B7%D0%B0%D1%80%D0%B0%D0%BD%D0%B5%D0%B5%20%D0%BE%D0%BF%D1%80%D0%B5%D0%B4%D0%B5%D0%BB%D1%91%D0%BD%D0%BD%D0%BE%D0%B5.)
 
 ### ex19. Поиск на заданной позиции.
 Пример использования флага y.
@@ -6062,12 +6062,15 @@ https://bootstrap-4.ru/docs/5.2/getting-started/introduction/
 ![alt](/img_read/2.jpg)
 
 ## 121 Урок. Работа с ветками.
-Создание новой ветки и переход в неё **git checkout -b**. Список всех веток **git branch -b** создать и перейти. , **-m** переименовать , **-d** удалить.https://www.git-scm.com/book/ru/v2/%D0%9F%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5-C%3A-%D0%9A%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D1%8B-Git-%D0%92%D0%B5%D1%82%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B8-%D1%81%D0%BB%D0%B8%D1%8F%D0%BD%D0%B8%D1%8F.
+Создание новой ветки и переход в неё **git checkout -b**. Список всех веток **git branch -b** создать и перейти. , **-m** переименовать , **-d** удалить. [Подробная информация](https://www.git-scm.com/book/ru/v2/%D0%9F%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5-C%3A-%D0%9A%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D1%8B-Git-%D0%92%D0%B5%D1%82%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B8-%D1%81%D0%BB%D0%B8%D1%8F%D0%BD%D0%B8%D1%8F).
 
 ## 122 Урок. Панель команд Git в VS Code.
+![alt](/img_read/1.jpg) 
+
 ## 123 Урок. Откат к любому коммиту и Git Graph.
 Устанавливаем **Git Graph** и на лейбл вверху справа проверяем все коммиты и свободно можем по ним переходить.
 ## 124 Урок. Удаление репозитория.
+[Удаление репозитория](https://docs.github.com/en/repositories/creating-and-managing-repositories/deleting-a-repository)
 ## 125 Урок. Синтаксис Markdown для README.md.
 <a id="anchor"></a>
 ( --- , *** ) - горизонтальная линия.
