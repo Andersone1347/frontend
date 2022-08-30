@@ -6072,12 +6072,16 @@ https://bootstrap-4.ru/docs/5.2/getting-started/introduction/
 ## 124 Урок. Удаление репозитория.
 [Удаление репозитория](https://docs.github.com/en/repositories/creating-and-managing-repositories/deleting-a-repository)
 ## 125 Урок. Синтаксис Markdown для README.md.
+
+Установим расширение **vscode** _Markdown Preview Enhanced_ для предпросмотра **readme**, кликаем правой кнопкой мыши и выбираем открыть превью маркдаун.
 <a id="anchor"></a>
 ( --- , *** ) - горизонтальная линия.
-( \__жирный__  ) ((\_курсив_)     
-(> цитата)
-(>> вложеная цитата)
-\[ссылка](https://github.com/Andersone1347?tab=repositories)
+__жирный__    
+_курсив_     
+>цитата
+>>вложеная цитата
+
+[ссылка](https://github.com/Andersone1347?tab=repositories)
 
 Сноска первая[^1] и вторая [^2]
 [^1]: Текст сноски 1
@@ -6097,6 +6101,18 @@ https://bootstrap-4.ru/docs/5.2/getting-started/introduction/
 ТЕРМИН
 : ОПРЕДЕЛЕНИЕ
 
-[Вверх](#anchor)
+[Вверх якоря](#anchor)
+
+И прочие html-теги.
 
 ## 126 Урок. Фрагменты кода Gist.   
+
+1. Устанавливаем расширение "gist" в "Visual Studio";
+2. Заходим на главную своего профиля в Github, то есть "https://github.com/settings/profile" далее "Developer sesttings" далее "Personal acces tokens" выбираем "generate new token", Генерируя токен, нужно поставить галочку на gist. и копируем наш сгенерированный код(token);
+3. Заходим в "Visual Studio", жмем F1, вводим "gist" и выбираем "GIST: select profile";
+4. Вводим в появившееся окно наш сгенерированный TOKEN, далее вас попросят ввести имя пользователя, то есть ВАШЕ имя привязанное к аккаунту на github.
+5. Проверить все ли работает ТЕПЕРЬ.
+
+![alt](/js_bootstrap/img/2.png)
+
+[Дополнительная информация](https://docs.github.com/en/get-started/writing-on-github/editing-and-sharing-content-with-gists/creating-gists)
