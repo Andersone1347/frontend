@@ -6310,4 +6310,136 @@ const questions = [
 Алгоритм заключаетьс в том, чей объект наберёт больше плюсов того и в финале выведут на экран.
 
 ## Урок 130. Работа над интерфейсом игры.
-Заполняем **index**, линкуем css, js.
+Заполняем **index**, линкуем css, js. В целом пишем разметку.
+
+_index.html_
+```
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="img/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/font-awesome.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>С точки зрения бональной эрудиции стратегия для аутистов</title>
+  </head>
+
+  <body>
+    <div class="main">
+      <div class="app">
+        <div class="app__header">
+          <img src="img/logo.png" class="app__logo" />
+        </div>
+        <div class="app__body">
+          <button class="app__btn">
+            <i class="fa fa-play-circle-o" aria-hidden="true"></i>
+            <div class="app__btn-text">Начать</div>
+          </button>
+          <button class="app__btn">
+            <i class="fa fa-trophy" aria-hidden="true"></i>
+            <div class="app__btn-text">Достижения</div>
+          </button>
+          <button class="app__btn">
+            <i class="fa fa-user" aria-hidden="true"></i>
+            <div class="app__btn-text">Автор</div>
+          </button>
+          <button class="app__btn btn__sound">
+            <i class="fa fa-volume-up" aria-hidden="true"></i>
+            <div class="app__btn-text">Звук</div>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/vue.js"></script>
+    <script src="js/const.js"></script>
+  </body>
+</html>
+```
+_style.css_
+```
+@font-face {
+    font-family: "Yanone";
+    src: url(../fonts/YanoneKaffeesatz-Medium.ttf);
+}
+* {
+  box-sizing: border-box;
+}
+  body {
+        font-family: "Yanone", sans-serif;
+}
+  i.fa {
+    font-size: 30px;
+    margin-right: 10px;
+  }
+@keyframes slide {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 0%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+.main {
+    background-image: url(../img/background__main.jpg);
+    background-repeat: repeat-x;
+    animation: slide 90s linear infinite;
+}
+.app {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+}
+.app__header {
+    background-color: rgba(0,0,0,0.5);
+    border-bottom: 7px solid orange;
+    min-height: 247px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 10px;
+}
+.app__logo {
+    padding: 20px 0;
+    display: block;
+    width: 200px;
+    margin: 0 auto;
+}
+.app__body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100%;
+    overflow: auto;
+}
+.app__btn {
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 50px;
+    width: 240px;
+    background-color: blue;
+    box-shadow: 0px 7px 0px 0px aqua;
+    margin: 0 auto;
+    border-radius: 30px;
+    text-decoration: none;
+    font-style: 16px;
+    line-height: 20px;
+    color: aliceblue;
+    text-transform: uppercase;
+}
+.app__btn:focus {
+    outline: none;
+}
+```
+## Урок 131. Работа над интерфейсом игры.
