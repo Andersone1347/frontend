@@ -6442,7 +6442,7 @@ _style.css_
     outline: none;
 }
 ```
-![alt](/img_read/130 screen1.jpg)
+![alt](/img_read/130%20screen1.jpg)
 
 ## Урок 131. Работа над интерфейсом игры.
 Верстка страниц достижений.
@@ -6604,6 +6604,169 @@ border: 5px solid rgba(1,88,154,0.5);
 }
 
 ```
-![alt](/img_read/131 screen5.jpg)
+![alt](/img_read/131%20screen5.jpg)
 
 ## Урок 132. Экран с вопросами в игре.
+Верстка.
+_html_
+```
+    <div class="app">
+      <div class="app__body">
+        <a target="_blank" href="#" class="app__btn">
+          <i class="fa fa-instagram" aria-hidden="true"></i>
+          <div class="app__btn-text">Insta</div>
+        </a>
+        <a target="_blank" href="#" class="app__btn">
+         <i class="fa fa-twitter" aria-hidden="true"></i>
+          <div class="app__btn-text">twit</div>
+        </a>
+        <a target="_blank" href="#" class="app__btn">
+          <i class="fa fa-facebook" aria-hidden="true"></i>
+          <div class="app__btn-text">Facebook</div>
+        </a>
+        <a target="_blank" href="#" class="app__btn">
+          <i class="fa fa-youtube" aria-hidden="true"></i>
+          <div class="app__btn-text">youtube</div>
+        </a>
+        <a target="_blank" href="#" class="app__btn">
+          <i class="fa fa-vk" aria-hidden="true"></i>
+          <div class="app__btn-text">vk</div>
+        </a>
+        <button class="app__btn btn__back">
+          <i class="fa fa-reply" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
+```
+_css_
+```
+.app__header-inner{
+    color: aliceblue;
+    text-align: center;
+} 
+.app__count{
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+.app__text {
+    font-size: 18px;
+}
+```
+![alt](/img_read/132%20screen2.jpg)
+![alt](/img_read/132%20screen4.jpg)
+
+## Урок 133. Экран с результатами.
+Верстка.
+_index_
+```
+<div class="app results" data-race="infested">
+      <div class="app__body">
+        <div class="app__results-inner">
+          <div class="results__title">
+            zerg
+          </div>
+          <div class="results__img">
+            <img src="img/infested_logo.png">
+          </div>
+          <div class="results__text-box">
+            <p class="results__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit eos obcaecati quis minus enim vero perferendis corporis quam, mollitia sunt asperiores molestias atque quia odio, vel autem impedit quo ipsa, voluptatibus a ratione officia nam? Recusandae similique illum maxime a.</p>
+            <p class="results__quote">цитата 1</p>
+            <p class="results__quote">цитата 2</p>
+            <p class="results__author">автор</p>
+          </div>
+          <div>
+            <button class="app__btn btn__back btn__infested">
+              <i class="fa fa-reply" aria-hidden="true"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+```
+_css_
+```
+.results .app__body {
+    justify-content: space-between;
+}
+.app__results-inner {
+    color: aliceblue;
+    padding: 20px;
+}
+.results__title {
+    text-transform: uppercase;
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 20px;
+    padding-top: 20px;
+}
+.results__img {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.results__img img {
+    width: 250px;
+}
+.results__text-box {
+    margin-bottom: 20px;
+    font-size: 16px;
+    line-height: 20px;
+}
+.results__text {
+    margin-bottom: 20px;
+}
+.app.results{
+    animation: none;
+    background-size: cover;
+    background-position: center center;
+}
+.app.results[data-race="zerg"] {
+    background-image: url(../img/zerg_bg.jpg);
+}
+.app.results[data-race="primal"] {
+    background-image: url(../img/primal_bg.jpg);
+}
+.app.results[data-race="terran"] {
+    background-image: url(../img/terran_bg.jpg);
+}
+.app.results[data-race="infested"] {
+    background-image: url(../img/infested_bg.jpg);
+}
+.app.results[data-race="protoss"] {
+    background-image: url(../img/protoss_bg.jpg);
+}
+.app.results[data-race="taldarim"] {
+    background-image: url(../img/taldarim_bg.jpg);
+    background-position: 40% 0;
+}
+.app.results[data-race="hybrid"] {
+    background-image: url(../img/hybrid_bg.jpg);
+    background-position: 45% 0;
+}
+.btn__zerg {
+    background-color: #762877;
+}
+.btn__primal {
+    background-color: #56a725;
+}
+.btn__protoss {
+    background-color: #fce356;
+    color: rgba(0,0,0,0.8);
+}
+.btn__taldarim {
+    background-color: #9d0101;
+}
+.btn__terran {
+    background-color: #da8618;
+}
+.btn__infested {
+    background-color: #f5b673;
+    color: rgba(0,0,0,0.8);
+}
+.btn__hybrid {
+    background-color: #fc7654;
+}
+```
+![alt](/img_read/133%20screen3-6.jpg)
+
+
+## Урок 134. Начало работы с Vue.
