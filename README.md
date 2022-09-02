@@ -6428,7 +6428,7 @@ _style.css_
     text-align: center;
     min-height: 50px;
     width: 240px;
-    background-color: blue;
+    background-color: rgba(1,88,154,0.5);
     box-shadow: 0px 7px 0px 0px aqua;
     margin: 0 auto;
     border-radius: 30px;
@@ -6442,4 +6442,168 @@ _style.css_
     outline: none;
 }
 ```
+![alt](/img_read/130 screen1.jpg)
+
 ## Урок 131. Работа над интерфейсом игры.
+Верстка страниц достижений.
+_index_
+```
+    <div class="app achivments">
+      <div class="app__body">
+        <div class="app__body-inner">
+          <h2 class="app__body-title">
+            <i class="fa fa-trophy" aria-hidden="true"></i>
+            Достижения
+          </h2>
+          <div class="app__body-top">
+            <div class="app__card">
+              <div class="app__card-text">Счёт</div>
+              <div class="app__card-count">0</div>
+            </div>
+            <div class="app__card">
+              <div class="app__card-text">Открыто рас</div>
+              <div class="app__card-count">0</div>
+            </div>
+            <div class="app__card">
+              <div class="app__card-text">Всего игр</div>
+              <div class="app__card-count">0</div>
+            </div>
+            <div class="app__card">
+              <div class="app__card-text">Любимая раса</div>
+              <div class="app__card-count">0</div>
+            </div>
+          </div>
+          <div class="app__body-middle">
+            <div class="app_result">
+              <div class="app__result-score">
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <div class="app__result-count">150</div>
+              </div>
+              <div class="app__result-name">zerg</div>
+              <div class="app__result-amount">5</div>
+            </div>
+          </div>
+          <div class="app__body-middle">
+            <div class="app_result">
+              <div class="app__result-score">
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <div class="app__result-count">150</div>
+              </div>
+              <div class="app__result-name">zerg</div>
+              <div class="app__result-amount">5</div>
+            </div>
+          </div>
+          <div class="app__body-bottom">
+            <button class="app__btn btn__back btn_achivment">
+              <i class="fa fa-reply" aria-hidden="true"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+```
+_style.css_
+```
+.achivments .app__body {
+justify-content: flex-start;
+}
+.app__body-inner {
+    width: 100%;
+    max-width: 375px;
+    margin: 0 auto;
+    color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;    
+}
+.app__body-title {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 25px;
+    margin-bottom: 20px;
+    padding-top: 20px;
+}
+
+.app__body-top {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: max-content max-content;
+    place-content: center center;
+    margin-bottom: 20px;
+}
+.app__card {
+    background-color: rgba(0,0,0,0.5);
+    padding: 20px 10px;
+    border: 5px solid rgba(1,88,154,0.5);
+    text-align: center;
+}
+.app__card:nth-child(1) {
+border-right: none;
+border-bottom: none;
+}
+.app__card:nth-child(2) {
+    border-left: none;
+    border-bottom: none;
+    }
+    .app__card:nth-child(3) {
+        border-right: none;
+        border-top: none;
+        }
+    .app__card:nth-child(4) {
+            border-left: none;
+            border-top: none;
+            }
+.app__card-text {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+.app__card-count {
+    font-size: 18px;
+}
+.app__body-middle {
+    margin-bottom: 15px;
+}
+.app_result {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 10px;
+    border: 5px solid rgba(1,88,154,0.5);
+    background-color: rgba(25,121,211,0.8);
+    margin-bottom: 7px;
+}
+.app_result:last-child {
+    margin-bottom: 0;
+}
+
+i.fa-star {
+margin-right: 0;
+font-size: 15px;
+margin-bottom: 3px;
+}
+.app__result-name {
+font-size: 18px;
+margin-left: auto;
+margin-right: 20px;
+}
+.app__result-amount {
+font-size: 18px;
+}
+
+.btn__back {
+width: 70px;
+height: 70px;
+box-shadow: none;
+border-radius: 50%;
+}
+.btn_achivment {
+background-color: rgba(0,0,0,0.5);
+border: 5px solid rgba(1,88,154,0.5);
+}
+
+```
+![alt](/img_read/131 screen5.jpg)
+
+## Урок 132. Экран с вопросами в игре.
