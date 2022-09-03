@@ -19,15 +19,15 @@
           <img src="img/logo.png" class="app__logo" />
         </div>
         <div class="app__body">
-          <button class="app__btn">
+          <button class="app__btn" @click="goToQuestions">
             <i class="fa fa-play-circle-o" aria-hidden="true"></i>
             <div class="app__btn-text">Начать</div>
           </button>
-          <button class="app__btn">
+          <button class="app__btn"  @click="goToAchivments">
             <i class="fa fa-trophy" aria-hidden="true"></i>
             <div class="app__btn-text">Достижения</div>
           </button>
-          <button class="app__btn">
+          <button class="app__btn"  @click="goToSocial">
             <i class="fa fa-user" aria-hidden="true"></i>
             <div class="app__btn-text">Автор</div>
           </button>
@@ -37,9 +37,9 @@
           </button>
         </div>
       </div>
-    </div>
+    
 
-    <!-- <div class="app achivments" v-show="showAchivments">
+    <div class="app achivments" v-show="showAchivments">
       <div class="app__body">
         <div class="app__body-inner">
           <h2 class="app__body-title">
@@ -91,6 +91,7 @@
           </div>
         </div>
       </div>
+    </div>
    
 
     <div class="app" v-show="showQuestions">
@@ -106,7 +107,7 @@
         </button>
 
       </div>
-    </div> -->
+    </div>
 
     <div class="app" v-show="showSocial">
       <div class="app__body">
@@ -130,13 +131,13 @@
           <i class="fa fa-vk" aria-hidden="true"></i>
           <div class="app__btn-text">vk</div>
         </a>
-        <button class="app__btn btn__back">
+        <button class="app__btn btn__back"  @click="goToMain">
           <i class="fa fa-reply" aria-hidden="true"></i>
         </button>
       </div>
     </div>
 
-    <!-- <div class="app results" data-race="infested" v-show="showResult">
+    <div class="app results" data-race="infested" v-show="showResult">
       <div class="app__body">
         <div class="app__results-inner">
           <div class="results__title">
@@ -158,13 +159,16 @@
           </div>
         </div>
       </div>
-    </div> -->
+    </div>
 
+    </div>
     </div> 
 
     <script src="js/vue.js"></script>
     <script src="js/const.js"></script>
     <script>
+
+
         let app = new Vue({
     el: '.main',
     data: {
@@ -180,7 +184,6 @@
             'protoss': 0,
             'taldarim': 0,
             'terran': 0
-
         },
         totalGame: localStorage.getItem('sc2TotalGame') ? JSON.parse(localStorage.getItem('sc2TotalGame')) : {
             'zerg': 0,
@@ -196,6 +199,55 @@
         results: results,
         resultRace: 'infested',
     },
+    methods: {
+      goToMain() {
+        this.showMain = tru
+        this.showSocial = false
+        this.showAchivments = false
+        this.showQuestions = false
+        this.showResult = false
+      },
+      goToSocial() {
+        this.showMain = false
+        this.showSocial = true
+        this.showAchivments = false
+        this.showQuestions = false
+        this.showResult = false
+      },
+      goToAchivments() {
+        if(this.totalGames > 0) {
+        this.showMain = false
+        this.showSocial = false
+        this.showAchivments = true
+        this.showQuestions = false
+        this.showResult = false
+      } else {
+        this.goToQuestions()
+       }
+      },
+      goToQuestions() {
+        this.score = {
+            'zerg': 0,
+            'primal': 0,
+            'protoss': 0,
+            'taldarim': 0,
+            'terran': 0,
+        }
+        this.showMain = false
+        this.showSocial = false
+        this.showAchivments = false
+        this.showQuestions = true
+        this.showResult = false
+      },
+      goToResult() {
+        this.showMain = false
+        this.showSocial = false
+        this.showAchivments = false
+        this.showQuestions = false
+        this.showResult = true
+        this.resultRace = race
+      },
+    }
 })
     </script>
   </body>

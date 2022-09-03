@@ -6770,3 +6770,126 @@ _css_
 
 
 ## Урок 134. Начало работы с Vue.
+
+Директива **v-show** аналогично v-if позволяет скрывать или отображать элементы по определенному условию.
+
+В **index** прописываем скрипт, и к каждому экрану прописываем **v-show=""** для открытия и закрытия экрана true\false.    
+_script_
+```
+    <script>
+
+
+        let app = new Vue({
+    el: '.main',
+    data: {
+        showMain: true,
+        showSocial: false,
+        showAchivments: false,
+        showQuestions: false,
+        showResult: false,
+        number: 0,
+        score: {
+            'zerg': 0,
+            'primal': 0,
+            'protoss': 0,
+            'taldarim': 0,
+            'terran': 0
+        },
+        totalGame: localStorage.getItem('sc2TotalGame') ? JSON.parse(localStorage.getItem('sc2TotalGame')) : {
+            'zerg': 0,
+            'primal': 0,
+            'protoss': 0,
+            'taldarim': 0,
+            'terran': 0,
+            'infested': 0,
+            'hybrid': 0,
+        },
+        totalGames: localStorage.getItem('sc2TotalGame') ? localStorage.getItem('sc2TotalGame') :0,
+        questions: questions,
+        results: results,
+        resultRace: 'infested',
+    },
+    methods: {
+      goToMain() {
+         
+      }
+    }
+})
+    </script>
+```
+
+## Урок 135. Обработка событий на Vue.
+Создаём 5 методов для разных вариаций экрана.
+```
+    methods: {
+      goToMain() {
+        this.showMain = tru
+        this.showSocial = false
+        this.showAchivments = false
+        this.showQuestions = false
+        this.showResult = false
+      },
+      goToSocial() {
+        this.showMain = false
+        this.showSocial = true
+        this.showAchivments = false
+        this.showQuestions = false
+        this.showResult = false
+      },
+      goToAchivments() {
+        if(this.totalGames > 0) {
+        this.showMain = false
+        this.showSocial = false
+        this.showAchivments = true
+        this.showQuestions = false
+        this.showResult = false
+      } else {
+        this.goToQuestions()
+       }
+      },
+      goToQuestions() {
+        this.score = {
+            'zerg': 0,
+            'primal': 0,
+            'protoss': 0,
+            'taldarim': 0,
+            'terran': 0,
+        }
+        this.showMain = false
+        this.showSocial = false
+        this.showAchivments = false
+        this.showQuestions = true
+        this.showResult = false
+      },
+      goToResult() {
+        this.showMain = false
+        this.showSocial = false
+        this.showAchivments = false
+        this.showQuestions = false
+        this.showResult = true
+        this.resultRace = race
+      },
+    }
+})
+```
+Для подписки на события DOM и выполнения **JavaScript**-кода по их наступлении используйте директиву **v-on** или сокращённо **@click**.        
+Например:       
+_html_
+```
+<div id="example-1">
+  <button v-on:click="counter += 1">+1</button>
+  <p>Кнопка выше была нажата {{ counter }} раз</p>
+</div>
+_js_
+```
+```
+var example1 = new Vue({
+  el: '#example-1',
+  data: {
+    counter: 0
+  }
+})
+```
+В верстке добавляем методы на наши кнопки с помощью обработчика событий **@click**.
+
+## Урок 136. Циклы и методы на Vue.
