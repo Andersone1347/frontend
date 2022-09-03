@@ -6899,3 +6899,35 @@ var example1 = new Vue({
 В верстке добавляем методы на наши кнопки с помощью обработчика событий **@click**.
 
 ## Урок 136. Циклы и методы на Vue.
+Добавляем метод NextQuestions.
+```
+      nextQuestions(answer) {
+        if(this.number == 24) {
+          this.number = 0
+          //this.endGame();
+        } else {
+          this.number++
+        }
+        eval(answer)
+      }
+```
+Дополнили верстку.
+```
+    <div class="app" v-show="showQuestions">
+      <div class="app__header">
+        <div class="app__header-inner">
+          <div class="app__count"># {{ number +1 }}</div>
+            <div class="app__text" >{{ questions[number][0] }}</div>
+        </div>
+      </div>
+      <div class="app__body">
+        <button class="app__btn"
+          v-for="(answer, i) in questions[number][1]"
+          v-on:click="nextQuestions(questions[number][2][i])">
+          <div class="app__btn-text">{{ answer }}</div>
+        </button>
+
+      </div>
+    </div>
+```
+Используем директиву **v-for** для отрисовки списка элементов на основе массива данных. У директивы **v-for** особый синтаксис записи: **item in items**, где **items** — исходный массив, а **item** — ссылка на текущий элемент массива:
