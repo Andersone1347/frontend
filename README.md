@@ -6932,4 +6932,144 @@ var example1 = new Vue({
 ```
 Используем директиву **v-for** для отрисовки списка элементов на основе массива данных. У директивы **v-for** особый синтаксис записи: **item in items**, где **items** — исходный массив, а **item** — ссылка на текущий элемент массива.
 
-## Урок 136. Конец игры на Vue.
+## Урок 137. Конец игры на Vue.
+**v-bind**
+Сокращённая запись: **:**
+
+Ожидает: **any** (если указан аргумент) | **Object** (без аргументов)
+
+Аргумент: **attrOrProp** (опционально)
+
+Модификаторы:
+
+**.camel** — преобразование **kebab-case** имён атрибутов в **camelCase**.
+Использование:
+
+Динамически привязывает выражение к одному или нескольким атрибутам или входным параметрам компонента.
+
+При использовании с атрибутами **class** или **style** в качестве значений допускаются массивы и объекты. Подробнее можно узнать в разделе руководства по ссылкам ниже.
+
+При привязке входных параметров к дочернему компоненту потребуется их также определить в нём.
+
+При использовании без аргумента можно привязать объект из пар имя-значение. Обратите внимание, в этом режиме не поддерживаются массивы или объекты для **class** и **style**.
+
+Пример:
+```
+<!-- привязка к атрибуту -->
+<img v-bind:src="imageSrc" />
+
+<!-- динамическое имя атрибута -->
+<button v-bind:[key]="value"></button>
+
+<!-- сокращённая запись -->
+<img :src="imageSrc" />
+
+<!-- сокращённая запись при динамическом имени атрибута -->
+<button :[key]="value"></button>
+
+<!-- инлайн-выражение с конкатенацией строк -->
+<img :src="'/path/to/images/' + fileName" />
+
+<!-- привязка классов -->
+<div :class="{ red: isRed }"></div>
+<div :class="[classA, classB]"></div>
+<div :class="[classA, { classB: isB, classC: isC }]"></div>
+
+<!-- привязка стилей -->
+<div :style="{ fontSize: size + 'px' }"></div>
+<div :style="[styleObjectA, styleObjectB]"></div>
+
+<!-- привязка объекта с несколькими атрибутами -->
+<div v-bind="{ id: someProp, 'other-attr': otherProp }"></div>
+
+<!-- привязка входного параметра / "prop" должен быть объявлен в my-component -->
+<my-component :prop="someThing"></my-component>
+
+<!-- передача всех входных параметров родительского компонента в дочерний -->
+<child-component v-bind="$props"></child-component>
+
+<!-- XLink -->
+<svg><a :xlink:special="foo"></a></svg>
+```
+Модификатор **.camel** позволяет приводить имя атрибута **v-bind** в **camelCase** при использовании **DOM**-шаблонов, например для атрибута **viewBox** в **SVG**:
+```
+<svg :view-box.camel="viewBox"></svg>
+```
+Указывать **.camel** не нужно при использовании строковых шаблонов или их компиляции с помощью **vue-loader/vueify**.
+---
+
+Написан новый метод конец игры.
+```
+      endGame() {
+        this.totalGames++;
+        localStorage.setItem('sc2TotalGames', this.totalGames)
+        // Зерг
+        if(this.score.zerg > this.score.protoss && this.score.zerg > this.score.terran && this.score.primal < 8 && Math.abs(this.score.protoss - this.score.zerg) > 3) {
+          this.goToResult('zerg')
+          this.totalGame.zerg++
+        }
+        // Изначальный
+        else if (this.score.primal > this.score.protoss &&
+        this.score.primal > this.score.terran &&
+        this.score.primal == 8) {
+          this.goToResult('primal')
+          this.totalGame.primal++
+        }
+        // Протосс
+        else if (this.score.protoss > this.score.zerg &&
+        this.score.protoss > this.score.terran &&
+        this.score.taldarim < 5 &&
+        Math.abs(this.score.protoss - this.score.zerg) > 3) {
+          this.goToResult('protoss')
+          this.totalGame.protoss++
+        }
+        // Талдарим
+        else if (this.score.protoss > this.score.zerg &&
+        this.score.protoss > this.score.terran &&
+        this.score.taldarim == 5) {
+          this.goToResult('taldarim')
+          this.totalGame.taldarim++
+        }
+        //Терран 
+        else if (this.score.terran > this.score.zerg &&
+        this.score.terran > this.score.protoss) {
+          this.goToResult('terran')
+          this.totalGame.terran++
+        }
+        //Гибрид
+        else if (Math.abs(this.score.protoss - this.score.zerg) <= 3) {
+          this.goToResult('hybrid')
+          this.totalGame.hybrid++
+        }
+        //Зараженный терран
+        else {
+          this.goToResult('infested')
+          this.totalGame.infested++
+        }
+        localStorage.setItem('sc2TotalGame', JSON.stringify(this.totalGame))
+```
+Изменён экран результатов(**app results**) на вывод данных из массива в файле **const.js**.
+```
+    <div class="app results" v-show="showResult" :data-race="resultRace" >
+      <div class="app__body">
+        <div class="app__results-inner">
+          <div class="results__title">{{ results[resultRace].name }}</div>
+          <div class="results__img">
+            <img :src="'img/'+resultRace+'_logo.png'">
+          </div>
+          <div class="results__text-box">
+            <p class="results__text">{{ results[resultRace].description }}</p>
+            <p class="results__quote">{{ results[resultRace].quote1 }}</p>
+            <p class="results__quote">{{ results[resultRace].quote2 }}</p>
+            <p class="results__author">{{ results[resultRace].author }}</p>
+          </div>
+          <div>
+            <button :class="'app__btn btn__back btn__'+resultRace" @click="goToAchivments">
+              <i class="fa fa-reply" aria-hidden="true"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+```
+## Урок 138. Вычисляемые свойства на Vue.
