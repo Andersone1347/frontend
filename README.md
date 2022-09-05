@@ -7195,3 +7195,6 @@ audio_icon.classList.remove('fa-volume-up')
 })
 ```
 B скрипт перенесён в отдельный файл и подключен к index.html.
+
+## Урок 140. Работа с Git и GitHub.
+Загружаем наш проект на GitPages.
