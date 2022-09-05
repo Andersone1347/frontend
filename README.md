@@ -7073,3 +7073,96 @@ var example1 = new Vue({
     </div>
 ```
 ## Урок 138. Вычисляемые свойства на Vue.
+Написали свойства, сделали статистику, достижения на экране(app achivments).
+_index_
+```
+<div class="app achivments" v-show="showAchivments">
+      <div class="app__body">
+        <div class="app__body-inner">
+          <h2 class="app__body-title">
+            <i class="fa fa-trophy" aria-hidden="true"></i>
+            Достижения
+          </h2>
+          <div class="app__body-top">
+            <div class="app__card">
+              <div class="app__card-text">Счёт</div>
+              <div class="app__card-count">{{ totalScore }}</div>
+            </div>
+            <div class="app__card">
+              <div class="app__card-text">Открыто рас</div>
+              <div class="app__card-count">{{ openRaces }}</div>
+            </div>
+            <div class="app__card">
+              <div class="app__card-text">Всего игр</div>
+              <div class="app__card-count">{{ totalGames }} </div>
+            </div>
+            <div class="app__card">
+              <div class="app__card-text">Любимая раса</div>
+              <div class="app__card-count">{{ favoriteRace }}</div>
+            </div>
+          </div>
+          <div class="app__body-middle">
+            <div class="app_result" 
+            v-for="(race, k) in results"
+            v-show="showResultRace[k]"
+            @click="goToResult(k)">
+              <div class="app__result-score">
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <div class="app__result-count">{{ race.points }}</div>
+              </div>
+              <div class="app__result-name">{{ race.name }}</div>
+              <div class="app__result-amount">{{ totalGame[k] }}</div>
+            </div>
+          </div>
+          <div class="app__body-bottom">
+            <button class="app__btn btn__back btn_achivment" @click="goToMain">
+              <i class="fa fa-reply" aria-hidden="true"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+```
+
+_script_
+```
+    computed: {
+      totalScore()  {
+        let score=0 
+        for(let i in this.totalGame) {
+          score+=(this.totalGame[i]*results[i].points)
+        }
+        return score
+      },
+      openRaces()  {
+        let count=0 
+        for(let i in this.totalGame) {
+          if(this.totalGame[i]>0) count++
+        }
+        return count
+      },
+      favoriteRace() {
+        let max='zerg'
+        for(let i in this.totalGame) {
+          if(this.totalGame[i]>this.totalGame[max]) {
+            max=i
+          }
+        }
+      return results[max].name
+      },
+      showResultRace() {
+        return {
+          'zerg': this.totalGame.zerg > 0 ? true : false,
+          'primal': this.totalGame.primal > 0 ? true : false,
+          'protoss': this.totalGame.protoss > 0 ? true : false,
+          'taldarim': this.totalGame.taldarim > 0 ? true : false,
+          'terran': this.totalGame.terran > 0 ? true : false,
+          'infested': this.totalGame.infested > 0 ? true : false,
+          'hybrid': this.totalGame.hybrid > 0 ? true : false,
+        }
+      }
+    }
+})
+```
+
+## Урок 139. Музыка в игре на JavaScript.
