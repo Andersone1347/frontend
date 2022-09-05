@@ -49,33 +49,25 @@
           <div class="app__body-top">
             <div class="app__card">
               <div class="app__card-text">Счёт</div>
-              <div class="app__card-count">0</div>
+              <div class="app__card-count">{{ totalScore }}</div>
             </div>
             <div class="app__card">
               <div class="app__card-text">Открыто рас</div>
-              <div class="app__card-count">0</div>
+              <div class="app__card-count">{{ openRaces }}</div>
             </div>
             <div class="app__card">
               <div class="app__card-text">Всего игр</div>
-              <div class="app__card-count">0</div>
+              <div class="app__card-count">{{ totalGames }} </div>
             </div>
             <div class="app__card">
               <div class="app__card-text">Любимая раса</div>
-              <div class="app__card-count">0</div>
+              <div class="app__card-count">{{ favoriteRace }}</div>
             </div>
           </div>
           <div class="app__body-middle">
-            <div class="app_result">
-              <div class="app__result-score">
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <div class="app__result-count">150</div>
-              </div>
-              <div class="app__result-name">zerg</div>
-              <div class="app__result-amount">5</div>
-            </div>
-          </div>
-          <div class="app__body-middle">
-            <div class="app_result">
+            <div class="app_result" 
+            v-for="(race, k) in results"
+            @click="goToResult(k)">
               <div class="app__result-score">
                 <i class="fa fa-star" aria-hidden="true"></i>
                 <div class="app__result-count">150</div>
@@ -85,7 +77,7 @@
             </div>
           </div>
           <div class="app__body-bottom">
-            <button class="app__btn btn__back btn_achivment">
+            <button class="app__btn btn__back btn_achivment" @click="goToMain">
               <i class="fa fa-reply" aria-hidden="true"></i>
             </button>
           </div>
@@ -162,7 +154,7 @@
     </div>
 
     </div>
-    </div> 
+   
 
     <script src="js/vue.js"></script>
     <script src="js/const.js"></script>
@@ -194,7 +186,7 @@
             'infested': 0,
             'hybrid': 0,
         },
-        totalGames: localStorage.getItem('sc2TotalGame') ? localStorage.getItem('sc2TotalGame') :0,
+        totalGames: localStorage.getItem('sc2TotalGames') ? localStorage.getItem('sc2TotalGames') : 0,
         questions: questions,
         results: results,
         resultRace: 'infested',
@@ -303,6 +295,31 @@
           this.totalGame.infested++
         }
         localStorage.setItem('sc2TotalGame', JSON.stringify(this.totalGame))
+      }
+    },
+    computed: {
+      totalScore()  {
+        let score=0 
+        for(let i in this.totalGame) {
+          score+=(this.totalGame[i]*results[i].points)
+        }
+        return score
+      },
+      openRaces()  {
+        let count=0 
+        for(let i in this.totalGame) {
+          if(this.totalGame[i]>0) count++
+        }
+        return count
+      },
+      favoriteRace() {
+        let max='zerg'
+        for(let i in this.totalGame) {
+          if(this.totalGame[i]>this.totalGame[max]) {
+            max=i
+          }
+        }
+      return results[max].name
       }
     }
 })
