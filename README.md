@@ -7319,5 +7319,42 @@ $ gulp --version
 CLI version: 2.3.0
 Local version: 4.0.2
 ```
-
 ## Урок 146. Пакеты на NPM JS.
+
+Создаём файл **gulpfile.js** и вводим в терменале **gulp**.
+```
+function defaultTask(cb) {
+    // place code for your default task here
+    cb();
+  }
+  
+  exports.default = defaultTask
+```
+```
+D:\andrey\TestGulp>gulp
+[20:15:05] Using gulpfile D:\andrey\TestGulp\gulpfile.js
+[20:15:05] Starting 'default'...
+[20:15:05] Finished 'default' after 3.05 ms
+
+D:\andrey\TestGulp>
+```
+
+[npm пакеты](https://www.npmjs.com/) в поиске **less** => **instal** он копирует команду,добавляем **-D**(**npm i less -D**) и вбиваем в интервал.
+**-D** это то же, что **--save-dev** (установка пакета как dev-зависимость), так же устанавливаем **del**.
+
+Coздадим папку **dist** и удалим её через **gulp(del)**
+```
+const gulp = require('gulp')
+const less = require('less')
+const del = require('del')
+
+function clean() {
+    return del(['dist'])
+}
+
+exports.clean = clean
+```
+```
+D:\andrey\TestGulp>gulp clean 
+```
+## Урок 147. Константа с путями.
