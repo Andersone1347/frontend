@@ -7257,3 +7257,60 @@ D:\Repositories>cd  My_Test_Gulp
 D:\Repositories\My_Test_Gulp>
 ```
 ## Урок 145. Инициализация проекта NPM init.
+Далее вводим опять же по инструкции (_Создайте файл package.json в каталоге вашего проекта_).
+```
+D:\Repositories\My_Test_Gulp>npm init
+This utility will walk you through creating a package.json file.
+It only covers the most common items, and tries to guess sensible defaults.
+
+See `npm help init` for definitive documentation on these fields
+and exactly what they do.
+
+Use `npm install <pkg>` afterwards to install a package and
+save it as a dependency in the package.json file.
+
+Press ^C at any time to quit.
+package name: (my_test_gulp)
+version: (1.0.0)
+description:  (my_test_gulp)
+entry point: (index.js)
+test command:
+git repository:
+keywords:
+author: Andrey Panov
+license: (ISC)
+About to write to D:\Repositories\My_Test_Gulp\package.json:
+
+{
+  "name": "my_test_gulp",
+  "version": "1.0.0",
+  "description": " (my_test_gulp)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Andrey Panov",
+  "license": "ISC"
+}
+
+
+Is this OK? (yes) yes
+
+D:\Repositories\My_Test_Gulp>
+``` 
+Все настройки сохранились файлом в созданной папке.
+![alt](/img_read/4.png)
+
+Удалим файл и рассмотрим другой способ.     
+В терминале **vscode** вводим команду:
+```
+PS D:\Repositories\My_Test_Gulp> npm init -y
+```
+По сути тоже самое.
+
+Далее по инструкции=>
+Install the gulp package in your devDependencies#
+```
+npm install --save-dev gulp
+```
+
