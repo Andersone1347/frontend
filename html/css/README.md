@@ -658,6 +658,76 @@ style.css
 
 Создание шапки по макету лого и меню навигации,с помощью hover при наведение на меню загораеться желтым , объекты меню обёрнуты в тег **а** для дальнейшего перехода для сайта.
 
+_index_
+```
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мой сайт</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="menu">
+        <div class="container">
+            <div class="menu__inner">
+                <div class="logo">
+                    <img src="img/logo.png" alt="">
+                </div>
+                <ul class="nav">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Service</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Pricing</a></li>
+                    <li><a href="#">How it Work</a></li>
+                    <li><a href="#">Happy Clients</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+```
+_css_
+```
+* {
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+.container {
+    width: 1170px;
+    margin: 0 auto;
+}
+.menu__inner {
+    margin: 25px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0; 
+}
+.nav li a {
+    text-transform: uppercase;
+    color: #999;
+    text-decoration: none;
+    padding: 10px 20px;
+}
+.nav li a:hover {
+    background-color: #ffc744;
+    color: #fff;
+    border-radius: 5px;
+}
+```
+Верстка из урока.
+![alt](../img/25%D1%83%D1%80%D0%BE%D0%BA.png)
 ## Урок 26. Домашнее задание 1.
 
 С помощью дивов сделать похожую html страничку как на видио, и в css указать похожие свойства текста,расположения,шрифта,и размера.
