@@ -709,6 +709,55 @@ css
     border-radius: 5px;
 }
 ```
+
+С прописаным медиа __css__.
+```
+* {
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+.container {
+    width: 1170px;
+    margin: 0 auto;
+}
+.menu__inner {
+    margin: 25px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0; 
+}
+.nav li a {
+    text-transform: uppercase;
+    color: #999;
+    text-decoration: none;
+    padding: 10px 20px;
+}
+.nav li a:hover {
+    background-color: #ffc744;
+    color: #fff;
+    border-radius: 5px;
+}
+
+@media screen and (max-width:994px) {
+    .container {
+        max-width: 100%;
+      }
+      .menu__inner {
+        margin: 0;
+        justify-content: space-around;
+        flex-wrap: wrap;
+      }
+      .nav {
+        flex-direction: column;
+      }
+}
+```
 ## Урок 26. Домашнее задание 1.
 
 С помощью дивов сделать похожую html страничку как на видио, и в css указать похожие свойства текста,расположения,шрифта,и размера.
