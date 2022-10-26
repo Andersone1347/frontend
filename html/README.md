@@ -824,7 +824,44 @@ margin: 400px;
     font-weight: lighter;
 }
 ```
+__media__
+```
+@media screen and (max-width:1150px) {
+.container{
+    width: 100%;
+}
+    .info__inner{
+    justify-content: center;
+}
+.item{
+    padding: 0 20px;
+}
+}
 
+@media screen and (max-width:740px) {
+.number{
+    font-size: 45px;
+}
+.text{
+    font-size: 15px;
+}
+}
+```               
+Или __flex-wrap__.
+```
+ @media screen and (max-width:1250px) {
+.container{
+    width: 100%;
+}
+.info__inner{
+    flex-wrap: wrap;
+}
+ }
+ @media screen and (max-width:769px) {
+    .info__inner{
+        height: auto;
+    }
+```
 ## Урок 27. Практическое занятие 2.
 ### Создаём блок в котором иконка, цифры и надпись.          
  В **body** 3 вложеных дива **box=>container=>box__inner** , а в **css** устанавливаем ширину для контейнера **1170px** и с помощью **margin** выравниваем по центру **0 auto;** и соответствено **border-box** для всех элементов.    
