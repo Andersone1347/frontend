@@ -1210,53 +1210,77 @@ p {
 </body>
   ```
 
+__css__
   ```
-  css
 * {
     box-sizing: border-box;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
 }
-
 .container {
     width: 1170px;
     margin: 0 auto;
 }
+img {
+    width: 250px;
+}
+h2, p {
+    color: #5e5e5e;
+    line-height: 30px;
+}
 .box__inner {
     display: flex;
     align-items: center;
-    margin-left: 190px;
-    margin-top: 200px;
-}
-img {
-    max-width: 150px;
+    justify-content: center;
 }
 .content {
-    max-width: 458px;
+    max-width: 500px;
+    margin-right: 40px;
 }
-
-.icons div{
+.icons > div {
     width: 50px;
     height: 50px;
-    border: 1px solid green;
+    border: 2px solid #30a740;
+    background-color: transparent;
     font-size: 25px;
+    color: #30a740;
     border-radius: 50%;
     display: flex;
     justify-content: center;
-    align-items: center;  
+    align-items: center;
+    transition: 0.2s;
+    cursor: pointer;
+    margin: 15px 0;
 }
-.fa {
-    color: green;
-}
-.fa-pencil {
-}
-.fa-facebook {
-}
-.icons div:hover {
-    background-color: darkgreen; 
-}
-.fa div:hover {
-    color: aqua;
+.icons > div:hover {
+    background-color: #30a740;
+    color: #fff;
 }
   ```
+__media__
+```
+@media screen and (max-width: 1160px) {
+    .container{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .box__inner {
+        flex-wrap: wrap;
+    }
+    .content {
+        order: -1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    h2, p {
+        text-align: center;
+    }
+}
+```
+
+
   ![alt](/img_read/030%20%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5.png)
  ## Урок 31. Photoshop.
 
