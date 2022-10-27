@@ -1256,7 +1256,7 @@ h2, p {
     color: #fff;
 }
   ```
-__media__
+__media__  
 ```
 @media screen and (max-width: 1160px) {
     .container{
