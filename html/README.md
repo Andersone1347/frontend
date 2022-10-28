@@ -1506,107 +1506,133 @@ __media__
 
 html
  ```
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мой сайт</title>
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
 <body>
 
-    <div class="team">
+    <div class="about">
         <div class="container">
-            <div class="team__inner">
-                <h2 class="team__title">why this is awesome</h2>
-                <div class="team__line"></div>
-                <p class="team__text">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <div class="about__inner">
+                <h2 class="about__title">WHY THIS IS AWESOME</h2>
+                <div class="about__line"></div>
+                <p class="about__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
             </div>
             <div class="cards">
                 <div class="item">
-                    <div class="icons"><i class="fa fa-twitter" aria-hidden="true"></i></div>
+                    <i class="fa fa-lightbulb-o" aria-hidden="true"></i>
                     <h3 class="item__title">Thoughtful Design</h3>
-                    <p class="item__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, veritatis! Beatae commodi dolor dolores? Rerum laborum sed expedita?</p>
+                    <p class="item__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra.</p>
                 </div>
                 <div class="item">
-                    <div class="icons"><i class="fa fa-twitter" aria-hidden="true"></i></div>
-                    <h3 class="item__title">Thoughtful Design</h3>
-                    <p class="item__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, veritatis! Beatae commodi dolor dolores? Rerum laborum sed expedita?</p>
+                    <i class="fa fa-keyboard-o" aria-hidden="true"></i>
+                    <h3 class="item__title">Well Crafted</h3>
+                    <p class="item__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra.</p>
                 </div>
                 <div class="item">
-                    <div class="icons"><i class="fa fa-twitter" aria-hidden="true"></i></div>
-                    <h3 class="item__title">Thoughtful Design</h3>
-                    <p class="item__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, veritatis! Beatae commodi dolor dolores? Rerum laborum sed expedita?</p>
+                    <i class="fa fa-bolt" aria-hidden="true"></i>
+                    <h3 class="item__title">Easy to Customize</h3>
+                    <p class="item__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra.</p>
                 </div>
             </div>
         </div>
-    
-
+    </div>
 </body>
+</html>
  ```
 
  css
  ```
-
-* {
+ * {
     box-sizing: border-box;
 }
-
-.container {
-    width: 1095px;
-    height: 387px;
-    margin: 0 auto;
-}
-.team {
-    background-color: #ff3f3;  
-}
-.team__inner {
-    text-align: center;
-}
-.team__title {
-    font-size: 30px;
-    font-family: "Gotham";
-    color: rgb(48, 48, 48);
-    font-weight: bold;
-    text-transform: uppercase;
-    line-height: 50px; 
+body {
     margin: 0;
-    padding-top: 50px;
+    font-family: "Tahoma";
 }
-.team__line {
-    width: 50px;
-    height: 3px;
-    background-color: orange;
+.container {
+    width: 1100px;
     margin: 0 auto;
-    margin-top: 30px;
 }
-.team__text {
-    padding-top: 30px;
-    font-size: 16px;
-    font-family: "Proxima";
-    color: rgb(90, 90, 90);
-    line-height: 25px; 
-    margin: 0 auto; 
-    width: 540px;
+.about__inner {
+    text-align: center;
+    padding-top: 105px;
+}
+.about__title {
+    margin: 0;
+    font-size: 36px;
+    color: rgb(33, 33, 33);
+    font-weight: 400;
+    margin-bottom: 30px;
+}
+.about__line {
+    margin: 0 auto 30px;
+    width: 64px;
+    height: 2px;
+    background-color: #ff8b38;
+}
+.about__text {
+    margin: 0;
+    margin-bottom: 80px;
+    font-size: 14px;
+    color: rgb(134, 135, 139);  
 }
 .cards {
     display: flex;
-    justify-content: space-around;  
-    padding-bottom: 80px;
-    padding-top: 75px;
+    justify-content: space-between;
 }
 .item {
+    max-width: 330px;
     text-align: center;
-    background-color: #fff;
-    min-width: 328px;
-    padding: 20px 35px;
-   
 }
- .icons .fa{
-    padding-top: 10px;  
-    color: orange;
-    font-size: 45px;
+.fa {
+    color: #ff8b38;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 70px;
     height: 70px;
-    border: 2px solid orange;
+    font-size: 30px;
+    margin: 0 auto;
+    border: 2px solid #ff8b38;
     border-radius: 50%;
-    align-items: center;   
- }
- 
+}
+.item__title {
+    font-weight: 400;
+    margin: 25px 0 20px;
+}
+.item__text {
+    margin: 0;
+    font-size: 14px;
+    line-height: 20px;
+    color: rgb(134, 135, 139);  
+} 
  ```
+ __media__
+ ```
+@media screen and (max-width:1100px) {
+    .container{
+        width:100%
+    }
+    .cards{
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    .item{
+        padding: 10px;
+    }
+}
+ ```
+![alt](../img_read/33(1).png)
+![alt](../img_read/33(2).png)
+![alt](../img_read/33(3).png)
+
  ## Урок 34. Заключение.
 
 Полезные сайта для поиска инвормации. 
