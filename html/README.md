@@ -1476,6 +1476,30 @@ body {
 }
 
 ```
+__media__
+```
+@media screen and (max-width:900px) {
+.container{
+    width: 100%;
+}    
+.cards{
+    flex-wrap: wrap;
+}
+.item{
+    margin: 10px;
+}
+}
+
+@media screen and (max-width:550px) {
+.team{
+    width: fit-content;
+}
+}
+```
+![alt](../img_read/32(1).png)
+![alt](../img_read/32(2).png)
+
+
  ## Урок 33. Домашнее задание 4.
 (переделать)
  Сделать блок как на видио.
